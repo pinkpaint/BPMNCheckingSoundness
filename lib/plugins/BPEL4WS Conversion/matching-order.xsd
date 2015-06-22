@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.processmining.org/bpel4ws_conversion/matching-order"
+	targetNamespace="http://www.processmining.org/bpel4ws_conversion/matching-order"
+	elementFormDefault="qualified">
+
+	<element name="matching-order">
+		<complexType>
+			<sequence>
+				<choice minOccurs="0" maxOccurs="unbounded">
+					<element name="predefined">
+						<complexType>
+							<attribute name="name" use="required">
+								<simpleType>
+									<restriction base="string">
+										<enumeration value="Sequence" />
+										<enumeration value="Switch" />
+										<enumeration value="Pick" />
+										<enumeration value="While" />
+										<enumeration value="Flow" />
+									</restriction>
+								</simpleType>
+							</attribute>
+						</complexType>
+					</element>
+					<element name="component">
+						<complexType>
+							<attribute name="path" use="required" />
+						</complexType>
+					</element>
+				</choice>
+			</sequence>
+		</complexType>
+		<unique name="predefined-unique">
+			<selector xpath="tns:predefined" />
+			<field xpath="@name" />
+		</unique>
+		<unique name="component-unique">
+			<selector xpath="tns:component" />
+			<field xpath="@path" />
+		</unique>
+	</element>
+	
+</schema>

@@ -1,0 +1,5 @@
+<UserDefined>
+	<Family name="User defined rules">
+	<RuleEntry name="exampleResponse"><Rule><Body><Conjunction><Activities><SimpleActivity name="A" forbidden="false" /></Activities><Constraints><SimpleStringConstraint variable="A" operator="EQUAL" targetConstant="First visit" /></Constraints></Conjunction></Body><Head><Disjunction><Conjunction><Activities><SimpleActivity name="B" forbidden="false" /></Activities><Constraints><RelativeTimeConstraint variable="T_B" operator="AFTER" targetVariable="T_A" displacementOP="PLUS" displacement="0" /><SimpleStringConstraint variable="B" operator="EQUAL" targetConstant="ECG" /></Constraints></Conjunction></Disjunction></Head></Rule></RuleEntry>
+	</Family>
+</UserDefined>

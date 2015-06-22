@@ -1,0 +1,459 @@
+
+
+
+<style>
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0mm; margin-right:0mm; margin-top:0mm}
+span.MsoFootnoteReference
+	{vertical-align:super}
+-->
+</style>
+
+
+<h2> <a name="intro"> <span lang="en-gb">Introduction </span> </a></h2>
+<p style="text-align:justify"><span lang="en-gb"><font size="2">The purpose of the Association 
+Rule Miner plug-in is to discover association rules from the event log. 
+The approach of the plug-in is based on machine learning techniques and the ARM 
+uses algorithms implemented in the Weka library [1] to generate association 
+rules. </font> </span></p>
+
+
+<p style="text-align:justify"><span lang="en-gb"><font size="2">Association rules, as the name suggests are the rules that shows associations 
+between various items. These items can be products in your shopping basket, they 
+can be spare parts in an automobile company information system, and many other 
+such examples can be thought of. In the context of ProM these items are the 
+activities in an event log. </font> </span></p>
+
+
+<p> <span lang="en-gb"><font size="2">An example association rule is:</font></span></p>
+
+
+<p> <span lang="en-gb"><font size="2">computer =&gt;antivirus_software [support 2%, 
+confidence=60%]</font></span></p>
+
+
+<p> <span lang="en-gb"><font size="2">The above rule gives the information that customers who 
+purchase computers also tend to buy anti-virus software at the same time.</font></span></p>
+
+
+<p align="justify"> <span lang="en-gb"><b><font size="2">Rule Support and confidence</font></b><font size="2"> are 
+two measures of rule interestingness. They respectively represent usefulness and 
+certainty of discovered rules. A support of 2% for above association rule means 
+that 2% of all the transactions under analysis show that computer and antivirus 
+software are purchased together. A confidence of 60% means that 60% of the 
+customers who purchased a computer also bought the software.</font></span></p>
+
+
+<p> <span lang="en-gb"><font size="2">In general, if we have an association rule: a =&gt;b then 
+the support count indicates the joint probability of a and b. It is calculated 
+as:</font></span></p>
+
+
+<p align="left"> <b><span lang="en-gb"><font size="2">Support (a =&gt;b) = Number of 
+transactions containing (a U b)/ Total number of transactions </font> </span></b></p>
+
+
+<p> <span lang="en-gb"><font size="2">Confidence indicates the conditional probability of b 
+given a. It is calculated as:</font></span></p>
+
+
+<p align="left"> <b><span lang="en-gb"><font size="2">Confidence (a =&gt;b) = Number of 
+transactions containing (a U b)/ Number of transactions containing a</font></span></b></p>
+
+
+<hr>
+
+<h2> <a name="intro"> <span lang="en-gb">Applications of association rules </span> </a>
+</h2>
+
+
+<p align="justify"> <span lang="en-gb"><font size="2">In general the discovery of interesting correlation 
+relationships among huge amounts of business transaction records can help in 
+many business decision making processes, such as catalogue design, cross 
+marketing, and customer shopping behaviour analysis. These association rules 
+show relationship between various items in the database or between various 
+activities in an event log (in context of ProM).</font></span></p>
+
+<hr>
+<h2> <a name="intro"> <span lang="en-gb">Algorithms </span> </a></h2>
+
+
+<p align="justify"> <span lang="en-gb">T<font size="2">here are various algorithms that discover associations 
+among items in large transactional or relational data like Apriori, Predictive 
+Apriori, AprioriTid, Tertius etc. Every algorithm follows 
+two steps:</font></span></p>
+
+
+<ol>
+  <li>
+  <p align="justify"><i><span lang="en-gb"><font size="2">Find all frequent itemsets.
+  </font> </span></i>
+  <span style="font-family: Times New Roman" lang="en-gb"><font size="2">An itemset (set of 
+  items) satisfying a minimum support value is referred to as frequent itemset 
+  or large itemset. This minimum support value is called the minimum support 
+  threshold.</font></span></li>
+  <li>
+
+
+<p align="justify"> <i><span lang="en-gb"><font size="2">Generate association rules from these 
+frequent itemsets.</font></span></i><span lang="en-gb"><font size="2"> Generate strong association 
+rules from the frequent itemsets. The rules that satisfy both a minimum support 
+threshold and a minimum confidence threshold are known as strong rules. Strong 
+rules are preferred because it is not practical to do an exhaustive search for 
+thousands of potential rules that can be generated from a database. Many of 
+these rules will not be of interest and use because they may be unreliable due 
+to low support or confidence values. Therefore it is common to generate only 
+those rules that have a minimum specified support and confidence values. Such 
+rules are called strong association rules.</font></span></p>
+
+
+  </li>
+</ol>
+
+
+<p align="justify"> <span lang="en-gb"><font size="2">This plug-in provides you two algorithms to generate 
+association rules. They are: Apriori algorithm [2] and Predictive Apriori algorithm 
+[3]. </font>
+</span></p>
+
+
+<hr>
+
+<h2> <a name="intro"> <span lang="en-gb">How to use</span> </a></h2>
+
+
+<h3> Apriori algorithm</h3>
+
+<p>
+
+<p align="justify">
+<span lang="en-gb"><font size="2">The input to the plug-in is an event log. When we choose the 
+plug-in from the list of mining plug-ins in ProM we get the following screen:</font></span></p>
+
+<p align="center">
+<img src= "Figure 1.png" alt="start screen" width="688" height="500" ></p>
+</p>
+
+<p align="center">
+<b><font size="2">Figure 1:&nbsp; Apriori algorithm and its parameters in the 
+Association Rule Miner plug-in</font></b></p>
+<p align="justify">
+<font size="2">On the screen we can see we have an option to choose an algorithm, as well as we 
+can see a brief description of the algorithm. </font> </p>
+<ul>
+  <li>
+  <p align="justify"><b><font size="2">Use Algorithm:</font></b><font size="2"> This allows the user to make a selection from 
+  Apriori and Predictive Apriori algorithms.</font></li>
+  <li>
+  <p align="justify"><b><font size="2">Algorithm description: </font> </b>
+  <font size="2">This provides the user with a one-line 
+  description about the algorithm he has chosen.</font></li>
+</ul>
+<p align="justify">
+<font size="2">On the basis of the algorithm that a user chooses he is made available certain 
+parameters. Following parameters are available for the Apriori algorithm:</font></p>
+<ul>
+  <li>
+<p align="justify">
+<b><font size="2">Population size (for Rules):</font></b><font size="2"> The user can specify the population size 
+from which the association rules will be generated. The original Apriori 
+algorithm takes this parameter as the <i>number of rules. </i>The parameter <i>
+population size </i>&nbsp;indicates how many number of rules generated initially 
+will be used for pruning and retaining the non-redundant rules.</font></p>
+  </li>
+</ul>
+<ul>
+  <li>
+<p align="justify">
+<b><font size="2">Minimum Confidence (of a rule):</font></b><font size="2"> The user can specify the minimum 
+confidence the rules must have. As indicated earlier, confidence represents how 
+strong a rule is. The default confidence value is 0.9 or 90%.</font></p>
+  </li>
+</ul>
+<ul>
+  <li>
+<p align="justify">
+<b><font size="2">Lower bound &amp; Upper bound for minimum support: </font> </b>
+<span style="font-size:10.0pt">&nbsp;</span><font size="2">The user can also specify the 
+support of an itemset using two parameters- <i>lower bound for minimum support
+</i>and<i> upper bound for minimum support. </i>By using this range of support 
+values we can experiment with different rules that have itemsets with a support 
+count lying in this range of values. For example, if the lower bound value is 
+set to 0.6 and the upper bound value is set to 0.9, it means we are interested 
+in itemsets that occur in not less than 60% of the process instances and in not 
+more than 90% of the process instances out of the total number of process 
+instances in the log. The default values of the lower bound and upper bound for 
+minimum support is 0.1 and 1 respectively.</font></li>
+</ul>
+<ul>
+  <li>
+<p align="justify">
+<b><font size="2">Output Frequent ItemSets: </font> </b><font size="2">If the user decides to select this option, he 
+will also output the frequent itemsets. By default this option is not selected.</font></li>
+</ul>
+<ul>
+  <li>
+<p align="justify">
+<b><font size="2">Care about Event Types: </font> </b><font size="2">Through this option, the user can choose to work 
+with or without the event type of tasks.</font></li>
+</ul>
+<ul>
+  <li>
+<p align="justify">
+<b><font size="2">Insert a dummy (noname) activity: </font> </b><font size="2">General rules of the form [ 
+=&gt;a1,...,ak] are generated if the user selects this option.</font></p>
+  </li>
+</ul>
+<ul>
+  <li>
+<p align="justify">
+<font size="2">Besides these parameters, the user is also provided with a facility to save the 
+intermediate Attribute Relation File Format (ARFF) file. The plug-in takes an 
+MXML log as input and internally converts this log file into ARFF format which 
+is necessary as we use the algorithms from the Weka library. So, if the user 
+also wants to experiment with other algorithms available in the Weka library he 
+can save the intermediate ARFF file. For this, he should select the option <b>
+Save intermediate input ARFF file </b>and then click <b>Browse... </b>button to 
+specify the location where he wants to save this file. The text field will show the path selected by the user.
+</font> </p>
+  </li>
+</ul>
+<p align="justify">
+<font size="2">The user then must press the <b>Start Mining </b>button to start executing the 
+algorithm as well to save the ARFF file too. If the user successfully saves the 
+file he gets a confirmation message. </font> </p>
+<p align="justify">
+<font size="2">If the user does not select the option to output the frequent itemsets he gets 
+the following screen:</font></p>
+
+<p align="center">
+<img src="Figure 2.png" width="688" height="500"></p>
+
+<p align="center">
+<b><font size="2">Figure 2: Association rules from Apriori in ARM can be seen as 
+a list as well as a text</font></b></p>
+
+<p align="justify">
+<font size="2">On the left-hand side we can see that 4 association rules are generated from the 
+population size of 10.
+Let us interpret one of the rules. For example, rule number 3 i.e. </font> </p>
+
+<p align="justify">
+<b><font size="2">Measurement_hamilton_anxiety =&gt;Measurement_barthel (conf:1)</font></b></p>
+
+<p align="justify">
+<font size="2">The rule contains 1 item on the left hand side and 1 item on the right hand 
+side. Items on the LHS are called antecedents and the items on the RHS&nbsp;are 
+called consequents. A rule may have multiple antecedents and multiple 
+consequents. This rule says: &quot;if activity <i>measurement_hamilton_anxiety</i> happens, activity 
+<i>measurement_barthel</i> will also 
+happen. The confidence of this rule is 1 indicating that 100% of 
+the process instances where <i>measurement_hamilton_anxiety</i> executes, <i>
+measurement_barthel</i> will 
+also execute.</font></p>
+
+<p align="justify">
+<font size="2">We can also choose to show frequent itemsets along with the rules. For this we 
+check the corresponding option and we obtain the following output. </font> </p>
+
+<p align="center">
+<img src="Figure3.png" width="688" height="500"></p>
+
+<p align="center">
+<b><font size="2">Figure 3: Frequent ItemSets from the Apriori algorithm</font></b></p>
+
+<p>
+<font size="2">In Figure 3, we can see both the frequent itemsets and the association rules 
+using the corresponding tab. </font> </p>
+
+<h3>
+Predictive Apriori algorithm</h3>
+
+<p>
+<font size="2">The user can also choose to generate association rules using the Predictive 
+Apriori algorithm. This can be done by making this selection as shown below:</font></p>
+
+<p align="center">
+<img src="Figure4.png" width="688" height="500"></p>
+
+<p align="center">
+<b><font size="2">Figure 4: Select from algorithm- Apriori or Predictive Apriori</font></b></p>
+
+<p align="justify">
+<font size="2">After selecting the Predictive Apriori algorithm, the user 
+receives the following screen:</font></p>
+
+<p align="center">
+<img src= "Figure 5.png" alt="start screen" width="709" height="500" ></p>
+
+<p align="center">
+<b><font size="2">Figure 5: Predictive Apriori algorithm and its parameter</font></b></p>
+
+<p align="justify">
+<font size="2">We can see that the Predictive apriori algorithm generates the best n rules 
+where n is the number of rules to be specified by the user. We can also note 
+that the only parameter we are required to specify is the number of rules. This 
+algorithm is based on the concept of <i>predictive accuracy </i>which combines 
+both the support and confidence measures. The user has also the option of saving 
+the intermediate ARFF file. By default 100 rules are generated, this is also the 
+maximum number of rules that can be generated. Minimum number of rules that are 
+generated is 1. For example, we want to generate 10 rules. We obtain the following 
+rules for the log being used:</font></p>
+
+<p align="center">
+<img src="Figure6.png" width="688" height="500"></p>
+
+<p align="center">
+<b><font size="2">Figure 6: Output of the Predictive Apriori algorithm</font></b></p>
+
+<p align="justify">
+<font size="2">The rules are interpreted in the same way as in Apriori algorithm. But we see 
+the (predictive) accuracy values instead of the confidence values. We can 
+understand that the c<span style="font-family: Times New Roman">onfidence of a 
+rule is the ratio of correct predictions over all record for which a prediction 
+is made. </span>The predictive accuracy c (a=&gt;b) of an association rule can be 
+defined as the probability of a correct prediction with respect to the process 
+underlying the database.&nbsp; The rules in predictive apriori algorithm are ranked 
+on the basis of their predictive accuracy values.</font></p>
+
+<h3 align="justify">
+Working with event types</h3>
+
+<p align="justify">
+<font size="2">As already indicated that the user can choose to work with event types. If in 
+Figure 5, the user selects the option <i>care about Event Types?</i> he is able 
+to generate the rules along with event type information, as seen in the figure 
+below.</font></p>
+
+<p align="center">
+<img src="Figure7.png" width="688" height="500"></p>
+
+<p align="center">
+<b><font size="2">Figure 7: Association rules with event type information</font></b></p>
+
+<h3 align="justify">
+Clustering</h3>
+
+<p align="justify">
+<font size="2">On the right hand side of figures 2, 3, 6 &amp; 7, we see a list of process instances in a 
+table. If the button <b>Cluster</b> is clicked then all the process instances 
+satisfying the selected rule or the frequent itemset will be seen in grey shade in the process instance 
+table. This gives us an indication of how many process instances satisfy a 
+particular rule/frequent itemset. </font></p>
+
+<p align="justify">
+<font size="2">Once we have the process instances satisfying a particular rule or frequent 
+itemset, these can be exported to an mxml log or used for mining with any other mining algorithm. If we cluster on the basis of rule 3 in Figure 7 we obtain 
+the following output:</font></p>
+
+<p align="center">
+<img src="Figure8.png" width="688" height="500"></p>
+
+<p align="center">
+<b><font size="2">Figure 8: Cluster of process instances satisfying an 
+association rule</font></b></p>
+
+<h3 align="justify">
+Saving the intermediate ARFF file</h3>
+
+<p>
+
+<p><font size="2">As shown in figures above, we can also save the intermediate ARFF file at a 
+specified location. For this we specify the desired location by using the browse 
+button. Figure 9 shows this:</font></p>
+
+<p align="center">
+<img src="Figure9.png" width="688" height="500"></p>
+
+
+<p align="center">
+<b><font size="2">Figure 9: Saving the intermediate ARFF file to the specified 
+location</font></b></p>
+
+<p><font size="2">Once the file is successfully saved the user gets the 
+message as shown in the following figure:</font></p>
+
+<p align="center">
+<img src="Figure 10.png" width="667" height="500"></p>
+
+
+
+<p align="center">
+<b><font size="2">Figure 10: Intermediate ARFF file successfully saved!</font></b></p>
+
+
+
+<p><font size="2">This ARFF file can be directly loaded in Weka library to experiment with all 
+Weka algorithms. The figure below shows how this ARFF file looks:</font></p>
+
+<p align="center">
+<img src="Figure11.png" width="688" height="516"></p>
+
+<p align="center">
+<b><font size="2">Figure 11: Saved ARFF file</font></b></p>
+
+<p>
+<font size="2">The first line in the file with the tag @relation indicates the name of this 
+file, which is the name of the log used for mining. This name will help the user 
+keep track of which log file is converted to ARFF for association rule mining.</font></p>
+
+
+<p>
+<font size="2">In the next lines are the tag @attribute. This represents the activities in the 
+log. T In this case we have 6 activities, namely <i>Measurement_barthel, 
+Measurement_NIH, Measurement_london, Measurement_hamilton_anxiety, 
+Measurement_hamilton_depression, Measurement_SF36 </i>and<i> 
+Measurement_glasgow.</i>&nbsp; We can also see {yes,?} besides the activity names. 
+This indicates the values these attributes can take. In terms of data mining, the activities are treated as attributes which can have some values.
+</font> </p>
+
+
+
+<p>
+<font size="2">The association rules that are mined by the ARM are boolean association rules which establish 
+associations between the presence or absence of the items. So, each activity 
+(attribute) has two values-yes or ? based on its presence or absence in a 
+particular process instance. A ? indicates that the activity is not present in a 
+particular process instance.</font></p>
+
+
+
+<p>
+<font size="2">The next tag is @data. This is the converted mxml log into a log format 
+acceptable by Weka.&nbsp; If we look at the process instances here we see they 
+contain yes or no values. Let us analyze the first process instance:</font></p>
+
+
+
+<p>
+<font size="2">yes,yes,yes,yes,yes,yes,?</font></p>
+
+
+
+<p>
+<font size="2">This means this process instance consists of all activities 
+except&nbsp; the activity <i>Measurement_glasgow.</i></font></p>
+
+
+
+<hr>
+<h5>References:</h5>
+<p><font size="2">For more information, please refer to the following publications:</font></p>
+<p><font size="2">[1] </font> <span class="m"><font size="2">R. Agrawal and R. Srikant. <i>Fast 
+Algorithms for Mining Association Rules</i>. In Proc. of the 20th Int'l 
+Conference on Very Large Databases, Santiago, Chile, September 1994.</font></span></p>
+<p><font size="2">[2] T. Scheffer. Finding Association Rules That 
+Trade Support Optimally against Confidence. In <i>Proceedings of the 5th 
+European Conference on Principles of Data Mining and Knowledge Discovery</i> 
+(September 03 - 05, 2001). L. D. Raedt and A. Siebes, Eds. Lecture Notes In 
+Computer Science, vol. 2168. Springer-Verlag, London, 424-435.</font></p>
+<p><font size="2">[3] I. H. Witten and E. Frank. <i>Data Mining:&nbsp; Practical machine 
+learning tools and techniques, 2nd Edition.</i> Morgan Kaufmann, 2005.</font></p>
+<p><font size="2">[4] S. Gupta. Master thesis. <i>Workflow and Process Mining in 
+Healthcare</i>. Department of Mathematics and Computer Science, Technische 
+Universiteit Eindhoven, May 2007.</font></p>

@@ -1,0 +1,13 @@
+Write files in sub-folders of this folder for HTML code of the help page. 
+Only write the body of a HTML document, 
+so without the <html>, <head> and <body> tags. 
+
+Each subfolder should have the exact name as the class, but without the package.
+Within each subfolder there should be a file with the exact name as the class,
+including the package, ending with ".html"
+
+For example:
+
+Folder:  ConformanceAnalysisPlugin
+
+File in that folder:  org.processmining.analysis.conformance.ConformanceAnalysisPlugin.html 

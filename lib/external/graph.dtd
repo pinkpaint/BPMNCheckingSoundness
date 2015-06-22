@@ -1,0 +1,51 @@
+<!-- edited with XML Spy v3.5 NT (http://www.xmlspy.com) by TBL (IDS Scheer AG) -->
+<!-- 
+    PPM Graph DTD 
+
+ARIS PPM:3.0.2 Build:3207 IDS Scheer AG
+$Author:   sma  $
+$Revision:   1.0  $
+Last Changed:  $Date:   Jul 09 2002 11:02:28  $
+-->
+<!-- ******************* graphlist ***********************
+    Eine Datei enthaelt eine Liste von Graphen
+-->
+<!ELEMENT graphlist (graph+)>
+<!-- ********************* graph *************************
+    Ein Graph kann Attribute haben,
+    muss mindestens einen Knoten haben,
+    und kann Kanten haben
+    Ein Graph wird durch eine ID identifiziert
+-->
+<!ELEMENT graph (attribute*, node+, edge*)>
+<!ATTLIST graph
+	id CDATA #REQUIRED
+	xml:lang NMTOKEN #IMPLIED
+>
+<!-- ********************* node **************************
+    Ein Knoten kann Attribute haben,
+    und muss von einem der angegebenen Typen sein.
+-->
+<!ELEMENT node (attribute*)>
+<!ATTLIST node
+	id CDATA #REQUIRED
+	type (OT_DEFAULT | OT_FUNC | OT_EVT | OT_ORG | OT_BELEG | OT_RULEAND | OT_RULEOR | OT_RULEXOR) #REQUIRED
+>
+<!-- ********************* edge **************************
+    Ein Kante kann Attribute haben,
+    und muss von einem der angegebenen Typen sein
+    und muss einen Quell- und einen Zielknoten haben
+-->
+<!ELEMENT edge (attribute*)>
+<!ATTLIST edge
+	type (CXN_FOLLOWS | CXN_UNDIRECTED) #REQUIRED
+	source CDATA #REQUIRED
+	target CDATA #REQUIRED
+>
+<!-- ********************* attribute *************************
+    Ein Attribut hat einen Typ
+-->
+<!ELEMENT attribute (#PCDATA)>
+<!ATTLIST attribute
+	type NMTOKEN #REQUIRED
+>

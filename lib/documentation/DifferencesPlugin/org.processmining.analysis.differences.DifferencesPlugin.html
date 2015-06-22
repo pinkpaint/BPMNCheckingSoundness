@@ -1,0 +1,38 @@
+<p>The differences analysis plugin allows you to discover and diagnose 
+differences between two business processes either in the Petri net or in the EPC 
+notation.</p>
+<h1>References</h1>
+<p>[1] R.M. Dijkman.
+<a href="http://is.tm.tue.nl/staff/rdijkman/papers/Dijkman%20(2007%20BETA%20WP)%20-%20Feedback%20on%20Differences%20between%20Business%20Processes.pdf">
+Feedback on Differences between Business Processes</a>. BETA Working Paper 
+WP-234, Eindhoven University of Technology, Eindhoven, The Netherlands, 2007.</p>
+<p>[2] R.M. Dijkman.
+<a href="http://is.tm.tue.nl/staff/rdijkman/papers/Dijkman%20(2007%20EDOC)%20-%20A%20Classification%20of%20Differences%20between%20Similar%20Business%20Processes.pdf">
+A Classification of Differences between Similar Business Processes.</a> In: <i>
+Proceedings of the 11th IEEE EDOC Conference (EDOC)</i>, Annapolis, MD, USA, pp. 
+37-47, 2007.</p>
+<h1>Overview of the Approach</h1>
+<p>The plugin takes two processes as input and decides whether they are 
+different. (We say that two processes are different if they are not completed 
+trace equivalent.) If the processes are different, the plugin points out exactly 
+where they are different and why they are different. This in contrast to 
+techniques that provide simple true/false answers about whether two processes 
+are different or not. The feedback on why processes are different is given in 
+terms of frequently occurring differences that we discovered in practice. The 
+plugin can be used for various purposes, such as detecting differences between 
+processes in a merger between organizations.</p>
+<h1>Using the Plugin</h1>
+<p>The following procedure shows you how to use the plug-in:</p>
+<ol>
+	<li>open the processes that you want to compare, for this example use
+	<a href="componentnet1.pnml">componentnet1.pnml</a> and
+	<a href="componentnet2.pnml">componentnet2.pnml</a>;</li>
+	<li>open this plugin, use the two processes that you just opened as 
+	arguments;</li>
+	<li>now indicate which tasks in one process are equivalent to which tasks in 
+	the other process, for this example tasks with identical names are 
+	considered to be equivalent, if you click 'find match' the plugin will 
+	automatically find a match between tasks based on their labels;</li>
+	<li>click 'evaluate' and the plugin will identify and diagnose the 
+	differences.</li>
+</ol>

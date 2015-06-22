@@ -1,0 +1,247 @@
+<html>
+
+<body>
+
+
+<p>&nbsp;</p>
+<table border="1" width="100%" id="table2">
+    <tr>
+        <td><b>Note:</b> This page explains the main configuration parameters of the
+        Genetic Algorithm plug-in. For more detailed information, please have a look at the
+        papers available at <a href="http://www.processmining.org/">http://www.processmining.org</a>.</td>
+    </tr>
+</table>
+<p>&nbsp;</p>
+<p><b><font size="6">Genetic Algorithm Plug-in</font></b></p>
+<p><i>Author: Ana Karla Alves de Medeiros</i> (<a href="http://is.tm.tue.nl/staff/amedeiros/">http://is.tm.tue.nl/staff/amedeiros/</a>)</p>
+
+<p>&nbsp;</p>
+
+<p>
+The 
+
+&quot;Genetic Algorithm plug-in&quot; uses genetic algorithms to mine process models from 
+event logs. Its output is a set of process models that are <i>decreasingly</i> 
+ordered by the fitness value. In other words, the best mined model is listed 
+first, and so on. Genetic algorithms are adaptive search methods that try to mimic the process of evolution. These algorithms start with an 
+<i>initial population</i> of individuals. Every individual is assigned a <i>fitness</i> measure to indicate its quality. In our case, an individual is a possible process model and the fitness is a function that evaluates how well the individual is able to reproduce the behavior in the log. 
+Populations evolve by <i>selecting</i> the fittest individuals and 
+generating new individuals using <i>genetic operators</i> such as <i>crossover</i> (combining parts of two or more individuals) 
+and <i>mutation</i> (random modification of an individual).
+
+
+</p>
+<p>
+The figure below illustrates the &quot;Genetic Algorithm plug-in&quot; main steps:</p>
+<p>&nbsp;</p>
+<table border="0" width="100%" id="table3">
+    <tr>
+        <td><img border="0" src="gaSteps.gif"></td>
+    </tr>
+    <caption valign="bottom">Figure 1 - The Main Steps of the Genetic Algorithm Plug-in.</caption>
+</table>
+
+
+<p>&nbsp;</p>
+<p>Every individual in the population is represented as a <i>causal matrix</i>. 
+Figure 3 illustrates the causal matrix for the process model in Figure 2. The 
+causal matrix shows the dependencies between the tasks, as well as the semantics 
+of these dependencies. In short, every tasks has an input (I) and output (O) set 
+of dependencies. Tasks in a same subset of an input/output set have an 
+XOR-relation. Tasks in different input/output subsets of a task have an 
+AND-relation.</p>
+
+<p>&nbsp;</p>
+<table border="0" width="100%" id="table4">
+    <tr>
+        <td align="center"><img border="0" src="originalPetriNet.gif"></td>
+    </tr>
+    <caption valign="bottom">Figure 2 - Model represented as a Petri net.</caption>
+</table>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+<table border="0" width="100%" id="table5">
+    <tr>
+        <td align="center"><img border="0" src="causalMatrixForOriginalPetriNet.gif"></td>
+    </tr>
+    <caption valign="bottom">Figure 3 - Model represented as a Causal Matrix 
+    (CM).</caption>
+</table>
+
+
+<p>The &quot;Genetic Algorithm plug-in&quot; parameters are:</p>
+
+
+<p><b>Population size</b><br><br>
+ Sets the number of individuals that are going to be used during the search.</p>
+
+
+<p><b>Initial population type</b><br><br>
+Sets how the initial population should be built. The table below summarizes 
+the possible options.<p>&nbsp;</p>
+<table border="1" width="100%" id="table1" style="border-left-width: 0px; border-top-width: 0px">
+    <tr>
+        <td align="center" style="border-left-style: none; border-left-width: medium; border-top-style: none; border-top-width: medium">&nbsp;</td>
+        <td align="center">Heuristics are Used to Set the <br>Dependencies Between 
+        Tasks</td>
+        <td align="center">The Dependencies Between <br> Tasks are Randomly Set</td>
+    </tr>
+    <tr>
+        <td align="center">Duplicate Individuals <br>are Allowed</td>
+        <td align="center"><i>Possible Duplicates</i></td>
+        <td align="center"><i>Without Heuristics</i></td>
+    </tr>
+    <tr>
+        <td align="center" height="98">Duplicate Individual <br>are Forbidden</td>
+        <td align="center" height="98"><i>No Duplicates</i></td>
+        <td align="center" height="98">&nbsp;</td>
+    </tr>
+</table>
+
+<p><b>Maximum number of generations</b><br><br>
+
+Sets the maximum number <i>n</i> of times that the genetic algorithm can iterate. This parameter 
+relates to the stopping criteria. In short, the Genetic Algorithm Plug-in stops when (i) 
+it finds an individual whose fitness is maximal, (ii) it iterates <i>n</i> times, or 
+(iii) the fittest individual has not changed for <i>n</i>/2 iterations in a row.
+</p>
+
+
+
+
+<p><b>Seed</b><br><br>
+Sets the seed that is used to generate random number for this plug-in.
+</p>
+
+
+<p><b>Power Value</b><br><br>
+
+Sets the power value that is used by the heuristics to build the initial population.
+In a nutshell, the heuristics works as follows: the more often a task <i>t<sub>1</sub></i> is directly followed by a 
+task <i>t<sub>2 </sub></i> (i.e. the subtrace <i>&quot;t<sub>1</sub>t<sub>2</sub>&quot;</i> appears in traces in the log), the higher the probability 
+that individuals are built with a dependency (or arc) from <i>t<sub>1 </sub></i> to <i>t<sub>2</sub></i>.
+The power value is used to control the "influence&quot; of the heuristics in the probability of setting a 
+dependency between two tasks. Higher values for power value lead to the inferring of fewer 
+dependencies between two tasks in the event log, and vice-versa. 
+</p>
+
+<p><b>Elistism rate</b><br><br>
+
+Sets the percentage of the fittest individuals in the current generation that are going to be copied to the next generation. 
+For instance, an elitism rate of 0.02 means that 2% of the best individuals in 
+the population are copied to the next population.
+
+</p>
+
+
+<p><b>Fitness Type</b><br><br>
+
+Sets the type of the fitness that the Genetic Algorithm plug-in uses to assess the quality of an individual. 
+The quality of an individual is basically set by its replaying of the log traces. 
+This replay can use a stop semantics parsing or a continuous semantics one. The 
+<i>stop semantics parsing</i> stops whenever the task to be parsed is not enabled. The 
+<i>continuous semantics parsing</i> works in a different way: whenever a task is not 
+enabled, the problem is registered (for instance, the number of missing tokens), 
+and the task is fired anyway. The fitness types <i>Proper Completion</i> and <i>Stop 
+Semantics</i> use stop semantics parsing. The other fitness types use a 
+continuous semantics one. In short, the fitness types work as follows:</p>
+
+<p>&nbsp;</p>
+
+<table border="0" width="100%" id="table5">
+    <tr>
+        <td align="center"><img border="0" src="fitnessTypesFormulae.gif"></td>
+    </tr>
+    <caption valign="bottom">Figure 4 - Formulae for the different fitness types.
+    The parameter <i>kappa</i> of the fitness <i>ExtraBehaviorPunishment</i> corresponds
+    to the advanced fitness parameter "Extra Behavior Punishment".</caption>
+</table>
+
+
+
+<p><i>NOTE: We strongly recommend the use of the &quot;ExtraBehaviorPunishment&quot; fitness 
+type because it incorporates the concepts of the other fitness types.</i></p>
+
+<p><b>Show Advanced Fitness Parameters</b><br><br>
+
+Allows for the setting of the parameters for the selected fitness type. For the GA, the fitness "ExtraBehaviorPunishment" 
+is the only one to have a parameter. This parameter is the <i>Extra Behavior 
+Punishment </i>(the <i>kappa</i> in item 5 of Figure 4).
+</p>
+
+
+<p><b>Use Genetic Operators</b><br><br>
+Sets if the genetic operators crossover and mutation are going to be used to build the 
+populations that follow the initial population. If this option is unchecked, the next populations are built just like the initial population. If this option is checked, 
+then the individuals of the next population that do not belong to the elite are 
+created by applying crossover and mutation to individuals in the current 
+population. The cycle works are follows: first two parents are selected;second they undergo
+ crossover (with a certain probability) and produce two offsprings; third, every offspring may be
+ mutated with a certain probability; finally, the offsprings are inserted into the new population.
+</p>
+
+
+<p><b>Selection Method Type</b><br><br>
+Sets how the parents for genetic operators are going to be chosen. Both methods are based on a tournament. The 
+method type <i>Tournament</i>&nbsp; works by randomly selecting <i>two</i> individuals in the population and returning the fittest individual in 75% of the times,
+ and the less fit individual in 25% of the times. The method type <i>Tournament5</i>&nbsp; randomly selects <i>five</i> individuals in the population and always returns 
+the fittest individual.</p>
+
+<p><b>Crossover Type</b><br><br>
+Sets how two parents (selected individuals) are going to be recombined. All types work at the task level. 
+However, their granularity varies. A task has an input and output set. 
+So, some crossover types work on the full input/output sets, others on subsets 
+that are in the input/output sets of a task. In short, the crossover types work as follows:</p>
+<ol>
+    <li><i>Local One Point</i>:  always swaps both the input and output sets of a task.</li>
+<li><i>Variable Local One Point</i>: swaps both input/output sets in 50% of the 
+times. The other times only one of these sets is swapped.</li>
+    <li><i>Fine Granularity</i>: swaps subsets in the input/output set of a 
+    task. If the subsets that are been swapped have intersecting elements with subsets
+    (in the other individual) that were not swapped, this crossover type randomly chooses 
+    if these subsets (the swapped and unswapped ones) are going (i) to be merged,  
+    or (ii) if the common elements are  going to be removed from the subsets 
+    that were not swapped during the crossover.</li>
+<li><i>Enhanced</i>: swaps subsets in the input/output set of a task. With equal probability,
+the swapped subsets can be: (i)  included into the input/output set, (ii) merged with some&nbsp;
+unswapped subsets in the input/output sets, or (iii) add the swapped sets and remove from some&nbsp;
+unswapped subsets intersecting elements that are in the swapped ones.</li>
+</ol>
+<p><i>NOTE: We strongly recommend the use of the &quot;Enhanced&quot; crossover 
+type because it incorporates the concepts of the other crossover types.</i></p>
+
+
+<p><b>Crossover Rate</b><br><br>Sets the probability that two parents are 
+going to be recombined to create two offsprings for the next generation. If the 
+probability is equal to 0, then, after the crossover, the offsprings are just 
+like the parents.</p>
+
+
+<p><b>Mutation Type</b><br><br>
+Sets how an individual is going to be randomly modified. The mutation point is 
+a task.</p>
+<ol>
+    <li><i>All Elements</i>: adds or removes one element of a subset in the 
+    input/output set of the mutated task.</li>
+    <li><i>Partition Redefinition</i>: re-arranges the subsets of the 
+    input/output set of the mutated task.</li>
+    <li><i>Enhanced</i>: performs one of the following operations with equal 
+    probability: (i) add a task to a subset in the input/output set of the 
+    mutated task, (ii) remove a task from a subset in the input/output set of a 
+    mutated task, or (iii) re-arrange the subsets of the input/output set of the 
+    mutated task.</li>
+</ol>
+
+<p><i>NOTE: We strongly recommend the use of the &quot;Enhanced&quot; mutation 
+type because it incorporates the concepts of the other mutation types.</i></p>
+
+
+<p><b>Mutation Rate</b><br><br>
+
+Sets the probability that an individual is going to be mutated.</p>
+
+
+</body>
+
+</html> 

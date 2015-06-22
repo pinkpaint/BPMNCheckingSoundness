@@ -1,0 +1,919 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<diagram
+  ><Pool id="pool1"
+    ><property name="height"
+      ></property
+    ><property name="width"
+      ></property
+    ><property name="sdm:y"
+      ></property
+    ><property name="sdm:x"
+      ></property
+    ><property name="Length"
+      ></property
+    ><property name="Size"
+      ></property
+    ><property name="y"
+      ></property
+    ><property name="x"
+      ></property
+    ><property name="Name"
+      >Pool</property></Pool
+  ><Start id="Start2"
+    ><property name="sdm:y"
+      ></property
+    ><property name="sdm:x"
+      ></property
+    ><property name="Lane"
+      >Pool</property
+    ><property name="y"
+      >1.0</property
+    ><property name="x"
+      >1.0</property
+    ><property name="CSSclass"
+      >Event</property
+    ><property name="height"
+      >30.0</property
+    ><property name="width"
+      >30.0</property></Start
+  ><End id="End7"
+    ><property name="sdm:y"
+      ></property
+    ><property name="sdm:x"
+      ></property
+    ><property name="Lane"
+      >Pool</property
+    ><property name="y"
+      >1.0</property
+    ><property name="x"
+      >1.0</property
+    ><property name="CSSclass"
+      >Event</property
+    ><property name="height"
+      >30.0</property
+    ><property name="width"
+      >30.0</property></End
+  ><SubProcess id="SubProcess2"
+    ><property name="sdm:y"
+      >35.0</property
+    ><property name="sdm:x"
+      >170.0</property
+    ><property name="y"
+      ></property
+    ><property name="x"
+      ></property
+    ><property name="Name"
+      >Followup</property
+    ><property name="BpmnType"
+      >SequenceB</property
+    ><property name="Expanded"
+      >false</property
+    ><property name="Transaction"
+      >false</property
+    ><property name="CSSclass"
+      >Activity</property
+    ><Start id="Start3"
+      ><property name="sdm:y"
+        ></property
+      ><property name="sdm:x"
+        ></property
+      ><property name="y"
+        >1.0</property
+      ><property name="x"
+        >1.0</property
+      ><property name="CSSclass"
+        >Event</property
+      ><property name="height"
+        >30.0</property
+      ><property name="width"
+        >30.0</property></Start
+    ><End id="End9"
+      ><property name="sdm:y"
+        ></property
+      ><property name="sdm:x"
+        ></property
+      ><property name="y"
+        >1.0</property
+      ><property name="x"
+        >1.0</property
+      ><property name="CSSclass"
+        >Event</property
+      ><property name="height"
+        >30.0</property
+      ><property name="width"
+        >30.0</property></End
+    ><SubProcess id="SubProcess3"
+      ><property name="sdm:y"
+        >35.0</property
+      ><property name="sdm:x"
+        >170.0</property
+      ><property name="y"
+        ></property
+      ><property name="x"
+        ></property
+      ><property name="Name"
+        >Followup Dependency Block</property
+      ><property name="BpmnType"
+        >DependentB</property
+      ><property name="Expanded"
+        >false</property
+      ><property name="Transaction"
+        >false</property
+      ><property name="CSSclass"
+        >Activity</property
+      ><Start id="Start5"
+        ><property name="sdm:y"
+          ></property
+        ><property name="sdm:x"
+          ></property
+        ><property name="y"
+          >1.0</property
+        ><property name="x"
+          >1.0</property
+        ><property name="CSSclass"
+          >Event</property
+        ><property name="height"
+          >30.0</property
+        ><property name="width"
+          >30.0</property></Start
+      ><End id="End8"
+        ><property name="sdm:y"
+          ></property
+        ><property name="sdm:x"
+          ></property
+        ><property name="y"
+          >1.0</property
+        ><property name="x"
+          >1.0</property
+        ><property name="CSSclass"
+          >Event</property
+        ><property name="height"
+          >30.0</property
+        ><property name="width"
+          >30.0</property></End
+      ><Task id="Task4"
+        ><property name="height"
+          ></property
+        ><property name="width"
+          ></property
+        ><property name="sdm:y"
+          ></property
+        ><property name="sdm:x"
+          ></property
+        ><property name="y"
+          ></property
+        ><property name="x"
+          ></property
+        ><property name="TaskType"
+          >StandardT</property
+        ><property name="Name"
+          >Followup Form Submission</property
+        ><property name="CSSclass"
+          >Activity</property
+        ><property name="Maxrange"
+          >14D</property
+        ><property name="Minrange"
+          >14D</property></Task
+      ><Flow islink="true" id="line6" from="Start5" to="Task4"
+        ><property name="x"
+          ></property
+        ><property name="y"
+          ></property></Flow
+      ><Flow islink="true" id="line7" from="Task4" to="End8"
+        ><property name="x"
+          ></property
+        ><property name="y"
+          ></property></Flow></SubProcess
+    ><Flow islink="true" id="line5" from="Start3" to="SubProcess3"
+      ><property name="x"
+        ></property
+      ><property name="y"
+        ></property></Flow
+    ><Flow islink="true" id="line8" from="SubProcess3" to="End9"
+      ><property name="x"
+        ></property
+      ><property name="y"
+        ></property></Flow
+    ><property name="Lane"
+      >Pool</property></SubProcess
+  ><SubProcess id="SubProcess5"
+    ><property name="sdm:y"
+      >35.0</property
+    ><property name="sdm:x"
+      >170.0</property
+    ><property name="y"
+      ></property
+    ><property name="x"
+      ></property
+    ><property name="Name"
+      >Treatment1</property
+    ><property name="BpmnType"
+      >SequenceB</property
+    ><property name="Expanded"
+      >false</property
+    ><property name="Transaction"
+      >false</property
+    ><property name="CSSclass"
+      >Activity</property
+    ><Start id="Start10"
+      ><property name="sdm:y"
+        ></property
+      ><property name="sdm:x"
+        ></property
+      ><property name="y"
+        >1.0</property
+      ><property name="x"
+        >1.0</property
+      ><property name="CSSclass"
+        >Event</property
+      ><property name="height"
+        >30.0</property
+      ><property name="width"
+        >30.0</property></Start
+    ><End id="End12"
+      ><property name="sdm:y"
+        ></property
+      ><property name="sdm:x"
+        ></property
+      ><property name="y"
+        >1.0</property
+      ><property name="x"
+        >1.0</property
+      ><property name="CSSclass"
+        >Event</property
+      ><property name="height"
+        >30.0</property
+      ><property name="width"
+        >30.0</property></End
+    ><Gateway id="Gateway9"
+      ><property name="height"
+        ></property
+      ><property name="width"
+        ></property
+      ><property name="y"
+        ></property
+      ><property name="x"
+        ></property
+      ><property name="GatewayType"
+        >AND</property
+      ><property name="Name"
+        >AND</property></Gateway
+    ><Gateway id="Gateway8"
+      ><property name="height"
+        ></property
+      ><property name="width"
+        ></property
+      ><property name="y"
+        ></property
+      ><property name="x"
+        ></property
+      ><property name="GatewayType"
+        >AND</property
+      ><property name="Name"
+        >AND</property></Gateway
+    ><Task id="Task7"
+      ><property name="height"
+        ></property
+      ><property name="width"
+        ></property
+      ><property name="sdm:y"
+        ></property
+      ><property name="sdm:x"
+        ></property
+      ><property name="y"
+        ></property
+      ><property name="x"
+        ></property
+      ><property name="TaskType"
+        >InterventionT</property
+      ><property name="Name"
+        >Control1</property
+      ><property name="CSSclass"
+        >Activity</property
+      ><property name="Maxrange"
+        >P0D</property
+      ><property name="Minrange"
+        >P0D</property></Task
+    ><Task id="Task6"
+      ><property name="height"
+        ></property
+      ><property name="width"
+        ></property
+      ><property name="sdm:y"
+        ></property
+      ><property name="sdm:x"
+        ></property
+      ><property name="y"
+        ></property
+      ><property name="x"
+        ></property
+      ><property name="TaskType"
+        >InterventionT</property
+      ><property name="Name"
+        >Control2</property
+      ><property name="CSSclass"
+        >Activity</property
+      ><property name="Maxrange"
+        >P0D</property
+      ><property name="Minrange"
+        >P0D</property></Task
+    ><SubProcess id="SubProcess7"
+      ><property name="sdm:y"
+        >35.0</property
+      ><property name="sdm:x"
+        >170.0</property
+      ><property name="y"
+        ></property
+      ><property name="x"
+        ></property
+      ><property name="Name"
+        >Treatment1 Dependency Block</property
+      ><property name="BpmnType"
+        >DependentB</property
+      ><property name="Expanded"
+        >false</property
+      ><property name="Transaction"
+        >false</property
+      ><property name="CSSclass"
+        >Activity</property
+      ><Start id="Start9"
+        ><property name="sdm:y"
+          ></property
+        ><property name="sdm:x"
+          ></property
+        ><property name="y"
+          >1.0</property
+        ><property name="x"
+          >1.0</property
+        ><property name="CSSclass"
+          >Event</property
+        ><property name="height"
+          >30.0</property
+        ><property name="width"
+          >30.0</property></Start
+      ><End id="End10"
+        ><property name="sdm:y"
+          ></property
+        ><property name="sdm:x"
+          ></property
+        ><property name="y"
+          >1.0</property
+        ><property name="x"
+          >1.0</property
+        ><property name="CSSclass"
+          >Event</property
+        ><property name="height"
+          >30.0</property
+        ><property name="width"
+          >30.0</property></End
+      ><Task id="Task8"
+        ><property name="height"
+          ></property
+        ><property name="width"
+          ></property
+        ><property name="sdm:y"
+          ></property
+        ><property name="sdm:x"
+          ></property
+        ><property name="y"
+          ></property
+        ><property name="x"
+          ></property
+        ><property name="TaskType"
+          >StandardT</property
+        ><property name="Name"
+          >Treatment Form Submission</property
+        ><property name="CSSclass"
+          >Activity</property
+        ><property name="Maxrange"
+          >14D</property
+        ><property name="Minrange"
+          ></property></Task
+      ><Flow islink="true" id="line8" from="Start9" to="Task8"
+        ><property name="x"
+          ></property
+        ><property name="y"
+          ></property></Flow
+      ><Flow islink="true" id="line9" from="Task8" to="End10"
+        ><property name="x"
+          ></property
+        ><property name="y"
+          ></property></Flow></SubProcess
+    ><Flow islink="true" id="line5" from="Start10" to="Gateway9"
+      ><property name="x"
+        ></property
+      ><property name="y"
+        ></property></Flow
+    ><Flow islink="true" id="line11" from="Gateway8" to="End12"
+      ><property name="x"
+        ></property
+      ><property name="y"
+        ></property></Flow
+    ><Flow islink="true" id="line6" from="Gateway9" to="Task7"
+      ><property name="x"
+        ></property
+      ><property name="y"
+        ></property></Flow
+    ><Flow islink="true" id="line7" from="Gateway9" to="SubProcess7"
+      ><property name="x"
+        ></property
+      ><property name="y"
+        ></property></Flow
+    ><Flow islink="true" id="line9" from="Task6" to="Gateway8"
+      ><property name="x"
+        ></property
+      ><property name="y"
+        ></property></Flow
+    ><Flow islink="true" id="line10" from="SubProcess7" to="Gateway8"
+      ><property name="x"
+        ></property
+      ><property name="y"
+        ></property></Flow
+    ><Flow islink="true" id="line8" from="Task7" to="Task6"
+      ><property name="x"
+        ></property
+      ><property name="y"
+        ></property></Flow
+    ><property name="Lane"
+      >Pool</property></SubProcess
+  ><SubProcess id="SubProcess9"
+    ><property name="sdm:y"
+      >35.0</property
+    ><property name="sdm:x"
+      >170.0</property
+    ><property name="y"
+      ></property
+    ><property name="x"
+      ></property
+    ><property name="Name"
+      >Randomisation</property
+    ><property name="BpmnType"
+      >SequenceB</property
+    ><property name="Expanded"
+      >false</property
+    ><property name="Transaction"
+      >false</property
+    ><property name="CSSclass"
+      >Activity</property
+    ><Start id="Start10"
+      ><property name="sdm:y"
+        ></property
+      ><property name="sdm:x"
+        ></property
+      ><property name="y"
+        >1.0</property
+      ><property name="x"
+        >1.0</property
+      ><property name="CSSclass"
+        >Event</property
+      ><property name="height"
+        >30.0</property
+      ><property name="width"
+        >30.0</property></Start
+    ><End id="End5"
+      ><property name="sdm:y"
+        ></property
+      ><property name="sdm:x"
+        ></property
+      ><property name="y"
+        >1.0</property
+      ><property name="x"
+        >1.0</property
+      ><property name="CSSclass"
+        >Event</property
+      ><property name="height"
+        >30.0</property
+      ><property name="width"
+        >30.0</property></End
+    ><SubProcess id="SubProcess10"
+      ><property name="sdm:y"
+        >35.0</property
+      ><property name="sdm:x"
+        >170.0</property
+      ><property name="y"
+        ></property
+      ><property name="x"
+        ></property
+      ><property name="Name"
+        >Randomisation Dependency Block</property
+      ><property name="BpmnType"
+        >DependentB</property
+      ><property name="Expanded"
+        >false</property
+      ><property name="Transaction"
+        >false</property
+      ><property name="CSSclass"
+        >Activity</property
+      ><Start id="Start12"
+        ><property name="sdm:y"
+          ></property
+        ><property name="sdm:x"
+          ></property
+        ><property name="y"
+          >1.0</property
+        ><property name="x"
+          >1.0</property
+        ><property name="CSSclass"
+          >Event</property
+        ><property name="height"
+          >30.0</property
+        ><property name="width"
+          >30.0</property></Start
+      ><End id="End4"
+        ><property name="sdm:y"
+          ></property
+        ><property name="sdm:x"
+          ></property
+        ><property name="y"
+          >1.0</property
+        ><property name="x"
+          >1.0</property
+        ><property name="CSSclass"
+          >Event</property
+        ><property name="height"
+          >30.0</property
+        ><property name="width"
+          >30.0</property></End
+      ><Task id="Task11"
+        ><property name="height"
+          ></property
+        ><property name="width"
+          ></property
+        ><property name="sdm:y"
+          ></property
+        ><property name="sdm:x"
+          ></property
+        ><property name="y"
+          ></property
+        ><property name="x"
+          ></property
+        ><property name="TaskType"
+          >StandardT</property
+        ><property name="Name"
+          >Randomisation Form Submission</property
+        ><property name="CSSclass"
+          >Activity</property
+        ><property name="Maxrange"
+          >14D</property
+        ><property name="Minrange"
+          ></property></Task
+      ><Flow islink="true" id="line2" from="Start12" to="Task11"
+        ><property name="x"
+          ></property
+        ><property name="y"
+          ></property></Flow
+      ><Flow islink="true" id="line3" from="Task11" to="End4"
+        ><property name="x"
+          ></property
+        ><property name="y"
+          ></property></Flow></SubProcess
+    ><Flow islink="true" id="line1" from="Start10" to="SubProcess10"
+      ><property name="x"
+        ></property
+      ><property name="y"
+        ></property></Flow
+    ><Flow islink="true" id="line4" from="SubProcess10" to="End5"
+      ><property name="x"
+        ></property
+      ><property name="y"
+        ></property></Flow
+    ><property name="Lane"
+      >Pool</property></SubProcess
+  ><SubProcess id="SubProcess12"
+    ><property name="sdm:y"
+      >35.0</property
+    ><property name="sdm:x"
+      >170.0</property
+    ><property name="y"
+      ></property
+    ><property name="x"
+      ></property
+    ><property name="Name"
+      >Eligibility</property
+    ><property name="BpmnType"
+      >SequenceB</property
+    ><property name="Expanded"
+      >false</property
+    ><property name="Transaction"
+      >false</property
+    ><property name="CSSclass"
+      >Activity</property
+    ><Start id="Start13"
+      ><property name="sdm:y"
+        ></property
+      ><property name="sdm:x"
+        ></property
+      ><property name="y"
+        >1.0</property
+      ><property name="x"
+        >1.0</property
+      ><property name="CSSclass"
+        >Event</property
+      ><property name="height"
+        >30.0</property
+      ><property name="width"
+        >30.0</property></Start
+    ><End id="End12"
+      ><property name="sdm:y"
+        ></property
+      ><property name="sdm:x"
+        ></property
+      ><property name="y"
+        >1.0</property
+      ><property name="x"
+        >1.0</property
+      ><property name="CSSclass"
+        >Event</property
+      ><property name="height"
+        >30.0</property
+      ><property name="width"
+        >30.0</property></End
+    ><SubProcess id="SubProcess13"
+      ><property name="sdm:y"
+        >35.0</property
+      ><property name="sdm:x"
+        >170.0</property
+      ><property name="y"
+        ></property
+      ><property name="x"
+        ></property
+      ><property name="Name"
+        >Eligibility Dependency Block</property
+      ><property name="BpmnType"
+        >DependentB</property
+      ><property name="Expanded"
+        >false</property
+      ><property name="Transaction"
+        >false</property
+      ><property name="CSSclass"
+        >Activity</property
+      ><Start id="Start23"
+        ><property name="sdm:y"
+          ></property
+        ><property name="sdm:x"
+          ></property
+        ><property name="y"
+          >1.0</property
+        ><property name="x"
+          >1.0</property
+        ><property name="CSSclass"
+          >Event</property
+        ><property name="height"
+          >30.0</property
+        ><property name="width"
+          >30.0</property></Start
+      ><End id="End11"
+        ><property name="sdm:y"
+          ></property
+        ><property name="sdm:x"
+          ></property
+        ><property name="y"
+          >1.0</property
+        ><property name="x"
+          >1.0</property
+        ><property name="CSSclass"
+          >Event</property
+        ><property name="height"
+          >30.0</property
+        ><property name="width"
+          >30.0</property></End
+      ><Task id="Task22"
+        ><property name="height"
+          ></property
+        ><property name="width"
+          ></property
+        ><property name="sdm:y"
+          ></property
+        ><property name="sdm:x"
+          ></property
+        ><property name="y"
+          ></property
+        ><property name="x"
+          ></property
+        ><property name="TaskType"
+          >StandardT</property
+        ><property name="Name"
+          >Eligibility Form Submission</property
+        ><property name="CSSclass"
+          >Activity</property
+        ><property name="Maxrange"
+          >14D</property
+        ><property name="Minrange"
+          ></property></Task
+      ><Gateway id="Gateway21"
+        ><property name="height"
+          ></property
+        ><property name="width"
+          ></property
+        ><property name="y"
+          ></property
+        ><property name="x"
+          ></property
+        ><property name="GatewayType"
+          >AND</property
+        ><property name="Name"
+          >AND</property></Gateway
+      ><Gateway id="Gateway20"
+        ><property name="height"
+          ></property
+        ><property name="width"
+          ></property
+        ><property name="y"
+          ></property
+        ><property name="x"
+          ></property
+        ><property name="GatewayType"
+          >AND</property
+        ><property name="Name"
+          >AND</property></Gateway
+      ><Task id="Task19"
+        ><property name="height"
+          ></property
+        ><property name="width"
+          ></property
+        ><property name="sdm:y"
+          ></property
+        ><property name="sdm:x"
+          ></property
+        ><property name="y"
+          ></property
+        ><property name="x"
+          ></property
+        ><property name="TaskType"
+          >StandardT</property
+        ><property name="Name"
+          >Eligibility Form Submission</property
+        ><property name="CSSclass"
+          >Activity</property
+        ><property name="Maxrange"
+          >14D</property
+        ><property name="Minrange"
+          ></property></Task
+      ><Gateway id="Gateway18"
+        ><property name="height"
+          ></property
+        ><property name="width"
+          ></property
+        ><property name="y"
+          ></property
+        ><property name="x"
+          ></property
+        ><property name="GatewayType"
+          >XOR</property
+        ><property name="Name"
+          >Data-XOR</property></Gateway
+      ><Gateway id="Gateway17"
+        ><property name="height"
+          ></property
+        ><property name="width"
+          ></property
+        ><property name="y"
+          ></property
+        ><property name="x"
+          ></property
+        ><property name="GatewayType"
+          >XOR</property
+        ><property name="Name"
+          >Data-XOR</property></Gateway
+      ><Task id="Task16"
+        ><property name="height"
+          ></property
+        ><property name="width"
+          ></property
+        ><property name="sdm:y"
+          ></property
+        ><property name="sdm:x"
+          ></property
+        ><property name="y"
+          ></property
+        ><property name="x"
+          ></property
+        ><property name="TaskType"
+          >StandardT</property
+        ><property name="Name"
+          >Eligibility Form Submission</property
+        ><property name="CSSclass"
+          >Activity</property
+        ><property name="Maxrange"
+          >14D</property
+        ><property name="Minrange"
+          ></property></Task
+      ><Task id="Task15"
+        ><property name="height"
+          ></property
+        ><property name="width"
+          ></property
+        ><property name="sdm:y"
+          ></property
+        ><property name="sdm:x"
+          ></property
+        ><property name="y"
+          ></property
+        ><property name="x"
+          ></property
+        ><property name="TaskType"
+          >StandardT</property
+        ><property name="Name"
+          >Eligibility Form Submission</property
+        ><property name="CSSclass"
+          >Activity</property
+        ><property name="Maxrange"
+          >14D</property
+        ><property name="Minrange"
+          ></property></Task
+      ><Task id="Task14"
+        ><property name="height"
+          ></property
+        ><property name="width"
+          ></property
+        ><property name="sdm:y"
+          ></property
+        ><property name="sdm:x"
+          ></property
+        ><property name="y"
+          ></property
+        ><property name="x"
+          ></property
+        ><property name="TaskType"
+          >StandardT</property
+        ><property name="Name"
+          >Eligibility Form Submission</property
+        ><property name="CSSclass"
+          >Activity</property
+        ><property name="Maxrange"
+          >14D</property
+        ><property name="Minrange"
+          ></property></Task
+      ><Flow islink="true" id="line6" from="Start23" to="Task22"
+        ><property name="x"
+          ></property
+        ><property name="y"
+          ></property></Flow
+      ><Flow islink="true" id="line10" from="Gateway18" to="End11"
+        ><property name="x"
+          ></property
+        ><property name="y"
+          ></property></Flow
+      ><Flow islink="true" id="line7" from="Task22" to="Gateway21"
+        ><property name="x"
+          ></property
+        ><property name="y"
+          ></property></Flow
+      ><Flow islink="true" id="line8" from="Gateway21" to="Task19"
+        ><property name="x"
+          ></property
+        ><property name="y"
+          ></property></Flow
+      ><Flow islink="true" id="line9" from="Gateway21" to="Gateway18"
+        ><property name="x"
+          ></property
+        ><property name="y"
+          ></property></Flow
+      ><Flow islink="true" id="line11" from="Gateway20" to="Gateway17"
+        ><property name="x"
+          ></property
+        ><property name="y"
+          ></property></Flow
+      ><Flow islink="true" id="line12" from="Task15" to="Gateway20"
+        ><property name="x"
+          ></property
+        ><property name="y"
+          ></property></Flow></SubProcess
+    ><Flow islink="true" id="line5" from="Start13" to="SubProcess13"
+      ><property name="x"
+        ></property
+      ><property name="y"
+        ></property></Flow
+    ><Flow islink="true" id="line11" from="SubProcess13" to="End12"
+      ><property name="x"
+        ></property
+      ><property name="y"
+        ></property></Flow
+    ><property name="Lane"
+      >Pool</property></SubProcess
+  ><Flow islink="true" id="line10" from="Start2" to="SubProcess12"
+    ><property name="x"
+      ></property
+    ><property name="y"
+      ></property></Flow
+  ><Flow islink="true" id="line6" from="SubProcess2" to="End7"
+    ><property name="x"
+      ></property
+    ><property name="y"
+      ></property></Flow
+  ><Flow islink="true" id="line7" from="SubProcess5" to="SubProcess2"
+    ><property name="x"
+      ></property
+    ><property name="y"
+      ></property></Flow
+  ><Flow islink="true" id="line8" from="SubProcess9" to="SubProcess5"
+    ><property name="x"
+      ></property
+    ><property name="y"
+      ></property></Flow
+  ><Flow islink="true" id="line9" from="SubProcess12"
+         to="SubProcess9"
+    ><property name="x"
+      ></property
+    ><property name="y"
+      ></property></Flow></diagram>

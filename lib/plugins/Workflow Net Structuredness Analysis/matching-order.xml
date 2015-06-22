@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<matching-order xmlns="http://www.processmining.org/wfnet-structuredness/matching-order">
+  <predefined name="Maximal sequence" />
+  <predefined name="Explicit choice" />
+  <predefined name="Implicit choice" />
+  <predefined name="While" />  
+  <predefined name="Maximal marked graph" />
+  <predefined name="Maximal state machine" />
+  <predefined name="Maximal well-structured" />
+</matching-order>
+

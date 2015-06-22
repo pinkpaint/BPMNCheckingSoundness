@@ -1,0 +1,193 @@
+
+<h3> <a name="intro"> Introduction </a></h3>
+<p> The DecMiner plugin allows to learn DecSerFlow and SCIFF constraints that can describe a process, which istances descriptions are saved in a log file. 
+<br> In order to learn those rules the process istances should necessary be classified (the instances saved in the log file might been already classified or 
+can be classified in the DecMiner plugin window) into conformat or non-conformant to the desired process model.
+</p>
+<p>The basic concepts of DecSerFlow are:
+<ul style=\"list-style-type:circle\">
+<li><b>Activities</b> to model atomic logical unit of works.</li> 
+<li><b>Constraints</b> to represent relationships (in the sense of policies or business rules) between activities. 
+Constraints are given as templates expressed as an LTL formula, hence the name "formulae" to indicate DecSerFlow relationships.</li>
+</ul>
+</p>
+<p>
+A DecSerFlow constraint, or rule, involves one or more activities.
+<br />A constraint that involves only one activity, or unary formulae, has the following model:
+<br /><i>dsf_nameOfTheConstraint(activity(activityName, someActivityAttributes))</i>
+<br /><br />A constraint that involves two activities, or binary formulae, has the following model:
+<br /><i>dsf_nameOfTheConstraint(activity(activity1Name, someActivity1Attributes),activity(activity2Name, someActivity2Attributes))</i>
+<br />And so on.
+</p>
+<p>The basic concepts of SCIFF are:
+<ul style=\"list-style-type:circle\">
+<li><b>Events</b> to model relevant facts that happened at a specific time. For example, an event may be an activity executed at a specific time T. 
+In this case, the notation used in DecMiner plugin to represent this event is: <i>hap(performed(activity(activityName, someActivityAttributes)), S, T)</i></li> 
+<li><b>Expectations</b> to model expected events that have to occured (in the case of positive expectations E, or have not to occured in the case of negative expectation EN)
+at a specific time in the future. The notation used in DecMiner plugin to represent expectations is: <i>E(hap(performed(activity(activityName, someActivityAttributes)), S, T))</i> in the case of positive ones,
+<i>EN(hap(performed(activity(activityName, someActivityAttributes)), S, T))</i> in the case of negative ones.</li>
+<li><b>Integrity constraints</b> allow to represents how expectations are generated. An integrity constraint has the following structure: HEAD --> BODY <br/>
+where HEAD is a congiunction of events and time constraints while BODY is a congiunction of expectations and time constraints.</li>
+</ul>
+</p>
+
+
+<hr />
+<h3> The DecMinerPlugin for ProM </h3>
+<p>
+After opening a log file, you can launch the DecMiner plugin from the <b>Mining</b> menu of ProM. 
+<br/> First of all a window that ask you to choose if you want to learn SCIFF or DecSerFlow rules is shown (like in the picture below).
+<p><img src="./images/screen8.jpg" alt="kind of rules choise" /></p>
+<p> Shortly after that, if it is the first time you launch the plugin, a window is prompted to choose the output directory of the mining process. 
+The specified directory will be memorized so that you won't be ask to choose it anymore. 
+However you can change the output directory at any time in the "ICL Parameters" tab of the plugin main window. 
+The output of the process will be named datasetForICL.icl.out and it will contain the learnt rules in a SCIFF format and, in case, in the DecSerFlow format, 
+and also some information about the learning process (execution time, number of negative examples not covered by the learnt rules, the algorithm parameters...). 
+If you have chosen to learn DecSerFlow rules, another output file, named datasetForICL.xml, will be created and it 
+ will contains the DecSerFlow rules in the xml graphical representation used by Declare [4].
+<br />In the case you are using the version of DecMiner plugin that needs an installation of SWI Prolog, the plugin tries to find 
+the prolog installation when launched for the first time. If it is not able to find it, it will ask you for the root directory of the SWI installation on your machine.
+</p>
+<p>
+After that the main window of DecMiner plugin appers:
+<p><img src="./images/screen1.jpg" alt="main windows of the DecMiner plugin" /></p>
+</p>
+<p>
+The learning procedure, which result is a group of DecSerFlow or SCIFF rules, is divided into the following, non-sequential, steps:
+<ul style=\"list-style-type:circle\">
+<li><b><a href="#classification">Classification of the process' istances</a></b></li>
+<li><b><a href="#activities">Selection of the activities and attributes to be considered in the rules</a></b></li>
+<li><b><a href="#templates">Selection of the DecSerFlow templates to be considered in the learning procedure (if you have chosen to learn DecSerFlow rules)</a></b> 
+or <b><a href="#templates2">specification of the parameters of the SCIFF rules that will be found (if you have chosen to learn SCIFF rules)</a></b></li>
+<li><b><a href="#mining">Specification of the parameters of the learning algorithm and output directory</a></b></li>
+</ul>
+Each one of the previous steps is associated to a tab of the plugin's main window.
+</p>
+
+
+<hr/>
+<p>
+<h3><a name="classification"> Classification</a></h3>
+When you click on the "Classification" tab of the main window of DecMiner plugin, the following window is shown:
+</p>
+<p><img src="./images/screen2.jpg" alt="classification window" /></p>
+<p>
+On the left of the window there is a column that lists all the process istances. The selected istance is shown in a graphical representation on the right
+ part of the window.
+ <br /> A process istance may be hightlighted in three diffent colors that represent its current state:
+<ul style=\"list-style-type:circle\">
+<li><b>white</b>: the istance has not yet been classified </li>
+<li><b>green</b>: the istance has been classified "conformant" to the process model</li>
+<li><b>red</b>: the istance has been classified "non-conformant" to the process model</li>
+</ul>
+You can classify, or modify a classified istance, simply by click on the istance and select the "Positive" or the "Negative" radio button if you want 
+to classify it as conformant or non-conformant respectively.
+</p>
+<p>
+The <b>Cancel</b> button allows to restore the istances to the last saved state.
+<br />The <b>Save MXML</b> button allows to save the current state of the classification process and export the classified log file in the MXML format.
+</p>
+
+
+<hr/>
+<p>
+<h3><a name="activities"> Activities</a></h3>
+</p>
+When you click on the "Activities" tab of the main window of DecMiner plugin, the following window is shown:
+<p><img src="./images/screen3.jpg" alt="activities selection window" /></p>
+<p>
+This window shows all the activities (and their attributes) that have been found in the log file using a tree representation: 
+activities are the roots of the tree, each attribute is a branch that has as many leaf as its possible values.
+ <br /> You should select only the activities and attributes that are relevant for the kind of constraints you want to be learnt. 
+ In other words, only the activities that has some meaning for the process description should be selected.
+</p>
+<p>
+The <b>Select all activities</b> button allows to automatically select all the activities.
+<br />The <b>Select all activities and their attributes</b> button allows to automatically select all the activities and all their attributes.
+<br />The <b>Clear selection</b> button allows to deselect all the activities and their attributes.
+</p>
+
+
+<hr/>
+<p>
+<h3><a name="templates">DecSerFlow Templates</a></h3>
+When you click on the "DecSerFlow Templates" tab (only if you have choosen to learn DecSerFlow rules)of the main window of DecMiner plugin, the following window is shown:
+</p>
+<p><img src="./images/screen4.jpg" alt="templates selection window" /></p>
+<p>
+The template selection window allows to choose which DecSerFlow templates you want to be considered in the learning process. Only constraints that rappresent the selected templates
+ will possibly be part of the result of the learning process. <br />You should consider that the more templates you select the longer the learning process will take.
+<br /> This window contains two table: the upper table contains all the DecSerFlow templates that may be chosen, while the lower table (with a green border)
+  contains all the selected templates. For each template is shown its name, a short description and its graphical representation (the same that is used in Declare).
+<br />There are 4 buttons that allow to add/remove templates from the selection. There are also 2 buttons that allow to move up or down a template in the table of the selected templates,
+   so that the template will be considered before or after another template in the learning process (the templates will be considered in the order they have in the table of selected templates).
+</p>
+
+
+<hr/>
+<p>
+<h3><a name="templates2">SCIFF Template options</a></h3>
+</p>
+When you click on the "SCIFF Template options" tab (only if you have choosen to learn SCIFF rules) of the main window of DecMiner plugin, the following window is shown:
+<p><img src="./images/screen10.jpg" alt="SCIFF Template options window" /></p>
+<p>
+In this window you can choose the number of activities you want to be considered in the body of the SCIFF rules and the kinds of temporal constraint to be considered.
+</p>
+
+<hr/>
+<p>
+<h3><a name="mining">ICL Parameters</a></h3>
+When you click on the "ICL Parameters" tab of the main window of DecMiner plugin, the following window is shown:
+</p>
+<p><img src="./images/screen5.jpg" alt="ICL parameters window" /></p>
+</p>
+<p>
+This window allows to change the parameters of the ICL algorithm, that is used to learn the constraints that describe the relations between the actions (and attributes)
+ in the desired process' model (the model that the conformant istances of the process respect, and the non-conformant istances do not respect).
+ <br />The learning procedure used in the DecMiner plugin differ from traditional process mining research in three aspects: first it performs 
+ mining from both conformant and non-conformant istances, while traditionally only conformant istances are considered; second it learns a declarative 
+ representation of a process model, while usually more procedural representation have been induced, and third, it is able to consider structured atomic activities, 
+ thanks to the first order representation.
+ <br />The language that is used to represent the knowledge base and history for ICL is a subset of the SCIFF language, originally defined in [5], 
+ for specifying and verifying interaction in open agent societies.
+ <br />The ICL algorithm perform a search in the space of all the possible constraints (derived from the combination of all the selected activities 
+ and constraint templates as a cartesian product) to find clauses that covers all positive examples (conformant istances) and rules out some negative example. 
+  <br/>In particulare this plugin's adaptation of ICL performs a loop in which negative istances are progressively ruled out and removed from the set of negative istances. 
+  At each iteration of the loop a new constraint is added to the theory. Each constraint rules out some negative istances. 
+  The loop ends when the set of negative istances is empty or when no constraint is found. In every iteration it looks for a rule by using beam search 
+  with as the heuristic function the probability that an input istance is negative given that is ruled out by the rule. This heuristic is computed as the number 
+  of ruled out negative istances over the total number of ruled out istances (positive and negative). Thus it looks for formulas that cover as many positive 
+  examples as possible and rule out as many negative examples as possible. At the end of each cycle the rule with the highest value for the heuristic function is returned.
+</p>
+<p>
+You can change the following parameters of the ICL algorithm:
+<ul style=\"list-style-type:circle\">
+<li><b>beamsize</b>: the beam size of the search</li>
+<li><b>minimum coverage</b>: the minimum number of istances that must be covered by a rule</li>
+<li><b>minimum accuracy</b>: the minimum value of the heuristic function</li>
+<li><b>maximum number of node</b>: the maximum number of node of the search tree</li>
+<li><b>output path</b>: the output path of the plugin</li>
+</ul>
+<br />You have to press the <b>Start mining</b> button in order to make the learning procedure start.
+</p>
+
+<hr/>
+<p>
+<h3><a name="results"> Results</a></h3>
+When the learning process is done the following window is shown:
+</p>
+<p><img src="./images/screen7.jpg" alt="results window" /></p>
+<p>The left tab of the window (and the only one tab in the case you have chosen to learn SCIFF rules) shows the learnt rules, in a textual representation. </p>
+<br /><p><img src="./images/screen6.jpg" alt="declare window" /></p>
+<p>The right tab of the window (that is shown only if you have chosen to learn DecSerFlow rules) shows a Declare graphical rappresentation of the DecSerFlow rules found.</p>
+
+<hr />
+<h4>References</h4>
+<p>[1] <i>"Towards a DecSerFlow Declarative Semantics based on Computational Logic"</i>, Federico Chesani, Paola Mello, Marco Montali, Sergio Storari, DEIS Technical Report no. DEIS- LIA-07-001
+<br />[2] <i>"DecSerFlow: Towards a Truly Declarative Service Flow Language"</i>, W.M.P. van der Aalst and M. Pesic
+<br />[3] <i>SWI Prolog</i>, <a href="http://www.swi-prolog.org/">SWI Prolog web site</a> and <a href="../../external/swi/SWIlicense.txt">license</a>
+<br />[4] <i>Declare</i>, <a href="http://is.tm.tue.nl/staff/mpesic/declare.htm">Declare web site</a> and <a href="../../external/declare/Declarelicense.txt">license</a>
+<br />[5] <i>"Verifiable agent interaction in abductive logic programming: the SCIFF framework"</i>,Alberti M., Chesani F., Gavanelli M., Lamma E., Mello P., Torroni P.
+<br />[6] <i>"Applying Inductive Logic Programming to Process Mining"</i>, Evelina Lamma, Paola Mello, Fabrizio Riguzzi, Sergio Storari
+</p>
+

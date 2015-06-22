@@ -1,0 +1,177 @@
+
+<br><h2><i>S</i>CIFF Checker: Users Guide</h2>
+<p>
+	Federico Chesani, Paola Mello, Marco Montali<br>
+	DEIS - University of Bologna<br>
+	40136 Bologna, Italy<br>
+</p>
+<p>
+	Contact Person: Marco Montali (<a href="mailto:marco.montali@unibo.it">marco.montali@unibo.it</a>)
+</p>
+<br><h2>1. Introduction</h2>
+<p>
+<i>S</i>CIFF Checker is an analysis plug-in whose purpose is to check compliance of MXML execution traces with respect to declarative business rules (called CLIMB rules). The plug-in provides an intuitive GUI to configure rules, supporting the possibility of constraining activity types, originators and execution times, and then exploits
+<a href="http://www.swi-prolog.org/">SWI-Prolog</a> to classify the traces as compliant/non-compliant w.r.t. the customized rule. 
+CLIMB rules are expressive reactive rules which resemble the Event-Condition-Action (ECA) ones but, since they are used for checking, they envisage <i>expectations</i> about executions rather than actions to be executed. Expectations represent events that should (not) happen. Therefore, CLIMB rules are used to constrain 
+the process execution when a given situation holds. Both positive and negative constraints can be imposed on the execution, i.e., it is possible to specify what is mandatory as well as forbidden in the process. 
+</p>
+<br><h2>2. The CLIMB language</h2>
+<p>
+Rules follow an <code>IF <i>Body</i> having <i>BodyConditions</i> THEN <i>Head</i></code> structure, 
+where <i>Body</i> is a conjunction of occurred events, with zero or more associated 
+conditions <i>BodyConditions</i>, and <i>Head</i> is a disjunction of conjunctions of positive and negative expectations (or false). Each head element can be subject to conditions as well.
+It is also possible to specify rules withouth the <code>IF</code> part: such rules are used to impose what the 
+business analyst expects (not) to find inside the process instances in any case. 
+The concept of event is tailored to the one of audit trail entry in the MXML meta-model, and therefore mainly characterized by
+<ul type="circle">
+<li>the identifier/name of the activity it is associated to;</li> 
+<li>an event type, according to the MXML transactional model;</li> 
+<li>an originator, identifying the worker who generated the event;</li> 
+<li>an execution time, representing the time at which the event has been generated.</li>
+</ul>
+Currently, other data items are not considered, but they can be seamlessly added (without modifying the reasoning part).<br>
+ 
+The main distinctive feature of CLIMB rules is that all these parameters are treated, 
+by default, as variables. To specify that a generic activity A has been subject 
+to a whatsoever event, the rule body will simply contain a string like:
+<center>
+	<code>
+		activity <i>A</i> is <i>performed</i> by <i>O<small>A</small></i> at time <i>T<small>A</small></i>
+	</code>
+</center>
+where <i>A</i> stands for the activity's name, 
+<i>O<small>A</small></i> and <i>T<small>A</small></i> represent the involved originator and execution time respectively, 
+and <i>performed</i> is a keyword denoting <i>any</i> event type. To facilitate readibility, 
+the part concerning originator and execution time is omitted if the corresponding variables are not involved in any condition.
+
+It is also possible to directly express an event repeatition, i.e. that a certain event has occurred <i>N</i> times (being <i>N</i> an integer greater than 1). Obviously, a repeatition is not associated to a single execution time, but it ranges inside a time interval.
+<center>
+	<code>
+		activity <i>A</i> is <i>performed</i> <i>N</i> times starting at time <i>T<small>startA</small></i> and ending at time
+		<i>T<small>completionA</small></i> 
+	</code>
+</center>
+Currently, in this case the involved originators cannot be constrained (this is matter of ongoing work!).<br>
+Expectations are represented in a very similar way, by simply substituting the word <code>is</code> with <code>should</code>/<code>should not</code>.
+
+</p>
+<br><h2>3. Conditions</h2>
+<p>
+The event type and the number of repeatition fields can be simply configured by changing their values. Event types range on the types envisaged in the MXML transactional model, hence it is sufficient to substitute the generic type <i>performed</i> with the specific one; for example,
+<code>
+	activity <i>A</i> is <i>completed</i> by <i>O<small>A</small></i> at time <i>T<small>A</small></i>
+</code>
+focuses on the completion of activity <i>A</i>.
+
+Other involved variables, i.e. activity types, originators and execution times, can instead be attached to conditions, in order to constrain them (<i>variable</i> conditions) or relating them to specific values (<i>absolute</i> conditions). The following table summarizes the currently supported conditions, where activity types an originators are treated as string variables, and execution times as time variabiles.<br><br>
+<!--<center>
+	<img src="constraints.png" width="500">
+</center>-->
+
+<table border="1" cellspacing="0" cellpadding="4">
+<tr>
+	<th width="9%">Type</th>
+	<th width="50%">Condition</th>
+	<th width="30%">Description</th>
+	<th width="11%">Applies to</th>
+</tr>
+<tr>
+	<td>absolute string condition</td>
+	<td><code><i>V</i> [equal to | different from] <i>constant</i></code></td>
+	<td>Variable <i>V</i> is equal to/different from a string constant</td>
+	<td rowspan="2">originator or activity type</td>
+</tr>
+<tr>
+	<td>relative string condition</td>
+	<td><code><i>V</i> [equal to | different from] <i>V<small>2</small></i></code></td>
+	<td>Variable <i>V</i> is equal to/different from another variable</td>
+</tr>
+<tr>
+	<td>absolute time condition</td>
+	<td><code><i>V</i> [at | not at | after | after or at | before | before or at] <i>datetime</i></code></td>
+	<td>Variable <i>V</i> is at/not at/... a certain datetime</td>
+	<td rowspan="2">execution / start / completion time</td>
+</tr>
+<tr>
+	<td>relative time condition</td>
+	<td><code><i>V</i> [at | not at | after | after or at | before | before or at] <i>V<small>2</small></i> ([+|-] displacement)</code> </td>
+	<td>Variable <i>V</i> is at/not at/... another variable (optionally) plus/minus a certain time displacement</td>
+</tr>
+</table>
+
+</p>
+<br><h2>4. Rule Templates</h2>
+<p>
+Rule templates are partially specified CLIMB rules which do not make use of absolute conditions; hence, they represent re-usable patterns which can be configured using the tool by adding further conditions or grounding them to a specific setting.
+
+A basic template example is the <i>synchronized responded existence</i>, which state that when two activities <i>A</i> and </i>B</i> are both performed, then another activity <i>C</i> should be performed as well:<br><br>
+<code>
+	<b>IF</b> activity <i>A</i> is <i>performed</i>
+	and activity <i>B</i> is <i>performed</i> <br>
+	<b>THEN</b> activity <i>C</i> should be <i>performed</i>
+</code><br><br>
+
+Templates are loaded from a XML file located at <code>lib/plugins/SCIFFChecker/SCIFFRules.sciff</code> and organized into a hierarchical tree. They can be modified or re-organized by simply modifying this file by hand. Currently, different templates inspired by ConDec/DecSerFlow constraints are already available.<br>
+Such templates extends the basic ones (such as the above mentioned <i>synchronized responded existence</i>) by mainly taking into account the temporal dimension. For example, <i>synchronized response</i> constrains the <i>synchronized responded existence</i> by imposing that activity C must be performed after both A and B.<br> Obviously, an organizational dimension can be also tackled by constraining involved originators.<br>
+When the user selects a template from the tree, its corresponding CLIMB representation is loaded in the center panel.
+<br><br>
+<center>
+	<img src="templates.png">
+</center>
+<br>
+</p>
+<br><h2>5. From Templates to Customized Rules</h2>
+<p>
+The following table shows how rules can be manipulated by the user.<br><br>
+<table border="1" cellspacing="0" cellpadding="4">
+<tr>
+	<th>Button</th>
+	<th>Action</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td align="center"><img src="Save.png"></td>
+	<td align="center">save rule</td>
+	<td>Saves the currently edited rule in the <i>User Defined Rules</i> family.</td>
+</tr>
+<tr>
+	<td align="center"><img src="Remove.png"></td>
+	<td align="center">remove rule</td>
+	<td>Removes the currently edited rule, if it belongs to the <i>User Defined Rules</i> family.</td>
+</tr>
+<tr>
+	<td align="center"><img src="Configure.png"></td>
+	<td align="center">configure rule</td>
+	<td>Makes all the variables involved in the currently edited rule to appear and become highlighted, and enables the possibility of modifying and removing conditions. New conditions can be added by clicking on a variable and configuring the corresponding pop-up window. To modify or delete an already inserted condition, the user shall simply click on the corresponding <img src="Edit.png"> or <img src="Remove.png"> icon respectively.</td>
+</tr>
+<tr>
+	<td align="center"><img src="Check.png"></td>
+	<td align="center">check log</td>
+	<td>Launches the compliance checking of execution traces. All absolute datetime values (both inside the rule and in the audit trail entries) are translated to the time units specified in the <i>granularity</i> field.</td>
+</tr>
+</table><br>
+In particular, the <i>configure rule</i> button is used to highlight variables and configure conditions. To attach a new condition to a certain variable, the user has to simply click on the variable. This action opens a pop-up windows which supports the user in the process of creating a new absolute or relative condition. A relative condition can be attached on the variable only if at least another variable exists in its scope. Variables contained in the body have visibility on the body itself, whereas the scope of a variable contained in the head comprehends the conjunction which contains the variable and the whole body.
+<br><br>
+Depending on the type of the variable, the pop-up window supports the creation of a string or a temporal conditions. To facilitate the task of adding an absolute string condition on originators and activity types, all the possible originator/activity type values contained in the log are provided to the user.<br>
+When configuring temporal conditions, <a href="http://www.toedter.com/en/jcalendar/">jcalendar</a> is exploited to specify datetimes and time displacements.<br>
+An example of a configured rule, which grounds the <i>response</i> template in the context of the <code>outpatientClinicExample.mxml</code> MXML log, is provided within the User Defined group.
+</p>
+<br><h2>6. Compliance Checking</h2>
+<p>
+The compliance checking process is concretely started by pressing on the <img src="Check.png"> button. The rule and each MXML execution trace are firstly pre-processed by translating datetimes and time displacements to integer values according to the choosen granularity, then mapped onto a Prolog program. <a href="http://www.swi-prolog.org/">SWI Prolog</a> is then exploited to classify each execution trace as compliant or non compliant w.r.t. the given rule. The final result is provided to the user by means of a pie chart (thanks to <a href="http://www.jfree.org/jfreechart/">jfreechart</a>) showing the number of compliant/non-compliant traces, and by explicitly enumerating correct and wrong instances. 
+<br><br>
+<center>
+	<img src="result.png">
+</center>
+<br>
+A new classification can be executed by considering either the whole log or only the compliant or non-compliant subset. It is also possible to direcly import the classified log into the <code>DecMiner</code> mining plug-in.
+</p>
+<br><h2>7. Acknowledgments</h2>
+<p>
+<i>S</i>CIFF Checker makes use of the following libraries and systems:
+<ul type="circle">
+	<li><a href="http://www.swi-prolog.org/">SWI Prolog</a></li>
+	<li><a href="http://www.jfree.org/jfreechart/">jfreechart</a></li>
+	<li><a href="http://www.toedter.com/en/jcalendar/">jcalendar</a></li>
+</ul>
+</p>

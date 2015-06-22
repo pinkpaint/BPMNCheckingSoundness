@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram>
+  <Pool id="Pool2">
+    <property name="width">825.7893</property>
+    <property name="sdm:y">71.740005</property>
+    <property name="sdm:x">642.34753</property>
+    <property name="Size">231.0</property>
+    <property name="Length">825.7893</property>
+    <property name="Name">Traveller</property>
+    <property name="y">19.54834</property>
+    <property name="x">52.032974</property>
+    <property name="height">231.0</property>
+  </Pool>
+  <Start id="Start3">
+    <property name="height">30.25</property>
+    <property name="x">86.83431</property>
+    <property name="CSSclass">Event</property>
+    <property name="sdm:y">107.0</property>
+    <property name="sdm:x">337.0</property>
+    <property name="width">30.250092</property>
+    <property name="Lane">Traveller</property>
+    <property name="y">88.54834</property>
+  </Start>
+  <Task id="Task4">
+    <property name="x">221.83432</property>
+    <property name="Name">Order_Trip</property>
+    <property name="CSSclass">Activity</property>
+    <property name="sdm:y">35.0</property>
+    <property name="sdm:x">60.0</property>
+    <property name="Lane">Traveller</property>
+    <property name="y">86.54834</property>
+  </Task>
+  <Task id="Task6">
+    <property name="LoopType">true</property>
+    <property name="sdm:y">205.0</property>
+    <property name="sdm:x">60.0</property>
+    <property name="Iteration">3</property>
+    <property name="Name">Change_Itin_T</property>
+    <property name="Lane">Traveller</property>
+    <property name="CSSclass">Task</property>
+    <property name="y">88.54834</property>
+    <property name="x">367.83432</property>
+    <property name="Loop">Ndet</property>
+  </Task>
+  <Task id="Task7">
+    <property name="x">652.8421</property>
+    <property name="Name">Cancel_Itin_T</property>
+    <property name="CSSclass">Activity</property>
+    <property name="sdm:y">35.0</property>
+    <property name="sdm:x">60.0</property>
+    <property name="Lane">Traveller</property>
+    <property name="y">163.54834</property>
+  </Task>
+  <Gateway id="Gateway8">
+    <property name="x">490.8343</property>
+    <property name="Name">Data-XOR</property>
+    <property name="height">51.414215</property>
+    <property name="GatewayType">XOR</property>
+    <property name="width">51.414185</property>
+    <property name="Lane">Traveller</property>
+    <property name="y">87.548325</property>
+  </Gateway>
+  <Flow from="Task6" id="Flow9" islink="true" to="Gateway8"/>
+  <Flow from="Gateway8" id="Flow10" islink="true" to="Task7"/>
+  <Task id="Task11">
+    <property name="x">646.8343</property>
+    <property name="Name">Reserve_Ticket</property>
+    <property name="CSSclass">Activity</property>
+    <property name="sdm:y">35.0</property>
+    <property name="sdm:x">60.0</property>
+    <property name="Lane">Traveller</property>
+    <property name="y">67.54834</property>
+  </Task>
+  <Flow from="Gateway8" id="Flow12" islink="true" to="Task11"/>
+  <Flow from="Start3" id="Flow13" islink="true" to="Task4"/>
+  <Flow from="Task4" id="Flow14" islink="true" to="Task6"/>
+  <End id="End15">
+    <property name="x">773.8382</property>
+    <property name="height">30.814484</property>
+    <property name="CSSclass">Event</property>
+    <property name="sdm:y">107.0</property>
+    <property name="sdm:x">417.0</property>
+    <property name="width">30.814453</property>
+    <property name="Lane">Traveller</property>
+    <property name="y">67.548325</property>
+  </End>
+  <End id="End16">
+    <property name="width">30.814453</property>
+    <property name="sdm:y">421.47876</property>
+    <property name="sdm:x">416.47876</property>
+    <property name="Lane">Traveller</property>
+    <property name="CSSclass">Event</property>
+    <property name="y">155.90723</property>
+    <property name="x">783.2493</property>
+    <property name="Trigger">Terminate</property>
+    <property name="height">30.814484</property>
+  </End>
+  <Flow from="Task11" id="Flow17" islink="true" to="End15"/>
+  <Flow from="Task7" id="Flow18" islink="true" to="End16"/>
+  <Pool id="Pool19">
+    <property name="width">825.7893</property>
+    <property name="sdm:y">71.740005</property>
+    <property name="sdm:x">642.34753</property>
+    <property name="Size">348.35938</property>
+    <property name="Length">825.7893</property>
+    <property name="Name">Agent</property>
+    <property name="y">280.54834</property>
+    <property name="x">52.032974</property>
+    <property name="height">348.35938</property>
+  </Pool>
+  <Start id="Start20">
+    <property name="x">97.0</property>
+    <property name="CSSclass">Event</property>
+    <property name="sdm:y">107.0</property>
+    <property name="sdm:x">337.0</property>
+    <property name="Lane">Agent</property>
+    <property name="y">354.04834</property>
+  </Start>
+  <Task id="Task21">
+    <property name="x">222.99586</property>
+    <property name="Name">Receive_Order</property>
+    <property name="CSSclass">Activity</property>
+    <property name="sdm:y">35.0</property>
+    <property name="sdm:x">60.0</property>
+    <property name="Lane">Agent</property>
+    <property name="y">356.04834</property>
+  </Task>
+  <Flow from="Start20" id="Flow23" islink="true" to="Task21"/>
+  <Task id="Task24">
+    <property name="LoopType">true</property>
+    <property name="sdm:y">205.0</property>
+    <property name="sdm:x">60.0</property>
+    <property name="Iteration">3</property>
+    <property name="Name">Verify_Seat</property>
+    <property name="Lane">Agent</property>
+    <property name="CSSclass">Task</property>
+    <property name="y">350.04834</property>
+    <property name="x">363.99585</property>
+    <property name="Loop">Ndet</property>
+  </Task>
+  <Flow from="Task21" id="Flow25" islink="true" to="Task24"/>
+  <Flow from="Task24" id="Flow27" islink="true" to="Gateway60"/>
+  <Task id="Task28">
+    <property name="x">665.99585</property>
+    <property name="Name">Change_Itin_A</property>
+    <property name="CSSclass">Activity</property>
+    <property name="sdm:y">35.0</property>
+    <property name="sdm:x">60.0</property>
+    <property name="Lane">Agent</property>
+    <property name="y">347.54834</property>
+  </Task>
+  <Flow from="Gateway60" id="Flow30" islink="true" to="Task28"/>
+  <SubProcess id="SubProcess33">
+    <property name="sdm:y">35.0</property>
+    <property name="sdm:x">170.0</property>
+    <property name="Expanded">true</property>
+    <property name="Name">Receive_Reserve</property>
+    <property name="Lane">Agent</property>
+    <property name="CSSclass">Activity</property>
+    <property name="Transaction">false</property>
+    <property name="y">484.54834</property>
+    <property name="x">311.22845</property>
+    <Task id="Task32">
+      <property name="Name">Reserve_Seat</property>
+      <property name="x">311.0036</property>
+      <property name="CSSclass">Task</property>
+      <property name="sdm:y">27.5</property>
+      <property name="sdm:x">170.0</property>
+      <property name="y">467.04834</property>
+    </Task>
+    <Start id="Start34">
+      <property name="x">200.99974</property>
+      <property name="height">30.008007</property>
+      <property name="CSSclass">Event</property>
+      <property name="sdm:y">107.0</property>
+      <property name="sdm:x">337.0</property>
+      <property name="width">30.008003</property>
+      <property name="y">467.04834</property>
+    </Start>
+    <End id="End35">
+      <property name="x">421.0036</property>
+      <property name="CSSclass">Event</property>
+      <property name="sdm:y">107.0</property>
+      <property name="sdm:x">417.0</property>
+      <property name="y">467.04834</property>
+    </End>
+    <Flow from="Start34" id="Flow36" islink="true" to="Task32">
+      <property name="x">236.00569</property>
+      <property name="y">467.04834</property>
+    </Flow>
+    <Flow from="Task32" id="Flow37" islink="true" to="End35">
+      <property name="x">385.77283</property>
+      <property name="y">467.04834</property>
+    </Flow>
+  </SubProcess>
+  <Flow from="Task28" id="Flow38" islink="true" to="Task24"/>
+  <Flow from="Gateway60" id="Flow39" islink="true" to="SubProcess33"/>
+  <Task id="Task44">
+    <property name="x">670.00366</property>
+    <property name="Name">Cancel_Itin_A</property>
+    <property name="CSSclass">Activity</property>
+    <property name="sdm:y">35.0</property>
+    <property name="sdm:x">60.0</property>
+    <property name="Lane">Agent</property>
+    <property name="y">582.9077</property>
+  </Task>
+  <End id="End45">
+    <property name="width">30.814453</property>
+    <property name="sdm:y">421.47876</property>
+    <property name="sdm:x">416.47876</property>
+    <property name="Lane">Agent</property>
+    <property name="CSSclass">Event</property>
+    <property name="y">593.5488</property>
+    <property name="x">821.4109</property>
+    <property name="Trigger">Terminate</property>
+    <property name="height">30.814453</property>
+  </End>
+  <Flow from="Task44" id="Flow47" islink="true" to="End45"/>
+  <End id="End48">
+    <property name="x">669.00366</property>
+    <property name="height">30.71875</property>
+    <property name="CSSclass">Event</property>
+    <property name="sdm:y">107.0</property>
+    <property name="sdm:x">417.0</property>
+    <property name="width">30.718628</property>
+    <property name="Lane">Agent</property>
+    <property name="y">469.54834</property>
+  </End>
+  <Flow from="SubProcess33" id="Flow49" islink="true" to="End48"/>
+  <Message from="Task4" id="Message50" islink="true" to="Task21">
+    <property name="Message">init</property>
+  </Message>
+  <Message from="Task21" id="Message51" islink="true" to="Task4">
+    <property name="Message">done</property>
+  </Message>
+  <Message from="Task6" id="Message52" islink="true" to="Task28">
+    <property name="Message">init</property>
+  </Message>
+  <Message from="Task28" id="Message54" islink="true" to="Task6">
+    <property name="Message">done</property>
+  </Message>
+  <Message from="Task7" id="Message55" islink="true" to="Task44">
+    <property name="Message">init</property>
+  </Message>
+  <Message from="Task44" id="Message56" islink="true" to="Task7">
+    <property name="Message">done</property>
+  </Message>
+  <Flow from="Gateway60" id="Flow57" islink="true" to="Task44"/>
+  <Message from="Task11" id="Message58" islink="true" to="SubProcess33">
+    <property name="Message">init</property>
+  </Message>
+  <Message from="SubProcess33" id="Message59" islink="true" to="Task11">
+    <property name="Message">done</property>
+  </Message>
+  <Gateway id="Gateway60">
+    <property name="height">51.414185</property>
+    <property name="Name">Event-XOR</property>
+    <property name="x">499.34644</property>
+    <property name="GatewayType">XOR</property>
+    <property name="width">51.414185</property>
+    <property name="XORType">Event</property>
+    <property name="Lane">Agent</property>
+    <property name="y">351.98145</property>
+  </Gateway>
+</diagram>

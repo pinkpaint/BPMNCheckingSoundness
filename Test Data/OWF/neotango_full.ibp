@@ -1,0 +1,2045 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram>
+	<Pool id="Pool1">
+		<property name="width">1976.392</property>
+		<property name="sdm:y">71.740005</property>
+		<property name="sdm:x">642.34753</property>
+		<property name="Size">826.0</property>
+		<property name="Length">1976.392</property>
+		<property name="Name">Neotango</property>
+		<property name="y">35.0</property>
+		<property name="x">-10.701139</property>
+		<property name="height">826.0</property>
+	</Pool>
+	<Start id="Start2">
+		<property name="x">35.008137</property>
+		<property name="height">30.016235</property>
+		<property name="CSSclass">Event</property>
+		<property name="sdm:y">107.0</property>
+		<property name="sdm:x">337.0</property>
+		<property name="width">30.016272</property>
+		<property name="Lane">Neotango</property>
+		<property name="y">614.5</property>
+	</Start>
+	<End id="End31">
+		<property name="x">1945.5613</property>
+		<property name="height">30.258728</property>
+		<property name="CSSclass">Event</property>
+		<property name="sdm:y">107.0</property>
+		<property name="sdm:x">417.0</property>
+		<property name="width">30.258911</property>
+		<property name="Lane">Neotango</property>
+		<property name="y">614.5</property>
+	</End>
+	<SubProcess id="SubProcess4389">
+		<property name="sdm:y">35.0</property>
+		<property name="sdm:x">170.0</property>
+		<property name="Expanded">false</property>
+		<property name="Name">Eligibility</property>
+		<property name="Lane">Neotango</property>
+		<property name="CSSclass">Activity</property>
+		<property name="Transaction">false</property>
+		<property name="y">614.5</property>
+		<property name="x">145.01628</property>
+		<property name="BpmnType">SequenceB</property>
+		<Start id="Start5391">
+			<property name="height">30.000015</property>
+			<property name="x">31.112</property>
+			<property name="CSSclass">Event</property>
+			<property name="sdm:y">107.0</property>
+			<property name="sdm:x">337.0</property>
+			<property name="width">30.000008</property>
+			<property name="y">592.9977</property>
+		</Start>
+		<End id="End6393">
+			<property name="height">30.438618</property>
+			<property name="x">259.97433</property>
+			<property name="CSSclass">Event</property>
+			<property name="sdm:y">107.0</property>
+			<property name="sdm:x">417.0</property>
+			<property name="width">30.43863</property>
+			<property name="y">594.9977</property>
+		</End>
+		<SubProcess id="SubProcess8395">
+			<property name="sdm:y">35.0</property>
+			<property name="sdm:x">170.0</property>
+			<property name="Expanded">true</property>
+			<property name="Name">Eligibity_Obv</property>
+			<property name="CSSclass">Activity</property>
+			<property name="Transaction">false</property>
+			<property name="y">597.0</property>
+			<property name="x">137.43303</property>
+			<property name="BpmnType">DependentB</property>
+			<Start id="Start9397">
+				<property name="height">30.007748</property>
+				<property name="x">41.115204</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">337.0</property>
+				<property name="width">30.007751</property>
+				<property name="y">573.12115</property>
+			</Start>
+			<End id="End11399">
+				<property name="height">30.43739</property>
+				<property name="x">233.50864</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">417.0</property>
+				<property name="width">30.437366</property>
+				<property name="y">570.1211</property>
+			</End>
+			<Task id="Task62">
+				<property name="Name">Eligibility_Submission</property>
+				<property name="x">146.14197</property>
+				<property name="CSSclass">Activity</property>
+				<property name="sdm:y">35.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">0D</property>
+				<property name="Maxrange">14D</property>
+				<property name="y">579.5</property>
+			</Task>
+			<Flow from="Start9397" id="Flow63" islink="true" to="Task62">
+				<property name="x">73.63252</property>
+				<property name="y">577.59924</property>
+			</Flow>
+			<Flow from="Task62" id="Flow64" islink="true" to="End11399">
+				<property name="x">209.70026</property>
+				<property name="y">574.81055</property>
+			</Flow>
+		</SubProcess>
+		<Flow from="Start5391" id="Flow28429" islink="true" to="SubProcess8395">
+			<property name="x">31.11174</property>
+			<property name="y">586.6629</property>
+		</Flow>
+		<Flow from="SubProcess8395" id="Flow29431" islink="true" to="End6393">
+			<property name="x">251.74121</property>
+			<property name="y">587.99884</property>
+		</Flow>
+	</SubProcess>
+	<Flow from="Start2" id="Flow432" islink="true" to="SubProcess4389"/>
+	<SubProcess id="SubProcess457">
+		<property name="sdm:y">35.0</property>
+		<property name="sdm:x">170.0</property>
+		<property name="Expanded">false</property>
+		<property name="Name">Randomisation</property>
+		<property name="Lane">Neotango</property>
+		<property name="CSSclass">Activity</property>
+		<property name="Transaction">false</property>
+		<property name="y">614.5</property>
+		<property name="x">295.0163</property>
+		<property name="BpmnType">SequenceB</property>
+		<Start id="Start559">
+			<property name="height">30.000015</property>
+			<property name="x">20.49121</property>
+			<property name="CSSclass">Event</property>
+			<property name="sdm:y">107.0</property>
+			<property name="sdm:x">337.0</property>
+			<property name="width">30.00003</property>
+			<property name="y">569.87836</property>
+		</Start>
+		<End id="End661">
+			<property name="height">30.303774</property>
+			<property name="x">569.35364</property>
+			<property name="CSSclass">Event</property>
+			<property name="sdm:y">107.0</property>
+			<property name="sdm:x">417.0</property>
+			<property name="width">30.303772</property>
+			<property name="y">575.87836</property>
+		</End>
+		<SubProcess id="SubProcess863">
+			<property name="sdm:y">35.0</property>
+			<property name="sdm:x">170.0</property>
+			<property name="Expanded">false</property>
+			<property name="Name">Randomisation_Obv</property>
+			<property name="CSSclass">Activity</property>
+			<property name="Transaction">false</property>
+			<property name="y">683.0938</property>
+			<property name="x">283.2735</property>
+			<property name="BpmnType">DependentB</property>
+			<Start id="Start965">
+				<property name="height">30.007486</property>
+				<property name="x">109.48013</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">337.0</property>
+				<property name="width">30.0075</property>
+				<property name="y">658.37836</property>
+			</Start>
+			<End id="End1167">
+				<property name="height">30.324493</property>
+				<property name="x">456.8737</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">417.0</property>
+				<property name="width">30.324463</property>
+				<property name="y">657.37836</property>
+			</End>
+			<Task id="Task66">
+				<property name="Name">Randomisation_Submission</property>
+				<property name="x">288.33786</property>
+				<property name="CSSclass">Activity</property>
+				<property name="sdm:y">35.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">21D</property>
+				<property name="Maxrange">21D</property>
+				<property name="y">707.7188</property>
+			</Task>
+			<Flow from="Start965" id="Flow67" islink="true" to="Gateway43">
+				<property name="x">136.3913</property>
+				<property name="y">669.5989</property>
+			</Flow>
+			<Flow from="Gateway44" id="Flow68" islink="true" to="End1167">
+				<property name="x">429.69083</property>
+				<property name="y">665.0989</property>
+			</Flow>
+			<Gateway id="Gateway43">
+				<property name="Name">AND</property>
+				<property name="x">174.00179</property>
+				<property name="GatewayType">AND</property>
+				<property name="y">680.8194</property>
+			</Gateway>
+			<Gateway id="Gateway44">
+				<property name="height">51.414215</property>
+				<property name="Name">AND</property>
+				<property name="x">392.0018</property>
+				<property name="GatewayType">AND</property>
+				<property name="width">51.414223</property>
+				<property name="y">672.8194</property>
+			</Gateway>
+			<Task id="Task45">
+				<property name="Name">OnStudy_Submission</property>
+				<property name="x">285.3527</property>
+				<property name="CSSclass">Activity</property>
+				<property name="sdm:y">35.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">21D</property>
+				<property name="Maxrange">21D</property>
+				<property name="y">623.4688</property>
+			</Task>
+			<Flow from="Gateway43" id="Flow46" islink="true" to="Task45">
+				<property name="x">215.03079</property>
+				<property name="FromGatewayPosition">Right</property>
+				<property name="y">652.1441</property>
+			</Flow>
+			<Flow from="Gateway43" id="Flow47" islink="true" to="Task66">
+				<property name="x">216.52338</property>
+				<property name="y">694.2691</property>
+			</Flow>
+			<Flow from="Task45" id="Flow48" islink="true" to="Gateway44">
+				<property name="x">353.3237</property>
+				<property name="y">648.1441</property>
+			</Flow>
+			<Flow from="Task66" id="Flow49" islink="true" to="Gateway44">
+				<property name="x">354.81628</property>
+				<property name="y">690.2691</property>
+			</Flow>
+		</SubProcess>
+		<Flow from="Start559" id="Flow109" islink="true" to="Gateway31">
+			<property name="x">47.895264</property>
+			<property name="y">571.71576</property>
+		</Flow>
+		<Flow from="Gateway32" id="Flow110" islink="true" to="End661">
+			<property name="x">536.93555</property>
+			<property name="y">575.9372</property>
+		</Flow>
+		<SubProcess id="SubProcess30">
+			<property name="sdm:y">35.0</property>
+			<property name="sdm:x">170.0</property>
+			<property name="Expanded">false</property>
+			<property name="Name">Randomisation_Work</property>
+			<property name="CSSclass">Activity</property>
+			<property name="Transaction">false</property>
+			<property name="y">510.9062</property>
+			<property name="x">275.4093</property>
+			<property name="BpmnType">InterventionB</property>
+			<Start id="Start39">
+				<property name="x">163.36086</property>
+				<property name="height">30.000008</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">337.0</property>
+				<property name="width">30.000015</property>
+				<property name="y">493.9063</property>
+			</Start>
+			<End id="End40">
+				<property name="height">30.094799</property>
+				<property name="x">387.3609</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">417.0</property>
+				<property name="width">30.094818</property>
+				<property name="y">497.9063</property>
+			</End>
+			<SubProcess id="SubProcess252">
+				<property name="LoopType">true</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">170.0</property>
+				<property name="Expanded">false</property>
+				<property name="Iteration">1</property>
+				<property name="Name">Randomising</property>
+				<property name="CSSclass">Activity</property>
+				<property name="Transaction">false</property>
+				<property name="y">493.4062</property>
+				<property name="x">274.38336</property>
+				<property name="Loop">Fix</property>
+				<property name="BpmnType">InterventionB</property>
+				<Task id="Task251">
+					<property name="x">282.30255</property>
+					<property name="Name">Randomise</property>
+					<property name="CSSclass">Task</property>
+					<property name="sdm:y">197.5</property>
+					<property name="sdm:x">170.0</property>
+					<property name="Minrange">0D</property>
+					<property name="Maxrange">0D</property>
+					<property name="y">475.9062</property>
+				</Task>
+				<End id="End254">
+					<property name="height">30.1194</property>
+					<property name="x">367.30255</property>
+					<property name="CSSclass">Event</property>
+					<property name="sdm:y">107.0</property>
+					<property name="sdm:x">417.0</property>
+					<property name="width">30.119385</property>
+					<property name="y">477.4062</property>
+				</End>
+				<Flow from="Task251" id="Flow256" islink="true" to="End254">
+					<property name="x">344.7467</property>
+					<property name="y">476.34296</property>
+				</Flow>
+				<Start id="Start310">
+					<property name="width">30.0</property>
+					<property name="sdm:y">177.0</property>
+					<property name="sdm:x">337.0</property>
+					<property name="Time">21D</property>
+					<property name="CSSclass">Event</property>
+					<property name="y">477.7812</property>
+					<property name="x">181.35663</property>
+					<property name="height">29.999998</property>
+					<property name="Trigger">Timer</property>
+				</Start>
+				<Flow from="Start310" id="Flow311" islink="true" to="Task251">
+					<property name="x">211.83167</property>
+					<property name="y">476.54776</property>
+				</Flow>
+			</SubProcess>
+			<Flow from="Start39" id="Flow257" islink="true" to="SubProcess252">
+				<property name="x">198.87418</property>
+				<property name="y">493.5355</property>
+			</Flow>
+			<Flow from="SubProcess252" id="Flow258" islink="true" to="End40">
+				<property name="x">350.82166</property>
+				<property name="y">496.79916</property>
+			</Flow>
+		</SubProcess>
+		<Gateway id="Gateway31">
+			<property name="x">86.00226</property>
+			<property name="Name">AND</property>
+			<property name="GatewayType">AND</property>
+			<property name="y">573.0694</property>
+		</Gateway>
+		<Gateway id="Gateway32">
+			<property name="x">494.0023</property>
+			<property name="Name">AND</property>
+			<property name="GatewayType">AND</property>
+			<property name="y">576.0694</property>
+		</Gateway>
+		<Flow from="Gateway31" id="Flow33" islink="true" to="SubProcess30">
+			<property name="x">166.05934</property>
+			<property name="y">541.9878</property>
+		</Flow>
+		<Flow from="Gateway31" id="Flow34" islink="true" to="SubProcess863">
+			<property name="x">169.99144</property>
+			<property name="y">628.0816</property>
+		</Flow>
+		<Flow from="SubProcess30" id="Flow35" islink="true" to="Gateway32">
+			<property name="x">399.35223</property>
+			<property name="y">543.4878</property>
+		</Flow>
+		<Flow from="SubProcess863" id="Flow36" islink="true" to="Gateway32">
+			<property name="x">403.28436</property>
+			<property name="y">629.5816</property>
+		</Flow>
+	</SubProcess>
+	<Flow from="SubProcess4389" id="Flow108" islink="true" to="SubProcess457"/>
+	<SubProcess id="SubProcess287">
+		<property name="sdm:y">35.0</property>
+		<property name="sdm:x">170.0</property>
+		<property name="Expanded">false</property>
+		<property name="Name">FollowUp</property>
+		<property name="Lane">Neotango</property>
+		<property name="CSSclass">Activity</property>
+		<property name="Transaction">false</property>
+		<property name="y">614.5</property>
+		<property name="x">1835.4318</property>
+		<property name="BpmnType">SequenceB</property>
+		<SubProcess id="SubProcess290">
+			<property name="sdm:y">35.0</property>
+			<property name="sdm:x">170.0</property>
+			<property name="Expanded">true</property>
+			<property name="Name">FollowUp_Obv</property>
+			<property name="CSSclass">Activity</property>
+			<property name="Transaction">false</property>
+			<property name="y">597.0</property>
+			<property name="x">1837.8806</property>
+			<property name="BpmnType">DependentB</property>
+			<Task id="Task288">
+				<property name="LoopType">true</property>
+				<property name="Maxrange">P3M</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">P3M</property>
+				<property name="Iteration">4</property>
+				<property name="Name">FollowUp_Submission_1</property>
+				<property name="CSSclass">Task</property>
+				<property name="y">580.0</property>
+				<property name="x">1675.3037</property>
+				<property name="Loop">Fix</property>
+			</Task>
+			<End id="End293">
+				<property name="height">30.493713</property>
+				<property name="x">2102.3037</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">417.0</property>
+				<property name="width">30.493774</property>
+				<property name="y">581.0</property>
+			</End>
+			<Start id="Start296">
+				<property name="height">30.24194</property>
+				<property name="x">1573.304</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">337.0</property>
+				<property name="width">30.242035</property>
+				<property name="y">581.0</property>
+			</Start>
+			<Flow from="Start296" id="Flow299" islink="true" to="Task288">
+				<property name="x">1604.3644</property>
+				<property name="y">580.3326</property>
+			</Flow>
+			<Flow from="Task288" id="Flow300" islink="true" to="Task288304">
+				<property name="x">1741.8037</property>
+				<property name="y">581.0812</property>
+			</Flow>
+			<Task id="Task288304">
+				<property name="LoopType">true</property>
+				<property name="Maxrange">P4M</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">P4M</property>
+				<property name="Iteration">3</property>
+				<property name="Name">FollowUp_Submission_2</property>
+				<property name="CSSclass">Task</property>
+				<property name="y">582.0</property>
+				<property name="x">1808.3037</property>
+				<property name="Loop">Fix</property>
+			</Task>
+			<Flow from="Task288304" id="Flow305" islink="true" to="Task288304307">
+				<property name="x">1887.3037</property>
+				<property name="y">578.0989</property>
+			</Flow>
+			<Task id="Task288304307">
+				<property name="LoopType">true</property>
+				<property name="Maxrange">P6M</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">P6M</property>
+				<property name="Iteration">5</property>
+				<property name="Name">FollowUp_Submission_3</property>
+				<property name="CSSclass">Task</property>
+				<property name="y">577.0</property>
+				<property name="x">1966.3037</property>
+				<property name="Loop">Fix</property>
+			</Task>
+			<Flow from="Task288304307" id="Flow308" islink="true" to="End293">
+				<property name="x">2054.1665</property>
+				<property name="y">580.3557</property>
+			</Flow>
+		</SubProcess>
+		<Start id="Start292">
+			<property name="height">30.234161</property>
+			<property name="x">1496.3038</property>
+			<property name="CSSclass">Event</property>
+			<property name="sdm:y">107.0</property>
+			<property name="sdm:x">337.0</property>
+			<property name="width">30.234222</property>
+			<property name="y">583.0</property>
+		</Start>
+		<End id="End295">
+			<property name="height">30.720337</property>
+			<property name="x">2174.3037</property>
+			<property name="CSSclass">Event</property>
+			<property name="sdm:y">107.0</property>
+			<property name="sdm:x">417.0</property>
+			<property name="width">30.720337</property>
+			<property name="y">585.0</property>
+		</End>
+		<Flow from="Start292" id="Flow297" islink="true" to="SubProcess290">
+			<property name="x">1529.802</property>
+			<property name="y">581.5762</property>
+		</Flow>
+		<Flow from="SubProcess290" id="Flow302" islink="true" to="End295">
+			<property name="x">2143.2544</property>
+			<property name="y">583.65765</property>
+		</Flow>
+	</SubProcess>
+	<Flow from="SubProcess287" id="Flow309" islink="true" to="End31"/>
+	<SubProcess id="SubProcess54">
+		<property name="sdm:y">35.0</property>
+		<property name="sdm:x">170.0</property>
+		<property name="Expanded">false</property>
+		<property name="Name">A1</property>
+		<property name="Lane">Neotango</property>
+		<property name="CSSclass">Activity</property>
+		<property name="Transaction">false</property>
+		<property name="y">826.0</property>
+		<property name="x">1065.224</property>
+		<property name="BpmnType">SequenceB</property>
+		<Start id="Start55131299">
+			<property name="height">30.02333</property>
+			<property name="x">640.1755</property>
+			<property name="CSSclass">Event</property>
+			<property name="sdm:y">107.0</property>
+			<property name="sdm:x">337.0</property>
+			<property name="width">30.023285</property>
+			<property name="y">807.1877</property>
+		</Start>
+		<End id="End56133301">
+			<property name="height">30.12101</property>
+			<property name="x">1490.1755</property>
+			<property name="CSSclass">Event</property>
+			<property name="sdm:y">107.0</property>
+			<property name="sdm:x">417.0</property>
+			<property name="width">30.120972</property>
+			<property name="y">820.1877</property>
+		</End>
+		<SubProcess id="SubProcess58135303">
+			<property name="sdm:y">35.0</property>
+			<property name="sdm:x">170.0</property>
+			<property name="Expanded">true</property>
+			<property name="Name">A1_Obv</property>
+			<property name="CSSclass">Activity</property>
+			<property name="Transaction">false</property>
+			<property name="y">881.5</property>
+			<property name="x">1094.1449</property>
+			<property name="BpmnType">DependentB</property>
+			<Start id="Start59137305">
+				<property name="height">30.016266</property>
+				<property name="x">812.5089</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">337.0</property>
+				<property name="width">30.01622</property>
+				<property name="y">863.3127</property>
+			</Start>
+			<End id="End60139307">
+				<property name="height">30.514885</property>
+				<property name="x">1375.5089</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">417.0</property>
+				<property name="width">30.514954</property>
+				<property name="y">866.31274</property>
+			</End>
+			<Task id="Task123141309">
+				<property name="LoopType">true</property>
+				<property name="Maxrange">21D</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">21D</property>
+				<property name="Iteration">4</property>
+				<property name="Name">A1_EC_Submission</property>
+				<property name="CSSclass">Task</property>
+				<property name="y">864.3127</property>
+				<property name="x">894.5365</property>
+				<property name="Loop">Fix</property>
+			</Task>
+			<Flow from="Start59137305" id="Flow124" islink="true" to="Task123141309">
+				<property name="x">833.5287</property>
+				<property name="y">863.433</property>
+			</Flow>
+			<Flow from="Task268276286317" id="Flow125" islink="true" to="Task338358314">
+				<property name="x">1087.2197</property>
+				<property name="y">864.09015</property>
+			</Flow>
+			<Task id="Task338358314">
+				<property name="LoopType">true</property>
+				<property name="Maxrange">14D</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">14D</property>
+				<property name="Iteration">4</property>
+				<property name="Name">A1_T_Submission</property>
+				<property name="TaskType">StandardT</property>
+				<property name="CSSclass">Task</property>
+				<property name="y">863.50006</property>
+				<property name="x">1151.1926</property>
+				<property name="Loop">Fix</property>
+			</Task>
+			<Flow from="Task268276286300320" id="Flow359" islink="true" to="End60139307">
+				<property name="x">1348.7358</property>
+				<property name="y">865.02405</property>
+			</Flow>
+			<Task id="Task268276286317">
+				<property name="Name">A1_Mid_Submission</property>
+				<property name="x">1023.2467</property>
+				<property name="CSSclass">Activity</property>
+				<property name="sdm:y">35.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">0D</property>
+				<property name="Maxrange">0D</property>
+				<property name="y">864.5</property>
+			</Task>
+			<Flow from="Task123141309" id="Flow287" islink="true" to="Task268276286317">
+				<property name="x">958.8916</property>
+				<property name="y">864.3938</property>
+			</Flow>
+			<Task id="Task268276286300320">
+				<property name="x">1282.2467</property>
+				<property name="Name">A1_End_Submission</property>
+				<property name="CSSclass">Activity</property>
+				<property name="sdm:y">35.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">0D</property>
+				<property name="Maxrange">0D</property>
+				<property name="y">863.5</property>
+			</Task>
+			<Flow from="Task338358314" id="Flow301" islink="true" to="Task268276286300320">
+				<property name="x">1216.7197</property>
+				<property name="y">863.5</property>
+			</Flow>
+		</SubProcess>
+		<SubProcess id="SubProcess64145323">
+			<property name="sdm:y">35.0</property>
+			<property name="sdm:x">170.0</property>
+			<property name="Expanded">true</property>
+			<property name="Name">A1_Work</property>
+			<property name="CSSclass">Activity</property>
+			<property name="Transaction">false</property>
+			<property name="y">735.5783</property>
+			<property name="x">1066.332</property>
+			<property name="BpmnType">InterventionB</property>
+			<Start id="Start77147325">
+				<property name="height">30.008263</property>
+				<property name="x">829.17346</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">337.0</property>
+				<property name="width">30.008286</property>
+				<property name="y">720.18774</property>
+			</Start>
+			<End id="End78149327">
+				<property name="height">30.610409</property>
+				<property name="x">1303.1732</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">417.0</property>
+				<property name="width">30.610443</property>
+				<property name="y">716.18774</property>
+			</End>
+			<SubProcess id="SubProcess355414435329">
+				<property name="LoopType">true</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">170.0</property>
+				<property name="Expanded">false</property>
+				<property name="Iteration">4</property>
+				<property name="Name">A1_T</property>
+				<property name="CSSclass">Activity</property>
+				<property name="Transaction">false</property>
+				<property name="y">717.5</property>
+				<property name="x">1164.8955</property>
+				<property name="Loop">Fix</property>
+				<property name="BpmnType">InterventionB</property>
+				<Task id="Task354416437331">
+					<property name="IName">Paclitaxel</property>
+					<property name="width">92.0</property>
+					<property name="Maxrange">0D</property>
+					<property name="sdm:y">197.5</property>
+					<property name="sdm:x">170.0</property>
+					<property name="Method">3 hour infusion</property>
+					<property name="Minrange">0D</property>
+					<property name="Name">A1_T_T</property>
+					<property name="TaskType">InterventionT</property>
+					<property name="IDose">175</property>
+					<property name="CSSclass">Task</property>
+					<property name="y">700.0</property>
+					<property name="x">1107.222</property>
+					<property name="height">60.0</property>
+				</Task>
+				<Start id="Start356418439333">
+					<property name="width">30.228935</property>
+					<property name="sdm:y">177.0</property>
+					<property name="sdm:x">337.0</property>
+					<property name="Time">14D</property>
+					<property name="CSSclass">Event</property>
+					<property name="y">701.4999</property>
+					<property name="x">1030.2222</property>
+					<property name="Trigger">Timer</property>
+					<property name="height">30.228853</property>
+				</Start>
+				<Flow from="Start356418439333" id="Flow357420441" islink="true" to="Task354416437331">
+					<property name="x">1053.2795</property>
+					<property name="y">700.9971</property>
+				</Flow>
+				<End id="End362426443336">
+					<property name="height">30.92308</property>
+					<property name="x">1299.222</property>
+					<property name="CSSclass">Event</property>
+					<property name="sdm:y">107.0</property>
+					<property name="sdm:x">417.0</property>
+					<property name="width">30.923065</property>
+					<property name="y">700.5</property>
+				</End>
+				<Flow from="Task354416437331" id="Flow429445" islink="true" to="End362426443336">
+					<property name="x">1218.4913</property>
+					<property name="y">700.45935</property>
+				</Flow>
+			</SubProcess>
+			<Flow from="Start77147325" id="Flow472" islink="true" to="SubProcess367314340371342">
+				<property name="x">883.8862</property>
+				<property name="y">718.8611</property>
+			</Flow>
+			<Flow from="SubProcess367314340371342" id="Flow473" islink="true" to="SubProcess355414435329">
+				<property name="x">1071.7432</property>
+				<property name="y">717.66077</property>
+			</Flow>
+			<Flow from="SubProcess355414435329" id="Flow474" islink="true" to="End78149327">
+				<property name="x">1253.8716</property>
+				<property name="y">716.3925</property>
+			</Flow>
+			<SubProcess id="SubProcess367314340371342">
+				<property name="LoopType">true</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">170.0</property>
+				<property name="Expanded">false</property>
+				<property name="Iteration">4</property>
+				<property name="Name">A1_EC</property>
+				<property name="CSSclass">Activity</property>
+				<property name="Transaction">false</property>
+				<property name="y">718.6566</property>
+				<property name="x">978.59094</property>
+				<property name="Loop">Fix</property>
+				<property name="BpmnType">InterventionB</property>
+				<Task id="Task79151229274342318316342373344">
+					<property name="IName">Epirubicin</property>
+					<property name="Maxrange">0D</property>
+					<property name="sdm:y">205.0</property>
+					<property name="sdm:x">60.0</property>
+					<property name="Method">slow push into fast drip</property>
+					<property name="Minrange">0D</property>
+					<property name="Name">A1_EC_E</property>
+					<property name="TaskType">InterventionT</property>
+					<property name="CSSclass">Activity</property>
+					<property name="IDose">90</property>
+					<property name="y">655.1566</property>
+					<property name="x">973.3079</property>
+				</Task>
+				<Flow from="Gateway84121200268344320330356387354" id="Flow347324318344375" islink="true" to="Task79151229274342318316342373344">
+					<property name="x">903.6699</property>
+					<property name="y">681.1444</property>
+				</Flow>
+				<Flow from="Task79151229274342318316342373344" id="Flow349328320346377" islink="true" to="Gateway84159233278346322322348379348">
+					<property name="x">1050.2922</property>
+					<property name="y">681.8319</property>
+				</Flow>
+				<Gateway id="Gateway84159233278346322322348379348">
+					<property name="height">51.414215</property>
+					<property name="Name">AND</property>
+					<property name="x">1097.9836</property>
+					<property name="GatewayType">AND</property>
+					<property name="width">51.414</property>
+					<property name="y">708.5072</property>
+				</Gateway>
+				<Flow from="Task82155231276340316326352383351" id="Flow350330324350381" islink="true" to="Gateway84159233278346322322348379348">
+					<property name="x">1050.7922</property>
+					<property name="y">727.8319</property>
+				</Flow>
+				<Task id="Task82155231276340316326352383351">
+					<property name="IName">cyclophosphamide</property>
+					<property name="Maxrange">0D</property>
+					<property name="sdm:y">205.0</property>
+					<property name="sdm:x">60.0</property>
+					<property name="Method">slow push infusion</property>
+					<property name="Minrange">0D</property>
+					<property name="Name">A1_EC_C</property>
+					<property name="TaskType">InterventionT</property>
+					<property name="IDose">600</property>
+					<property name="CSSclass">Activity</property>
+					<property name="y">747.1566</property>
+					<property name="x">974.3079</property>
+				</Task>
+				<Flow from="Gateway84121200268344320330356387354" id="Flow348326328354385" islink="true" to="Task82155231276340316326352383351">
+					<property name="x">904.1699</property>
+					<property name="y">727.1444</property>
+				</Flow>
+				<Gateway id="Gateway84121200268344320330356387354">
+					<property name="height">51.414185</property>
+					<property name="Name">AND</property>
+					<property name="x">863.3248</property>
+					<property name="GatewayType">AND</property>
+					<property name="width">51.414185</property>
+					<property name="y">707.1322</property>
+				</Gateway>
+				<End id="End268332358389356">
+					<property name="height">30.92308</property>
+					<property name="x">1156.3529</property>
+					<property name="CSSclass">Event</property>
+					<property name="sdm:y">107.0</property>
+					<property name="sdm:x">417.0</property>
+					<property name="width">30.92308</property>
+					<property name="y">705.7189</property>
+				</End>
+				<Flow from="Gateway84159233278346322322348379348" id="Flow270334363391" islink="true" to="End268332358389356">
+					<property name="x">1132.291</property>
+					<property name="y">707.4161</property>
+				</Flow>
+				<Start id="Start311336365393359">
+					<property name="width">30.00026</property>
+					<property name="sdm:y">177.0</property>
+					<property name="sdm:x">337.0</property>
+					<property name="Time">21D</property>
+					<property name="CSSclass">Event</property>
+					<property name="y">706.25</property>
+					<property name="x">800.3717</property>
+					<property name="height">30.00026</property>
+					<property name="Trigger">Timer</property>
+				</Start>
+				<Flow from="Start311336365393359" id="Flow312338367395" islink="true" to="Gateway84121200268344320330356387354">
+					<property name="x">826.4969</property>
+					<property name="y">706.7118</property>
+				</Flow>
+			</SubProcess>
+		</SubProcess>
+		<Gateway id="Gateway66168362">
+			<property name="height">51.414185</property>
+			<property name="Name">AND</property>
+			<property name="x">1432.8512</property>
+			<property name="GatewayType">AND</property>
+			<property name="width">51.414185</property>
+			<property name="y">820.53827</property>
+		</Gateway>
+		<Flow from="Gateway66168362" id="Flow70" islink="true" to="End56133301">
+			<property name="x">1466.8108</property>
+			<property name="y">820.4129</property>
+		</Flow>
+		<Gateway id="Gateway73171365">
+			<property name="Name">AND</property>
+			<property name="x">719.851</property>
+			<property name="GatewayType">AND</property>
+			<property name="y">808.53827</property>
+		</Gateway>
+		<Flow from="Gateway73171365" id="Flow74" islink="true" to="SubProcess58135303">
+			<property name="x">766.5275</property>
+			<property name="y">837.0191</property>
+		</Flow>
+		<Flow from="Gateway73171365" id="Flow75" islink="true" to="SubProcess64145323">
+			<property name="x">774.8617</property>
+			<property name="y">764.0583</property>
+		</Flow>
+		<Flow from="Start55131299" id="Flow76" islink="true" to="Gateway73171365">
+			<property name="x">674.66736</property>
+			<property name="ToGatewayPosition">Left</property>
+			<property name="y">808.1707</property>
+		</Flow>
+		<Flow from="SubProcess64145323" id="Flow79" islink="true" to="Gateway66168362">
+			<property name="x">1367.8214</property>
+			<property name="y">770.0583</property>
+		</Flow>
+		<Flow from="SubProcess58135303" id="Flow81" islink="true" to="Gateway66168362">
+			<property name="x">1405.6605</property>
+			<property name="y">843.01917</property>
+		</Flow>
+	</SubProcess>
+	<SubProcess id="SubProcess5487">
+		<property name="sdm:y">35.0</property>
+		<property name="sdm:x">170.0</property>
+		<property name="Expanded">false</property>
+		<property name="Name">A2</property>
+		<property name="Lane">Neotango</property>
+		<property name="CSSclass">Activity</property>
+		<property name="Transaction">false</property>
+		<property name="y">722.0</property>
+		<property name="x">1065.224</property>
+		<property name="BpmnType">SequenceB</property>
+		<Start id="Start5589179373">
+			<property name="x">575.65375</property>
+			<property name="height">30.015581</property>
+			<property name="CSSclass">Event</property>
+			<property name="sdm:y">107.0</property>
+			<property name="sdm:x">337.0</property>
+			<property name="width">30.015503</property>
+			<property name="y">636.6253</property>
+		</Start>
+		<End id="End5691181375">
+			<property name="x">1554.6538</property>
+			<property name="height">30.212364</property>
+			<property name="CSSclass">Event</property>
+			<property name="sdm:y">107.0</property>
+			<property name="sdm:x">417.0</property>
+			<property name="width">30.212402</property>
+			<property name="y">675.6253</property>
+		</End>
+		<SubProcess id="SubProcess5893183377">
+			<property name="sdm:y">35.0</property>
+			<property name="sdm:x">170.0</property>
+			<property name="Expanded">true</property>
+			<property name="Name">A2_Obv</property>
+			<property name="CSSclass">Activity</property>
+			<property name="Transaction">false</property>
+			<property name="y">770.0</property>
+			<property name="x">1114.8032</property>
+			<property name="BpmnType">DependentB</property>
+			<Start id="Start5997185379">
+				<property name="x">818.6885</property>
+				<property name="height">30.000004</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">337.0</property>
+				<property name="width">30.000015</property>
+				<property name="y">746.6252</property>
+			</Start>
+			<End id="End6099187381">
+				<property name="x">1410.6885</property>
+				<property name="height">30.399307</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">417.0</property>
+				<property name="width">30.399338</property>
+				<property name="y">751.6252</property>
+			</End>
+			<Task id="Task338383">
+				<property name="LoopType">true</property>
+				<property name="Maxrange">14D</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">14D</property>
+				<property name="Iteration">4</property>
+				<property name="Name">A2_T_Submission</property>
+				<property name="TaskType">StandardT</property>
+				<property name="CSSclass">Task</property>
+				<property name="y">751.5002</property>
+				<property name="x">921.6781</property>
+				<property name="Loop">Fix</property>
+			</Task>
+			<Task id="Task116189241312353385">
+				<property name="LoopType">true</property>
+				<property name="Maxrange">21D</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">21D</property>
+				<property name="Iteration">4</property>
+				<property name="Name">A2_EC_Submission</property>
+				<property name="CSSclass">Task</property>
+				<property name="y">752.12524</property>
+				<property name="x">1200.7073</property>
+				<property name="Loop">Fix</property>
+			</Task>
+			<Flow from="Start5997185379" id="Flow354" islink="true" to="Task338383">
+				<property name="x">850.18536</property>
+				<property name="y">749.94946</property>
+			</Flow>
+			<Flow from="Task338383" id="Flow355" islink="true" to="Task268276283390">
+				<property name="x">991.1919</property>
+				<property name="y">753.40967</property>
+			</Flow>
+			<Flow from="Task116189241312353385" id="Flow356" islink="true" to="Task268276283297393">
+				<property name="x">1262.2065</property>
+				<property name="y">751.8159</property>
+			</Flow>
+			<Task id="Task268276283390">
+				<property name="Name">A2_Mid_Submission</property>
+				<property name="x">1060.7056</property>
+				<property name="CSSclass">Activity</property>
+				<property name="sdm:y">35.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">0D</property>
+				<property name="Maxrange">0D</property>
+				<property name="y">754.5</property>
+			</Task>
+			<Flow from="Task268276283390" id="Flow284" islink="true" to="Task116189241312353385">
+				<property name="x">1130.7065</property>
+				<property name="y">752.96216</property>
+			</Flow>
+			<Task id="Task268276283297393">
+				<property name="x">1323.7056</property>
+				<property name="Name">A2_End_Submission</property>
+				<property name="CSSclass">Activity</property>
+				<property name="sdm:y">35.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">0D</property>
+				<property name="Maxrange">0D</property>
+				<property name="y">750.5</property>
+			</Task>
+			<Flow from="Task268276283297393" id="Flow298" islink="true" to="End6099187381">
+				<property name="x">1387.0803</property>
+				<property name="y">750.91425</property>
+			</Flow>
+		</SubProcess>
+		<SubProcess id="SubProcess64105191396">
+			<property name="sdm:y">35.0</property>
+			<property name="sdm:x">170.0</property>
+			<property name="Expanded">true</property>
+			<property name="Name">A2_Work</property>
+			<property name="CSSclass">Activity</property>
+			<property name="Transaction">false</property>
+			<property name="y">638.82825</property>
+			<property name="x">1093.2783</property>
+			<property name="BpmnType">InterventionB</property>
+			<Start id="Start77107193398">
+				<property name="x">848.6538</property>
+				<property name="height">30.008263</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">337.0</property>
+				<property name="width">30.008286</property>
+				<property name="y">617.6253</property>
+			</Start>
+			<End id="End78109195400">
+				<property name="x">1337.6538</property>
+				<property name="height">30.453514</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">417.0</property>
+				<property name="width">30.453552</property>
+				<property name="y">617.6254</property>
+			</End>
+			<SubProcess id="SubProcess355414402">
+				<property name="LoopType">true</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">170.0</property>
+				<property name="Expanded">false</property>
+				<property name="Iteration">4</property>
+				<property name="Name">A2_T</property>
+				<property name="CSSclass">Activity</property>
+				<property name="Transaction">false</property>
+				<property name="y">619.5</property>
+				<property name="x">960.35443</property>
+				<property name="Loop">Fix</property>
+				<property name="BpmnType">InterventionB</property>
+				<Task id="Task354416404">
+					<property name="IName">Paclitaxel</property>
+					<property name="width">92.0</property>
+					<property name="Maxrange">0D</property>
+					<property name="sdm:y">197.5</property>
+					<property name="sdm:x">170.0</property>
+					<property name="Method">3 hour infusion</property>
+					<property name="Minrange">0D</property>
+					<property name="Name">A2_T_T</property>
+					<property name="TaskType">InterventionT</property>
+					<property name="CSSclass">Task</property>
+					<property name="IDose">175</property>
+					<property name="y">602.0</property>
+					<property name="x">902.6809</property>
+					<property name="height">60.0</property>
+				</Task>
+				<Start id="Start356418406">
+					<property name="width">30.22821</property>
+					<property name="sdm:y">177.0</property>
+					<property name="sdm:x">337.0</property>
+					<property name="Time">14D</property>
+					<property name="CSSclass">Event</property>
+					<property name="y">603.4999</property>
+					<property name="x">825.68085</property>
+					<property name="height">30.22813</property>
+					<property name="Trigger">Timer</property>
+				</Start>
+				<Flow from="Start356418406" id="Flow357420" islink="true" to="Task354416404">
+					<property name="x">848.73816</property>
+					<property name="y">602.997</property>
+				</Flow>
+				<End id="End362426409">
+					<property name="x">1094.6809</property>
+					<property name="height">30.92308</property>
+					<property name="CSSclass">Event</property>
+					<property name="sdm:y">107.0</property>
+					<property name="sdm:x">417.0</property>
+					<property name="width">30.923065</property>
+					<property name="y">602.5</property>
+				</End>
+				<Flow from="Task354416404" id="Flow429" islink="true" to="End362426409">
+					<property name="x">1013.9502</property>
+					<property name="y">602.45935</property>
+				</Flow>
+			</SubProcess>
+			<Flow from="Start77107193398" id="Flow430" islink="true" to="SubProcess355414402">
+				<property name="x">884.5082</property>
+				<property name="y">619.02356</property>
+			</Flow>
+			<Flow from="SubProcess367314340414" id="Flow433" islink="true" to="End78109195400">
+				<property name="x">1269.2231</property>
+				<property name="y">618.17633</property>
+			</Flow>
+			<SubProcess id="SubProcess367314340414">
+				<property name="LoopType">true</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">170.0</property>
+				<property name="Expanded">false</property>
+				<property name="Iteration">4</property>
+				<property name="Name">A2_EC</property>
+				<property name="CSSclass">Activity</property>
+				<property name="Transaction">false</property>
+				<property name="y">623.15656</property>
+				<property name="x">1161.0498</property>
+				<property name="Loop">Fix</property>
+				<property name="BpmnType">InterventionB</property>
+				<Task id="Task79151229274342318316342416">
+					<property name="IName">Epirubicin</property>
+					<property name="Maxrange">0D</property>
+					<property name="sdm:y">205.0</property>
+					<property name="sdm:x">60.0</property>
+					<property name="Method">slow push into fast drip</property>
+					<property name="Minrange">0D</property>
+					<property name="Name">A2_EC_E</property>
+					<property name="TaskType">InterventionT</property>
+					<property name="IDose">90</property>
+					<property name="CSSclass">Activity</property>
+					<property name="y">559.65656</property>
+					<property name="x">1155.7666</property>
+				</Task>
+				<Flow from="Gateway84121200268344320330356426" id="Flow347324318344" islink="true" to="Task79151229274342318316342416">
+					<property name="x">1086.1287</property>
+					<property name="y">585.64435</property>
+				</Flow>
+				<Flow from="Task79151229274342318316342416" id="Flow349328320346" islink="true" to="Gateway84159233278346322322348420">
+					<property name="x">1232.7511</property>
+					<property name="y">586.33185</property>
+				</Flow>
+				<Gateway id="Gateway84159233278346322322348420">
+					<property name="x">1280.4425</property>
+					<property name="Name">AND</property>
+					<property name="height">51.414215</property>
+					<property name="GatewayType">AND</property>
+					<property name="width">51.414</property>
+					<property name="y">613.00714</property>
+				</Gateway>
+				<Flow from="Task82155231276340316326352423" id="Flow350330324350" islink="true" to="Gateway84159233278346322322348420">
+					<property name="x">1232.7511</property>
+					<property name="y">632.33185</property>
+				</Flow>
+				<Task id="Task82155231276340316326352423">
+					<property name="IName">cyclophosphamide</property>
+					<property name="Maxrange">0D</property>
+					<property name="sdm:y">205.0</property>
+					<property name="sdm:x">60.0</property>
+					<property name="Method">slow push infusion</property>
+					<property name="Minrange">0D</property>
+					<property name="Name">A2_EC_C</property>
+					<property name="TaskType">InterventionT</property>
+					<property name="CSSclass">Activity</property>
+					<property name="IDose">600</property>
+					<property name="y">651.65656</property>
+					<property name="x">1155.7666</property>
+				</Task>
+				<Flow from="Gateway84121200268344320330356426" id="Flow348326328354" islink="true" to="Task82155231276340316326352423">
+					<property name="x">1086.1287</property>
+					<property name="y">631.64435</property>
+				</Flow>
+				<Gateway id="Gateway84121200268344320330356426">
+					<property name="x">1045.7837</property>
+					<property name="Name">AND</property>
+					<property name="height">51.414185</property>
+					<property name="GatewayType">AND</property>
+					<property name="width">51.414185</property>
+					<property name="y">611.63214</property>
+				</Gateway>
+				<End id="End268332358428">
+					<property name="x">1338.8118</property>
+					<property name="height">30.92308</property>
+					<property name="CSSclass">Event</property>
+					<property name="sdm:y">107.0</property>
+					<property name="sdm:x">417.0</property>
+					<property name="width">30.92308</property>
+					<property name="y">610.2188</property>
+				</End>
+				<Flow from="Gateway84159233278346322322348420" id="Flow270334363" islink="true" to="End268332358428">
+					<property name="x">1314.7498</property>
+					<property name="y">611.916</property>
+				</Flow>
+				<Start id="Start311336365433">
+					<property name="width">30.00026</property>
+					<property name="sdm:y">177.0</property>
+					<property name="sdm:x">337.0</property>
+					<property name="Time">21D</property>
+					<property name="CSSclass">Event</property>
+					<property name="y">610.74994</property>
+					<property name="x">982.8305</property>
+					<property name="Trigger">Timer</property>
+					<property name="height">30.00026</property>
+				</Start>
+				<Flow from="Start311336365433" id="Flow312338367" islink="true" to="Gateway84121200268344320330356426">
+					<property name="x">1008.9557</property>
+					<property name="y">611.21173</property>
+				</Flow>
+			</SubProcess>
+			<Flow from="SubProcess355414402" id="Flow369" islink="true" to="SubProcess367314340414">
+				<property name="x">1060.7021</property>
+				<property name="y">622.72925</property>
+			</Flow>
+		</SubProcess>
+		<Gateway id="Gateway66131204437">
+			<property name="x">1477.3298</property>
+			<property name="Name">AND</property>
+			<property name="height">51.414185</property>
+			<property name="GatewayType">AND</property>
+			<property name="width">51.414185</property>
+			<property name="y">675.9759</property>
+		</Gateway>
+		<Flow from="Gateway66131204437" id="Flow70133" islink="true" to="End5691181375">
+			<property name="x">1521.2693</property>
+			<property name="y">675.7273</property>
+		</Flow>
+		<Gateway id="Gateway73135207440">
+			<property name="x">661.32935</property>
+			<property name="Name">AND</property>
+			<property name="GatewayType">AND</property>
+			<property name="y">637.9759</property>
+		</Gateway>
+		<Flow from="Gateway73135207440" id="Flow74137" islink="true" to="SubProcess5893183377">
+			<property name="x">740.36035</property>
+			<property name="y">695.9879</property>
+		</Flow>
+		<Flow from="Gateway73135207440" id="Flow75139" islink="true" to="SubProcess64105191396">
+			<property name="x">755.34106</property>
+			<property name="y">628.376</property>
+		</Flow>
+		<Flow from="Start5589179373" id="Flow76141" islink="true" to="Gateway73135207440">
+			<property name="x">613.1438</property>
+			<property name="y">637.6574</property>
+			<property name="ToGatewayPosition">Left</property>
+		</Flow>
+		<Flow from="SubProcess64105191396" id="Flow79143" islink="true" to="Gateway66131204437">
+			<property name="x">1407.2668</property>
+			<property name="y">649.4021</property>
+		</Flow>
+		<Flow from="SubProcess5893183377" id="Flow81145" islink="true" to="Gateway66131204437">
+			<property name="x">1445.2568</property>
+			<property name="y">714.9879</property>
+		</Flow>
+	</SubProcess>
+	<Flow from="SubProcess54" id="Flow221" islink="true" to="Gateway219">
+		<property name="x">743.49255</property>
+		<property name="y">78.22476</property>
+	</Flow>
+	<Flow from="Gateway218" id="Flow222" islink="true" to="SubProcess54">
+		<property name="x">455.02972</property>
+		<property name="y">63.29831</property>
+	</Flow>
+	<Flow from="Gateway218" id="Flow226" islink="true" to="SubProcess5487">
+		<property name="x">454.78787</property>
+		<property name="y">152.13419</property>
+	</Flow>
+	<Flow from="SubProcess5487" id="Flow360" islink="true" to="Gateway219">
+		<property name="x">743.25073</property>
+		<property name="y">167.06064</property>
+	</Flow>
+	<SubProcess id="SubProcess5487282">
+		<property name="sdm:y">35.0</property>
+		<property name="sdm:x">170.0</property>
+		<property name="Expanded">false</property>
+		<property name="Name">B2</property>
+		<property name="Lane">Neotango</property>
+		<property name="CSSclass">Activity</property>
+		<property name="Transaction">false</property>
+		<property name="y">614.5</property>
+		<property name="x">1065.224</property>
+		<property name="BpmnType">SequenceB</property>
+		<Start id="Start5589179284452">
+			<property name="height">30.015581</property>
+			<property name="x">568.65375</property>
+			<property name="CSSclass">Event</property>
+			<property name="sdm:y">107.0</property>
+			<property name="sdm:x">337.0</property>
+			<property name="width">30.015503</property>
+			<property name="y">513.54694</property>
+		</Start>
+		<End id="End5691181286454">
+			<property name="height">30.212364</property>
+			<property name="x">1561.6538</property>
+			<property name="CSSclass">Event</property>
+			<property name="sdm:y">107.0</property>
+			<property name="sdm:x">417.0</property>
+			<property name="width">30.212402</property>
+			<property name="y">550.547</property>
+		</End>
+		<SubProcess id="SubProcess5893183288456">
+			<property name="sdm:y">35.0</property>
+			<property name="sdm:x">170.0</property>
+			<property name="Expanded">true</property>
+			<property name="Name">B2_Obv</property>
+			<property name="CSSclass">Activity</property>
+			<property name="Transaction">false</property>
+			<property name="y">676.9219</property>
+			<property name="x">1157.8016</property>
+			<property name="BpmnType">DependentB</property>
+			<Start id="Start5997185290458">
+				<property name="height">30.000008</property>
+				<property name="x">832.6886</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">337.0</property>
+				<property name="width">30.000015</property>
+				<property name="y">658.547</property>
+			</Start>
+			<End id="End6099187292460">
+				<property name="height">30.391617</property>
+				<property name="x">1482.6886</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">417.0</property>
+				<property name="width">30.391663</property>
+				<property name="y">659.547</property>
+			</End>
+			<Task id="Task338294462">
+				<property name="LoopType">true</property>
+				<property name="Maxrange">14D</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">14D</property>
+				<property name="Iteration">4</property>
+				<property name="Name">B2_T_Submission</property>
+				<property name="TaskType">StandardT</property>
+				<property name="CSSclass">Task</property>
+				<property name="y">658.422</property>
+				<property name="x">936.67834</property>
+				<property name="Loop">Fix</property>
+			</Task>
+			<Task id="Task116189241312353296464">
+				<property name="LoopType">true</property>
+				<property name="Maxrange">21D</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">21D</property>
+				<property name="Iteration">4</property>
+				<property name="Name">B2_EC_Submission</property>
+				<property name="CSSclass">Task</property>
+				<property name="y">660.047</property>
+				<property name="x">1215.7073</property>
+				<property name="Loop">Fix</property>
+			</Task>
+			<Flow from="Start5997185290458" id="Flow354298" islink="true" to="Task338294462">
+				<property name="x">864.68555</property>
+				<property name="y">658.461</property>
+			</Flow>
+			<Flow from="Task268291472" id="Flow356302" islink="true" to="End6099187292460">
+				<property name="x">1438.0798</property>
+				<property name="y">659.7049</property>
+			</Flow>
+			<Task id="Task268468">
+				<property name="Name">B2_Mid_Submission</property>
+				<property name="x">1076.7014</property>
+				<property name="CSSclass">Activity</property>
+				<property name="sdm:y">35.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">0D</property>
+				<property name="Maxrange">0D</property>
+				<property name="y">659.42175</property>
+			</Task>
+			<Flow from="Task338294462" id="Flow273" islink="true" to="Task268468">
+				<property name="x">1006.6899</property>
+				<property name="y">659.0687</property>
+			</Flow>
+			<Flow from="Task268468" id="Flow274" islink="true" to="Task116189241312353296464">
+				<property name="x">1146.2043</property>
+				<property name="y">659.8184</property>
+			</Flow>
+			<Task id="Task268291472">
+				<property name="x">1353.7014</property>
+				<property name="Name">B2_End_Submission</property>
+				<property name="CSSclass">Activity</property>
+				<property name="sdm:y">35.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">0D</property>
+				<property name="Maxrange">0D</property>
+				<property name="y">660.42175</property>
+			</Task>
+			<Flow from="Task116189241312353296464" id="Flow292" islink="true" to="Task268291472">
+				<property name="x">1284.7043</property>
+				<property name="y">660.2798</property>
+			</Flow>
+		</SubProcess>
+		<SubProcess id="SubProcess64105191304477">
+			<property name="sdm:y">35.0</property>
+			<property name="sdm:x">170.0</property>
+			<property name="Expanded">true</property>
+			<property name="Name">B2_Work</property>
+			<property name="CSSclass">Activity</property>
+			<property name="Transaction">false</property>
+			<property name="y">517.1094</property>
+			<property name="x">1070.8168</property>
+			<property name="BpmnType">InterventionB</property>
+			<Start id="Start77107193306479">
+				<property name="height">30.016254</property>
+				<property name="x">865.1943</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">337.0</property>
+				<property name="width">30.016281</property>
+				<property name="y">495.5158</property>
+			</Start>
+			<End id="End78109195308481">
+				<property name="height">30.453514</property>
+				<property name="x">1276.1941</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">417.0</property>
+				<property name="width">30.453552</property>
+				<property name="y">499.766</property>
+			</End>
+			<SubProcess id="SubProcess355483">
+				<property name="LoopType">true</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">170.0</property>
+				<property name="Expanded">false</property>
+				<property name="Iteration">4</property>
+				<property name="Name">B2_TG</property>
+				<property name="CSSclass">Activity</property>
+				<property name="Transaction">false</property>
+				<property name="y">500.64044</property>
+				<property name="x">963.8927</property>
+				<property name="Loop">Fix</property>
+				<property name="BpmnType">InterventionB</property>
+				<Task id="Task354485">
+					<property name="IName">Paclitaxel</property>
+					<property name="width">92.0</property>
+					<property name="Maxrange">0D</property>
+					<property name="sdm:y">197.5</property>
+					<property name="sdm:x">170.0</property>
+					<property name="Method">3 hour infusion</property>
+					<property name="Minrange">0D</property>
+					<property name="Name">B2_TG_T</property>
+					<property name="TaskType">InterventionT</property>
+					<property name="IDose">175</property>
+					<property name="CSSclass">Task</property>
+					<property name="y">482.14044</property>
+					<property name="x">906.21893</property>
+					<property name="height">60.0</property>
+				</Task>
+				<Start id="Start356487">
+					<property name="width">30.227463</property>
+					<property name="sdm:y">177.0</property>
+					<property name="sdm:x">337.0</property>
+					<property name="Time">14D</property>
+					<property name="CSSclass">Event</property>
+					<property name="y">483.64047</property>
+					<property name="x">829.21893</property>
+					<property name="Trigger">Timer</property>
+					<property name="height">30.227383</property>
+				</Start>
+				<Flow from="Start356487" id="Flow357" islink="true" to="Task354485">
+					<property name="x">852.276</property>
+					<property name="y">483.13754</property>
+				</Flow>
+				<Task id="Task354359490">
+					<property name="IName">Gemcitabine</property>
+					<property name="width">94.0</property>
+					<property name="Maxrange">0D</property>
+					<property name="sdm:y">197.5</property>
+					<property name="sdm:x">170.0</property>
+					<property name="Method">60 minute infusion</property>
+					<property name="Minrange">0D</property>
+					<property name="Name">B2_TG_G</property>
+					<property name="TaskType">InterventionT</property>
+					<property name="CSSclass">Task</property>
+					<property name="IDose">2000</property>
+					<property name="y">484.14044</property>
+					<property name="x">1017.21906</property>
+					<property name="height">60.0</property>
+				</Task>
+				<Flow from="Task354485" id="Flow361" islink="true" to="Task354359490">
+					<property name="x">961.219</property>
+					<property name="y">482.96918</property>
+				</Flow>
+				<End id="End362493">
+					<property name="height">30.92308</property>
+					<property name="x">1098.219</property>
+					<property name="CSSclass">Event</property>
+					<property name="sdm:y">107.0</property>
+					<property name="sdm:x">417.0</property>
+					<property name="width">30.923065</property>
+					<property name="y">482.64044</property>
+				</End>
+				<Flow from="Task354359490" id="Flow363" islink="true" to="End362493">
+					<property name="x">1073.4883</property>
+					<property name="y">483.49588</property>
+				</Flow>
+			</SubProcess>
+			<Flow from="Start77107193306479" id="Flow364" islink="true" to="SubProcess355483">
+				<property name="x">894.5495</property>
+				<property name="y">498.77518</property>
+			</Flow>
+			<SubProcess id="SubProcess367497">
+				<property name="LoopType">true</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">170.0</property>
+				<property name="Expanded">false</property>
+				<property name="Iteration">4</property>
+				<property name="Name">B2_EC</property>
+				<property name="CSSclass">Activity</property>
+				<property name="Transaction">false</property>
+				<property name="y">498.57825</property>
+				<property name="x">1151.4843</property>
+				<property name="Loop">Fix</property>
+				<property name="BpmnType">InterventionB</property>
+				<Task id="Task79151229274342318499">
+					<property name="IName">Epirubicin</property>
+					<property name="Maxrange">0D</property>
+					<property name="sdm:y">205.0</property>
+					<property name="sdm:x">60.0</property>
+					<property name="Method">slow push into fast drip</property>
+					<property name="Minrange">0D</property>
+					<property name="Name">B2_EC_E</property>
+					<property name="TaskType">InterventionT</property>
+					<property name="IDose">90</property>
+					<property name="CSSclass">Activity</property>
+					<property name="y">435.07828</property>
+					<property name="x">1146.2012</property>
+				</Task>
+				<Flow from="Gateway84121200268344320509" id="Flow347324" islink="true" to="Task79151229274342318499">
+					<property name="x">1076.5632</property>
+					<property name="y">461.06607</property>
+				</Flow>
+				<Flow from="Task79151229274342318499" id="Flow349328" islink="true" to="Gateway84159233278346322503">
+					<property name="x">1223.1855</property>
+					<property name="y">461.75354</property>
+				</Flow>
+				<Gateway id="Gateway84159233278346322503">
+					<property name="x">1270.877</property>
+					<property name="Name">AND</property>
+					<property name="height">51.414215</property>
+					<property name="GatewayType">AND</property>
+					<property name="width">51.413986</property>
+					<property name="y">488.42883</property>
+				</Gateway>
+				<Flow from="Task82155231276340316506" id="Flow350330" islink="true" to="Gateway84159233278346322503">
+					<property name="x">1223.1855</property>
+					<property name="y">507.75354</property>
+				</Flow>
+				<Task id="Task82155231276340316506">
+					<property name="IName">cyclophosphamide</property>
+					<property name="Maxrange">0D</property>
+					<property name="sdm:y">205.0</property>
+					<property name="sdm:x">60.0</property>
+					<property name="Method">slow push infusion</property>
+					<property name="Minrange">0D</property>
+					<property name="Name">B2_EC_C</property>
+					<property name="TaskType">InterventionT</property>
+					<property name="CSSclass">Activity</property>
+					<property name="IDose">600</property>
+					<property name="y">527.07825</property>
+					<property name="x">1146.2012</property>
+				</Task>
+				<Flow from="Gateway84121200268344320509" id="Flow348326" islink="true" to="Task82155231276340316506">
+					<property name="x">1076.5632</property>
+					<property name="y">507.06604</property>
+				</Flow>
+				<Gateway id="Gateway84121200268344320509">
+					<property name="x">1036.2181</property>
+					<property name="Name">AND</property>
+					<property name="height">51.414185</property>
+					<property name="GatewayType">AND</property>
+					<property name="width">51.414185</property>
+					<property name="y">487.05386</property>
+				</Gateway>
+				<End id="End268511">
+					<property name="x">1329.2461</property>
+					<property name="height">30.92308</property>
+					<property name="CSSclass">Event</property>
+					<property name="sdm:y">107.0</property>
+					<property name="sdm:x">417.0</property>
+					<property name="width">30.92308</property>
+					<property name="y">485.64053</property>
+				</End>
+				<Flow from="Gateway84159233278346322503" id="Flow270" islink="true" to="End268511">
+					<property name="x">1305.1843</property>
+					<property name="y">487.33777</property>
+				</Flow>
+				<Start id="Start311514">
+					<property name="width">30.00026</property>
+					<property name="sdm:y">177.0</property>
+					<property name="sdm:x">337.0</property>
+					<property name="Time">21D</property>
+					<property name="CSSclass">Event</property>
+					<property name="y">486.1717</property>
+					<property name="x">973.26514</property>
+					<property name="Trigger">Timer</property>
+					<property name="height">30.00026</property>
+				</Start>
+				<Flow from="Start311514" id="Flow312" islink="true" to="Gateway84121200268344320509">
+					<property name="x">999.39026</property>
+					<property name="y">486.6335</property>
+				</Flow>
+			</SubProcess>
+			<Flow from="SubProcess355483" id="Flow262" islink="true" to="SubProcess367497">
+				<property name="x">1057.6885</property>
+				<property name="y">498.86005</property>
+			</Flow>
+			<Flow from="SubProcess367497" id="Flow263" islink="true" to="End78109195308481">
+				<property name="x">1233.7106</property>
+				<property name="y">499.53467</property>
+			</Flow>
+		</SubProcess>
+		<Gateway id="Gateway66131204334519">
+			<property name="height">51.414185</property>
+			<property name="Name">AND</property>
+			<property name="x">1508.3297</property>
+			<property name="GatewayType">AND</property>
+			<property name="width">51.414185</property>
+			<property name="y">548.8977</property>
+		</Gateway>
+		<Flow from="Gateway66131204334519" id="Flow70133336" islink="true" to="End5691181286454">
+			<property name="x">1540.2693</property>
+			<property name="y">549.1557</property>
+		</Flow>
+		<Gateway id="Gateway73135207338522">
+			<property name="Name">AND</property>
+			<property name="x">654.32935</property>
+			<property name="GatewayType">AND</property>
+			<property name="y">514.8975</property>
+		</Gateway>
+		<Flow from="Gateway73135207338522" id="Flow74137340" islink="true" to="SubProcess5893183288456">
+			<property name="x">743.8605</property>
+			<property name="y">587.90967</property>
+		</Flow>
+		<Flow from="Gateway73135207338522" id="Flow75139342" islink="true" to="SubProcess64105191304477">
+			<property name="x">760.1094</property>
+			<property name="y">505.82916</property>
+		</Flow>
+		<Flow from="Start5589179284452" id="Flow76141344" islink="true" to="Gateway73135207338522">
+			<property name="x">606.1438</property>
+			<property name="ToGatewayPosition">Left</property>
+			<property name="y">514.57904</property>
+		</Flow>
+		<Flow from="SubProcess64105191304477" id="Flow79143346" islink="true" to="Gateway66131204334519">
+			<property name="x">1392.0369</property>
+			<property name="y">526.1167</property>
+		</Flow>
+		<Flow from="SubProcess5893183288456" id="Flow81145353" islink="true" to="Gateway66131204334519">
+			<property name="x">1493.9329</property>
+			<property name="y">604.9098</property>
+		</Flow>
+	</SubProcess>
+	<Flow from="Gateway218" id="Flow264" islink="true" to="SubProcess5487282">
+		<property name="x">455.58212</property>
+		<property name="y">365.1623</property>
+	</Flow>
+	<Flow from="SubProcess5487282" id="Flow265" islink="true" to="Gateway219">
+		<property name="x">744.0449</property>
+		<property name="y">369.36084</property>
+	</Flow>
+	<SubProcess id="SubProcess5487282267">
+		<property name="sdm:y">35.0</property>
+		<property name="sdm:x">170.0</property>
+		<property name="Expanded">true</property>
+		<property name="Name">B1</property>
+		<property name="Lane">Neotango</property>
+		<property name="CSSclass">Activity</property>
+		<property name="Transaction">false</property>
+		<property name="y">308.0</property>
+		<property name="x">1065.224</property>
+		<property name="BpmnType">SequenceB</property>
+		<Start id="Start5589179284269532">
+			<property name="x">536.44214</property>
+			<property name="height">30.023315</property>
+			<property name="CSSclass">Event</property>
+			<property name="sdm:y">107.0</property>
+			<property name="sdm:x">337.0</property>
+			<property name="width">30.02326</property>
+			<property name="y">319.25</property>
+		</Start>
+		<End id="End5691181286271534">
+			<property name="x">1593.8252</property>
+			<property name="height">30.384338</property>
+			<property name="CSSclass">Event</property>
+			<property name="sdm:y">107.0</property>
+			<property name="sdm:x">417.0</property>
+			<property name="width">30.3844</property>
+			<property name="y">319.25</property>
+		</End>
+		<SubProcess id="SubProcess5893183288273536">
+			<property name="sdm:y">35.0</property>
+			<property name="sdm:x">170.0</property>
+			<property name="Expanded">true</property>
+			<property name="Name">B1_Obv</property>
+			<property name="CSSclass">Activity</property>
+			<property name="Transaction">false</property>
+			<property name="y">453.5</property>
+			<property name="x">1065.0435</property>
+			<property name="BpmnType">DependentB</property>
+			<Start id="Start5997185290275538">
+				<property name="x">729.81323</property>
+				<property name="height">30.016262</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">337.0</property>
+				<property name="width">30.016281</property>
+				<property name="y">436.0</property>
+			</Start>
+			<End id="End6099187292277540">
+				<property name="x">1400.0516</property>
+				<property name="height">30.391617</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">417.0</property>
+				<property name="width">30.391663</property>
+				<property name="y">436.0</property>
+			</End>
+			<Task id="Task338294279542">
+				<property name="LoopType">true</property>
+				<property name="Maxrange">21D</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">21D</property>
+				<property name="Iteration">4</property>
+				<property name="Name">B1_EC_Submission</property>
+				<property name="TaskType">StandardT</property>
+				<property name="CSSclass">Task</property>
+				<property name="y">436.0</property>
+				<property name="x">839.8214</property>
+				<property name="Loop">Fix</property>
+			</Task>
+			<Task id="Task116189241312353296281544">
+				<property name="LoopType">true</property>
+				<property name="Maxrange">14D</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">14D</property>
+				<property name="Iteration">4</property>
+				<property name="Name">B1_TG_Submission</property>
+				<property name="CSSclass">Task</property>
+				<property name="y">436.0</property>
+				<property name="x">1139.8214</property>
+				<property name="Loop">Fix</property>
+			</Task>
+			<Flow from="Start5997185290275538" id="Flow354298283" islink="true" to="Task338294279542">
+				<property name="x">764.8214</property>
+				<property name="y">436.0</property>
+			</Flow>
+			<Flow from="Task338294279542" id="Flow355300285" islink="true" to="Task268276549">
+				<property name="x">914.8214</property>
+				<property name="y">436.0</property>
+			</Flow>
+			<Flow from="Task268276294552" id="Flow356302287" islink="true" to="End6099187292277540">
+				<property name="x">1364.8214</property>
+				<property name="y">436.0</property>
+			</Flow>
+			<Task id="Task268276549">
+				<property name="x">989.8214</property>
+				<property name="Name">B1_Mid_Submission</property>
+				<property name="CSSclass">Activity</property>
+				<property name="sdm:y">35.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">0D</property>
+				<property name="Maxrange">0D</property>
+				<property name="y">436.0</property>
+			</Task>
+			<Flow from="Task268276549" id="Flow281" islink="true" to="Task116189241312353296281544">
+				<property name="x">1064.8214</property>
+				<property name="y">436.0</property>
+			</Flow>
+			<Task id="Task268276294552">
+				<property name="Name">B1_End_Submission</property>
+				<property name="x">1289.8214</property>
+				<property name="CSSclass">Activity</property>
+				<property name="sdm:y">35.0</property>
+				<property name="sdm:x">60.0</property>
+				<property name="Minrange">0D</property>
+				<property name="Maxrange">0D</property>
+				<property name="y">436.0</property>
+			</Task>
+			<Flow from="Task116189241312353296281544" id="Flow295" islink="true" to="Task268276294552">
+				<property name="x">1214.8214</property>
+				<property name="y">436.0</property>
+			</Flow>
+		</SubProcess>
+		<SubProcess id="SubProcess64105191304289555">
+			<property name="sdm:y">35.0</property>
+			<property name="sdm:x">170.0</property>
+			<property name="Expanded">true</property>
+			<property name="Name">B1_Work</property>
+			<property name="CSSclass">Activity</property>
+			<property name="Transaction">false</property>
+			<property name="y">217.0</property>
+			<property name="x">1065.0435</property>
+			<property name="BpmnType">InterventionB</property>
+			<Start id="Start77107193306291557">
+				<property name="x">707.87994</property>
+				<property name="height">30.02398</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">337.0</property>
+				<property name="width">30.024014</property>
+				<property name="y">183.5</property>
+			</Start>
+			<End id="End78109195308293559">
+				<property name="x">1421.9353</property>
+				<property name="height">30.567139</property>
+				<property name="CSSclass">Event</property>
+				<property name="sdm:y">107.0</property>
+				<property name="sdm:x">417.0</property>
+				<property name="width">30.567139</property>
+				<property name="y">183.5</property>
+			</End>
+			<Flow from="SubProcess367314577" id="Flow263341" islink="true" to="SubProcess355295562">
+				<property name="x">1236.6519</property>
+				<property name="y">183.5</property>
+			</Flow>
+			<SubProcess id="SubProcess355295562">
+				<property name="LoopType">true</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">170.0</property>
+				<property name="Expanded">false</property>
+				<property name="Iteration">4</property>
+				<property name="Name">B1_TG</property>
+				<property name="CSSclass">Activity</property>
+				<property name="Transaction">false</property>
+				<property name="y">183.5</property>
+				<property name="x">1311.6519</property>
+				<property name="Loop">Fix</property>
+				<property name="BpmnType">InterventionB</property>
+				<Task id="Task354297371564">
+					<property name="IName">Paclitaxel</property>
+					<property name="width">92.0</property>
+					<property name="Maxrange">0D</property>
+					<property name="sdm:y">197.5</property>
+					<property name="sdm:x">170.0</property>
+					<property name="Method">3 hour infusion</property>
+					<property name="Minrange">0D</property>
+					<property name="Name">B1_TG_T</property>
+					<property name="TaskType">InterventionT</property>
+					<property name="IDose">175</property>
+					<property name="CSSclass">Task</property>
+					<property name="y">165.0</property>
+					<property name="x">1253.9784</property>
+					<property name="height">60.0</property>
+				</Task>
+				<Start id="Start356299373566">
+					<property name="width">30.228935</property>
+					<property name="sdm:y">177.0</property>
+					<property name="sdm:x">337.0</property>
+					<property name="Time">14D</property>
+					<property name="CSSclass">Event</property>
+					<property name="y">166.5</property>
+					<property name="x">1176.9784</property>
+					<property name="Trigger">Timer</property>
+					<property name="height">30.228853</property>
+				</Start>
+				<Flow from="Start356299373566" id="Flow357301" islink="true" to="Task354297371564">
+					<property name="x">1200.0358</property>
+					<property name="y">165.99712</property>
+				</Flow>
+				<Task id="Task354359303376569">
+					<property name="IName">Gemcitabine</property>
+					<property name="width">94.0</property>
+					<property name="Maxrange">0D</property>
+					<property name="sdm:y">197.5</property>
+					<property name="sdm:x">170.0</property>
+					<property name="Method">60 minute infusion</property>
+					<property name="Minrange">0D</property>
+					<property name="Name">B1_TG_G</property>
+					<property name="TaskType">InterventionT</property>
+					<property name="CSSclass">Task</property>
+					<property name="IDose">2000</property>
+					<property name="y">167.0</property>
+					<property name="x">1364.9784</property>
+					<property name="height">60.0</property>
+				</Task>
+				<Flow from="Task354297371564" id="Flow361305" islink="true" to="Task354359303376569">
+					<property name="x">1308.9784</property>
+					<property name="y">165.82869</property>
+				</Flow>
+				<End id="End362307379572">
+					<property name="height">30.92308</property>
+					<property name="x">1445.9785</property>
+					<property name="CSSclass">Event</property>
+					<property name="sdm:y">107.0</property>
+					<property name="sdm:x">417.0</property>
+					<property name="width">30.923065</property>
+					<property name="y">165.5</property>
+				</End>
+				<Flow from="Task354359303376569" id="Flow363309" islink="true" to="End362307379572">
+					<property name="x">1421.2477</property>
+					<property name="y">166.35541</property>
+				</Flow>
+			</SubProcess>
+			<Flow from="Start77107193306291557" id="Flow381" islink="true" to="SubProcess367314577">
+				<property name="x">742.89197</property>
+				<property name="y">183.5</property>
+			</Flow>
+			<Flow from="SubProcess355295562" id="Flow382" islink="true" to="End78109195308293559">
+				<property name="x">1386.6519</property>
+				<property name="y">183.5</property>
+			</Flow>
+			<SubProcess id="SubProcess367314577">
+				<property name="LoopType">true</property>
+				<property name="sdm:y">205.0</property>
+				<property name="sdm:x">170.0</property>
+				<property name="Expanded">true</property>
+				<property name="Iteration">4</property>
+				<property name="Name">B1_EC</property>
+				<property name="CSSclass">Activity</property>
+				<property name="Transaction">false</property>
+				<property name="y">199.5</property>
+				<property name="x">989.77185</property>
+				<property name="Loop">Fix</property>
+				<property name="BpmnType">InterventionB</property>
+				<Task id="Task79151229274342318316579">
+					<property name="IName">Epirubicin</property>
+					<property name="Maxrange">0D</property>
+					<property name="sdm:y">205.0</property>
+					<property name="sdm:x">60.0</property>
+					<property name="Method">slow push into fast drip</property>
+					<property name="Minrange">0D</property>
+					<property name="Name">B1_EC_E</property>
+					<property name="TaskType">InterventionT</property>
+					<property name="CSSclass">Activity</property>
+					<property name="IDose">90</property>
+					<property name="y">234.0</property>
+					<property name="x">989.3147</property>
+				</Task>
+				<Flow from="Gateway84121200268344320330589" id="Flow347324318" islink="true" to="Task79151229274342318316579">
+					<property name="x">914.3147</property>
+					<property name="y">214.96649</property>
+				</Flow>
+				<Flow from="Task79151229274342318316579" id="Flow349328320" islink="true" to="Gateway84159233278346322322583">
+					<property name="x">1064.3147</property>
+					<property name="y">209.60254</property>
+				</Flow>
+				<Gateway id="Gateway84159233278346322322583">
+					<property name="height">51.414215</property>
+					<property name="Name">AND</property>
+					<property name="x">1110.0217</property>
+					<property name="GatewayType">AND</property>
+					<property name="width">51.41397</property>
+					<property name="y">182.0</property>
+				</Gateway>
+				<Flow from="Task82155231276340316326586" id="Flow350330324" islink="true" to="Gateway84159233278346322322583">
+					<property name="x">1064.3147</property>
+					<property name="y">154.39746</property>
+				</Flow>
+				<Task id="Task82155231276340316326586">
+					<property name="IName">cyclophosphamide</property>
+					<property name="Maxrange">0D</property>
+					<property name="sdm:y">205.0</property>
+					<property name="sdm:x">60.0</property>
+					<property name="Method">slow push infusion</property>
+					<property name="Minrange">0D</property>
+					<property name="Name">B1_EC_C</property>
+					<property name="TaskType">InterventionT</property>
+					<property name="IDose">600</property>
+					<property name="CSSclass">Activity</property>
+					<property name="y">130.0</property>
+					<property name="x">989.3147</property>
+				</Task>
+				<Flow from="Gateway84121200268344320330589" id="Flow348326328" islink="true" to="Task82155231276340316326586">
+					<property name="x">914.3147</property>
+					<property name="y">149.03351</property>
+				</Flow>
+				<Gateway id="Gateway84121200268344320330589">
+					<property name="height">51.414185</property>
+					<property name="Name">AND</property>
+					<property name="x">868.60754</property>
+					<property name="GatewayType">AND</property>
+					<property name="width">51.414185</property>
+					<property name="y">182.0</property>
+				</Gateway>
+				<End id="End268332591">
+					<property name="height">30.923073</property>
+					<property name="x">1191.1902</property>
+					<property name="CSSclass">Event</property>
+					<property name="sdm:y">107.0</property>
+					<property name="sdm:x">417.0</property>
+					<property name="width">30.923065</property>
+					<property name="y">182.0</property>
+				</End>
+				<Flow from="Gateway84159233278346322322583" id="Flow270334" islink="true" to="End268332591">
+					<property name="x">1155.7288</property>
+					<property name="y">182.0</property>
+				</Flow>
+				<Start id="Start311336594">
+					<property name="width">30.00852</property>
+					<property name="sdm:y">177.0</property>
+					<property name="sdm:x">337.0</property>
+					<property name="Time">21D</property>
+					<property name="CSSclass">Event</property>
+					<property name="y">182.0</property>
+					<property name="x">787.89624</property>
+					<property name="height">30.008514</property>
+					<property name="Trigger">Timer</property>
+				</Start>
+				<Flow from="Start311336594" id="Flow312338" islink="true" to="Gateway84121200268344320330589">
+					<property name="x">822.9005</property>
+					<property name="y">182.0</property>
+				</Flow>
+			</SubProcess>
+		</SubProcess>
+		<Gateway id="Gateway66131204334343597">
+			<property name="x">1512.926</property>
+			<property name="Name">AND</property>
+			<property name="height">51.414185</property>
+			<property name="GatewayType">AND</property>
+			<property name="width">51.414185</property>
+			<property name="y">319.25</property>
+		</Gateway>
+		<Flow from="Gateway66131204334343597" id="Flow70133336345" islink="true" to="End5691181286271534">
+			<property name="x">1558.633</property>
+			<property name="y">319.25</property>
+		</Flow>
+		<Gateway id="Gateway73135207338347600">
+			<property name="height">51.4142</property>
+			<property name="x">617.1609</property>
+			<property name="Name">AND</property>
+			<property name="GatewayType">AND</property>
+			<property name="width">51.414215</property>
+			<property name="y">319.25</property>
+		</Gateway>
+		<Flow from="Gateway73135207338347600" id="Flow74137340353" islink="true" to="SubProcess5893183288273536">
+			<property name="x">673.83655</property>
+			<property name="y">385.3415</property>
+		</Flow>
+		<Flow from="Gateway73135207338347600" id="Flow75139342359" islink="true" to="SubProcess64105191304289555">
+			<property name="x">662.868</property>
+			<property name="y">253.15851</property>
+		</Flow>
+		<Flow from="Start5589179284269532" id="Flow76141344363" islink="true" to="Gateway73135207338347600">
+			<property name="x">571.4538</property>
+			<property name="y">319.25</property>
+			<property name="ToGatewayPosition">Left</property>
+		</Flow>
+		<Flow from="SubProcess64105191304289555" id="Flow79143346366" islink="true" to="Gateway66131204334343597">
+			<property name="x">1467.219</property>
+			<property name="y">258.52246</property>
+		</Flow>
+		<Flow from="SubProcess5893183288273536" id="Flow81145353368" islink="true" to="Gateway66131204334343597">
+			<property name="x">1456.2502</property>
+			<property name="y">379.97754</property>
+		</Flow>
+	</SubProcess>
+	<Flow from="Gateway218" id="Flow385" islink="true" to="SubProcess5487282267">
+		<property name="x">451.07327</property>
+		<property name="y">286.20145</property>
+	</Flow>
+	<Flow from="SubProcess5487282267" id="Flow386" islink="true" to="Gateway219">
+		<property name="x">739.5361</property>
+		<property name="y">290.4</property>
+	</Flow>
+	<Gateway id="Gateway219">
+		<property name="x">1714.7246</property>
+		<property name="Name">Data-XOR</property>
+		<property name="height">51.414185</property>
+		<property name="GatewayType">XOR</property>
+		<property name="width">51.414185</property>
+		<property name="Lane">Neotango</property>
+		<property name="y">614.5</property>
+	</Gateway>
+	<Gateway id="Gateway218">
+		<property name="height">51.414185</property>
+		<property name="x">415.7234</property>
+		<property name="Name">Data-XOR</property>
+		<property name="GatewayType">XOR</property>
+		<property name="width">51.414154</property>
+		<property name="Lane">Neotango</property>
+		<property name="y">614.5</property>
+	</Gateway>
+	<Flow from="SubProcess457" id="Flow610" islink="true" to="Gateway218"/>
+	<Flow from="Gateway219" id="Flow612" islink="true" to="SubProcess287"/>
+</diagram>

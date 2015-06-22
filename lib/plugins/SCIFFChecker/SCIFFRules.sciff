@@ -1,0 +1,1016 @@
+<Rules>
+	<Family name="Existence rules">
+	<Family name="Basic Existence Templates">
+		<RuleEntry name="Existence of activity A">
+			<Rule>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="A"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="Existence of N executions of activity A">
+			<Rule>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<RepeatedActivity name="A" repeatition="2" minRepeatition="2"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>	
+		<RuleEntry name="Absence of activity A">
+			<Rule>
+				<Body>
+					<Conjunction>
+						<Activities>
+							<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="At most N-1 executions of activity A">
+			<Rule>
+				<Body>
+					<Conjunction>
+						<Activities>
+							<RepeatedActivity name="A" repeatition="2" minRepeatition="2"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+			</Rule>
+		</RuleEntry>
+	</Family>
+	</Family>
+	<Family name="IF...THEN rules">
+		<Family name="Basic IF...THEN Templates">
+		<RuleEntry name="If activity A then activity B">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="If activity A then activity B or C">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+						</Conjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="If activity A then activity B or C or D">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+						</Conjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+						</Conjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="D"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="If activities A and B then activity C">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+								<SimpleActivity name="B"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="If activities A and B and C then activity D">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+								<SimpleActivity name="B"/>
+								<SimpleActivity name="C"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="D"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="If activities A and B then activity C or D">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+								<SimpleActivity name="B"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+						</Conjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="D"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="If activity A N times then activity">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+							<RepeatedActivity name="A" repeatition="2" minRepeatition="2"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="If activity A then activity B N times">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<RepeatedActivity name="B" repeatition="2" minRepeatition="2"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		</Family>
+		<Family name="Timed IF...THEN templates">
+		<Family name="Response rules">
+		<RuleEntry name="Activity B after activity A">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_B" targetVariable="T_A" operator="AFTER"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="Activity B or C after activity A">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_B" targetVariable="T_A" operator="AFTER"/>
+							</Constraints>
+						</Conjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_C" targetVariable="T_A" operator="AFTER"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="Activity C after activity A and B">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+								<SimpleActivity name="B"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_C" targetVariable="T_A" operator="AFTER"/>
+								<RelativeTimeConstraint variable="T_C" targetVariable="T_B" operator="AFTER"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="Activity B after N occurrences of activity A">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+							<RepeatedActivity name="A" repeatition="2" minRepeatition="2"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_B" targetVariable="Tcompletion_A" operator="AFTER"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="N repeatitions of activity B after activity A">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<RepeatedActivity name="B" repeatition="2" minRepeatition="2"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="Tstart_B" targetVariable="T_A" operator="AFTER"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		</Family>
+		<Family name="Precedence rules">
+			<RuleEntry name="Activity B before activity A">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_B" targetVariable="T_A" operator="BEFORE"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="Activity B or C before activity A">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_B" targetVariable="T_A" operator="BEFORE"/>
+							</Constraints>
+						</Conjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_C" targetVariable="T_A" operator="AFTER"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="Activity C before activity A and B">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+								<SimpleActivity name="B"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_C" targetVariable="T_A" operator="AFTER"/>
+								<RelativeTimeConstraint variable="T_C" targetVariable="T_B" operator="AFTER"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="Activity B before N occurrences of activity A">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+							<RepeatedActivity name="A" repeatition="2" minRepeatition="2"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_B" targetVariable="Tstart_A" operator="BEFORE"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="N repeatitions of activity B before activity A">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<RepeatedActivity name="B" repeatition="2" minRepeatition="2"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="Tcompletion_B" targetVariable="T_A" operator="BEFORE"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		</Family>
+		<RuleEntry name="Activity C between activity A and B">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+								<SimpleActivity name="B"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_C" targetVariable="T_A" operator="AFTER"/>
+								<RelativeTimeConstraint variable="T_C" targetVariable="T_B" operator="BEFORE"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		</Family>
+		</Family>
+		<Family name="IF...THEN NOT rules">
+		<Family name="Basic IF...THEN NOT Templates">
+		<RuleEntry name="If activity A then activity B is forbidden">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B" forbidden="true"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="If activity A then activity B or C">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+						</Conjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="If activity A then activity B or C or D">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+						</Conjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+						</Conjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="D"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="If activities A and B then activity C">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+								<SimpleActivity name="B"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="If activities A and B and C then activity D">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+								<SimpleActivity name="B"/>
+								<SimpleActivity name="C"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="D"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="If activities A and B then activity C or D">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+								<SimpleActivity name="B"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+						</Conjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="D"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="If activity A N times then activity">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+							<RepeatedActivity name="A" repeatition="2" minRepeatition="2"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="If activity A then activity B N times">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<RepeatedActivity name="B" repeatition="2" minRepeatition="2"/>
+							</Activities>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		</Family>
+		<Family name="Timed IF...THEN templates">
+		<Family name="Response rules">
+		<RuleEntry name="Activity B after activity A">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_B" targetVariable="T_A" operator="AFTER"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="Activity B or C after activity A">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_B" targetVariable="T_A" operator="AFTER"/>
+							</Constraints>
+						</Conjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_C" targetVariable="T_A" operator="AFTER"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="Activity C after activity A and B">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+								<SimpleActivity name="B"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_C" targetVariable="T_A" operator="AFTER"/>
+								<RelativeTimeConstraint variable="T_C" targetVariable="T_B" operator="AFTER"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="Activity B after N occurrences of activity A">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+							<RepeatedActivity name="A" repeatition="2" minRepeatition="2"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_B" targetVariable="Tcompletion_A" operator="AFTER"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="N repeatitions of activity B after activity A">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<RepeatedActivity name="B" repeatition="2" minRepeatition="2"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="Tstart_B" targetVariable="T_A" operator="AFTER"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		</Family>
+		<Family name="Precedence rules">
+			<RuleEntry name="Activity B before activity A">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_B" targetVariable="T_A" operator="BEFORE"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="Activity B or C before activity A">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_B" targetVariable="T_A" operator="BEFORE"/>
+							</Constraints>
+						</Conjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_C" targetVariable="T_A" operator="AFTER"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="Activity C before activity A and B">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+								<SimpleActivity name="B"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_C" targetVariable="T_A" operator="AFTER"/>
+								<RelativeTimeConstraint variable="T_C" targetVariable="T_B" operator="AFTER"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="Activity B before N occurrences of activity A">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+							<RepeatedActivity name="A" repeatition="2" minRepeatition="2"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="B"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_B" targetVariable="Tstart_A" operator="BEFORE"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		<RuleEntry name="N repeatitions of activity B before activity A">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<RepeatedActivity name="B" repeatition="2" minRepeatition="2"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="Tcompletion_B" targetVariable="T_A" operator="BEFORE"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		</Family>
+		<RuleEntry name="Activity C between activity A and B">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+								<SimpleActivity name="B"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity name="C"/>
+							</Activities>
+							<Constraints>
+								<RelativeTimeConstraint variable="T_C" targetVariable="T_A" operator="AFTER"/>
+								<RelativeTimeConstraint variable="T_C" targetVariable="T_B" operator="BEFORE"/>
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+		</Family>
+		
+		<RuleEntry name="Four-eyes principle">
+			<Rule>
+				<Body>
+					<Conjunction>	
+						<Activities>
+								<SimpleActivity name="A"/>
+						</Activities>
+					</Conjunction>
+				</Body>
+				<Head>
+					<Disjunction>
+						<Conjunction>
+							<Activities>
+								<SimpleActivity forbidden="true" name="B"/>
+							</Activities>
+							<Constraints>
+								<SimpleStringConstraint variable="O_B" operator="EQUAL" targetVariable="O_A" />
+							</Constraints>
+						</Conjunction>
+					</Disjunction>
+				</Head>
+			</Rule>
+		</RuleEntry>
+	</Family>
+</Rules>

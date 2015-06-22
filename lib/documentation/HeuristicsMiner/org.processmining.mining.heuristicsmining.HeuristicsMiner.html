@@ -1,0 +1,1145 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 4.0">
+<meta name=Originator content="Microsoft Word 9">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Heuristics Mining: Users Guide</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>TM</o:Author>
+  <o:LastAuthor>TM</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>308</o:TotalTime>
+  <o:LastPrinted>2006-11-10T15:15:00Z</o:LastPrinted>
+  <o:Created>2006-11-12T16:40:00Z</o:Created>
+  <o:LastSaved>2006-11-12T16:40:00Z</o:LastSaved>
+  <o:Pages>15</o:Pages>
+  <o:Words>3502</o:Words>
+  <o:Characters>17514</o:Characters>
+  <o:Company>TU/e</o:Company>
+  <o:Lines>380</o:Lines>
+  <o:Paragraphs>114</o:Paragraphs>
+  <o:CharactersWithSpaces>24519</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:NL;}
+h1
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:Arial;
+	mso-font-kerning:16.0pt;
+	mso-ansi-language:NL;
+	font-weight:bold;}
+h2
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:14.0pt;
+	font-family:Arial;
+	mso-ansi-language:NL;
+	font-weight:bold;
+	font-style:italic;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:NL;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 207.65pt right 415.3pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:NL;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{mso-style-next:Normal;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:NL;
+	font-weight:bold;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-title-page:yes;
+	mso-even-footer:url("header.htm") ef1;
+	mso-footer:url("header.htm") f1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+</head>
+
+<body lang=EN-GB link=blue vlink=purple style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<h1><span style='mso-ansi-language:EN-GB'>HeuristicsMiner: Users Guide<o:p></o:p></span></h1>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=NL>A.J.M.M. (Ton) Weijters </span></p>
+
+<p class=MsoNormal><span lang=NL><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>Department of
+Technology Management,<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>Eindhoven University
+of Technology,<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>P.O. Box 513, <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>NL-5600 MB Eindhoven<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>The Netherlands.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>E-mail: </span><span
+lang=NL><a href="mailto:a.j.m.m.weijters@tm.tue.nl"><span lang=EN-US
+style='font-family:Arial;mso-ansi-language:EN-GB'><span lang=EN-US>a.j.m.m.weijters<span
+lang=EN-US>@tm.tue.nl</span></span></span></a></span><span style='mso-ansi-language:
+EN-GB'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=NL><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h2><span style='mso-ansi-language:EN-GB'>Introduction<o:p></o:p></span></h2>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>This document contains
+information about the <i>HeuristicsMiner plug-in</i> for ProM (version 4.0).
+For the PDF-version of this document see </span><span style='font-family:Arial;
+mso-ansi-language:EN-GB'><a href="http://is.tm.tue.nl/staff/aweijters/hm40.pdf">http://is.tm.tue.nl/staff/aweijters/hm40.pdf</a></span><span
+style='mso-ansi-language:EN-GB'>. ProM is a general <b>Pro</b>cess <b>M</b>ining
+framework that has been implemented in Java. For more information about the
+ProM framework, other available plug-ins, how to develop your own plug-in, how
+to down load the ProM framework, etc. we refer to the process mining home page
+htpp://www.processmining.org or the ProM web page: </span><span lang=NL><a
+href="http://is.tm.tue.nl/research/processmining/tools.htm"><span lang=EN-US
+style='font-family:Arial;mso-ansi-language:EN-GB'><span lang=EN-US>http://is.tm.tue.nl/research/processmining/tools.htm</span></span></a></span><span
+style='mso-ansi-language:EN-GB'>). <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>The HeuristcsMiner
+plug-in described in this document is more or less an replacement for the older
+heuristics mining tool Little Thumb (Weijters, A.J.M.M., &amp; Aalst, W.M.P.
+van der (2003). </span><span lang=NL>Rediscovering workflow models from
+event-based data using Little Thumb (<a
+href="http://is.tm.tue.nl/staff/aweijters/ICAE_v5.pdf"><span style='font-family:
+Arial'>http://is.tm.tue.nl/staff/aweijters/ICAE_v5.pdf</span></a>). <i>Integrated
+Computer-Aided Engineering, 10</i>(2), 151-162). </span><span style='mso-ansi-language:
+EN-GB'>The most important characteristic of the HeuristicsMiner is the <i>robustness
+for noise and exceptions</i>. Because the HeuristicsMiner is based on the
+frequency of patterns it is possible to focus on the main behaviour in the
+event log. More details about the implementation and performance results are
+available in the Beta working paper WP 166 (</span><span style='font-family:
+Arial;mso-ansi-language:EN-GB'><a
+href="http://is.tm.tue.nl/staff/aweijters/WP166.pdf">http://is.tm.tue.nl/staff/aweijters/WP166.pdf</a></span><span
+style='mso-ansi-language:EN-GB'>). Thre is also more information in this paper
+about a new feature of the HeuristicsMiner: the possibility to mine some long
+distance dependency relations (non free choice constructs).<span
+style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>The remainder of this
+Users Guide illustrates the mining capacity of the HeuristicsMiner. We will
+explain the basic ideas behind the HeuristicsMiner tool and the different
+measurements and parameters that are used in the tool, and how we can expect
+the parameters can be used to influence the amounts of details in the mined
+process models. <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<b><span style='font-size:16.0pt;font-family:Arial;mso-fareast-font-family:
+"Times New Roman";mso-font-kerning:16.0pt;mso-ansi-language:EN-GB;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><span style='mso-ansi-language:EN-GB'>A first acquaintance with the
+HeuristicsMiner Plug-in<o:p></o:p></span></h1>
+
+<p class=MsoNormal><b><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<h2><span style='mso-ansi-language:EN-GB'>Mining without noise<o:p></o:p></span></h2>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>To illustrate some
+properties of the heuristicsMiner plug-in we will use an event log (or
+transaction log) generated by the proces model given in Figure 1<a
+style='mso-footnote-id:ftn1' href="#_ftn1" name="_ftnref1" title=""><span
+class=MsoFootnoteReference><span style='mso-special-character:footnote'><![if !supportFootnotes]>[1]<![endif]></span></span></a>.
+The event log (</span><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+font-family:"Courier New";mso-ansi-language:EN-GB'>HeuristicsMinerUsersGuideVb1.xml</span><span
+style='mso-ansi-language:EN-GB'>) contains information about 1000 cases. For
+each case, the performed tasks and the and the moment of completion are
+recorded in the event log. For more information about the ProM XML-event log
+format we refer to Appendix A.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><span lang=NL><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:342pt;
+ height:180.75pt' o:ole="">
+ <v:imagedata src="image001.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=800 height=600 src="UG01.jpg"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Visio.Drawing.6" ShapeID="_x0000_i1025"
+  DrawAspect="Content" ObjectID="_1224858401">
+ </o:OLEObject>
+</xml><![endif]--></span></p>
+
+<p class=MsoCaption><a name="_Ref119395065"><span style='mso-ansi-language:
+EN-GB'>Figure </span></a><!--[if supportFields]><span style='mso-bookmark:_Ref119395065'></span><span
+style='mso-element:field-begin'></span><span style='mso-bookmark:_Ref119395065'><span
+style='mso-ansi-language:EN-GB'><span style="mso-spacerun: yes"> </span>SEQ
+Figure \* ARABIC </span><span lang=NL><span style='mso-element:field-separator'></span></span></span><![endif]--><span
+style='mso-bookmark:_Ref119395065'></span><span style='mso-bookmark:_Ref119395065'><span
+style='mso-ansi-language:EN-GB'>1</span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref119395065'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:_Ref119395065'></span><span style='mso-bookmark:_Ref119395065'></span><span
+style='mso-ansi-language:EN-GB'>: The HeuristicsNet process model that is used
+to generate the event log </span><span style='font-family:"Courier New";
+mso-ansi-language:EN-GB'>HeuristicsMiningUsersGuideVb1.xml</span><span
+style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>The squared boxes
+represents tasks. The arcs from A to C and B in combination with the </span><span
+style='font-family:Arial;mso-ansi-language:EN-GB'>&amp;</span><span
+style='mso-ansi-language:EN-GB'> indicate that after performing tasks A, both
+tasks C and B can be performed in parallel. After performing task B, task D or
+E has to be performed (indicated with a </span><span style='font-family:Arial;
+mso-ansi-language:EN-GB'>V</span><span style='mso-ansi-language:EN-GB'>)<span
+style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>The same model
+representation as depicted in Figure 1 is also used in the HeuristicsMiner
+plug-in. For each task an Input and Output expression is given. For instance,
+the Input expression for B is [A] and the Output expression is [D </span><span
+style='font-family:Arial;mso-ansi-language:EN-GB'>V</span><span
+style='mso-ansi-language:EN-GB'> E]. In Figure 1 the Input expression for K is
+not totally clear but it appears to be [[H </span><span style='font-family:
+Arial;mso-ansi-language:EN-GB'>V</span><span style='mso-ansi-language:EN-GB'>
+D] </span><span style='font-family:Arial;mso-ansi-language:EN-GB'>&amp;</span><span
+style='mso-ansi-language:EN-GB'> J]<a style='mso-footnote-id:ftn2' href="#_ftn2"
+name="_ftnref2" title=""><span class=MsoFootnoteReference><span
+style='mso-special-character:footnote'><![if !supportFootnotes]>[2]<![endif]></span></span></a>.
+Task I can be performed many times (a direct loop). There is also a loop from
+task J to task C, but this loop is rarely executed. Normally task K is
+performed after finishing task J. Also, skipping task F and H after performing
+task D is an exception. For people more familiar with the Petri net process
+model formalism we refer to Figure 2 for an equivalent Petri net. Remark that
+this Petri Net contains hidden task (D1, D2, and D3). <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>Given<span
+style="mso-spacerun: yes">  </span>the process model of Figure 1 and 2 , an
+example of a possible sequence of activities (or events) is the sequence
+ABCDIHIJK. A sequence of activities belonging to the same case, is called a
+trace. The event log in the </span><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>HeuristicsMiningUsersGuideVb1.xml</span><span
+style='mso-ansi-language:EN-GB'> contains 1000 random generated traces. On the
+next pages we will demonstrate what the HeuristicsMiner will do with the 1000
+traces in the event log.<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><span lang=NL><!--[if gte vml 1]><v:shape
+ id="_x0000_i1026" type="#_x0000_t75" style='width:315pt;height:138.75pt'
+ o:ole="">
+ <v:imagedata src="image003.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=800 height=600 src="UG02.jpg"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Visio.Drawing.6" ShapeID="_x0000_i1026"
+  DrawAspect="Content" ObjectID="_1224858402">
+ </o:OLEObject>
+</xml><![endif]--></span><span style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+
+<p class=MsoCaption><a name="_Ref119482394"><span style='mso-ansi-language:
+EN-GB'>Figure </span></a><!--[if supportFields]><span style='mso-bookmark:_Ref119482394'></span><span
+style='mso-element:field-begin'></span><span style='mso-bookmark:_Ref119482394'><span
+style='mso-ansi-language:EN-GB'><span style="mso-spacerun: yes"> </span>SEQ
+Figure \* ARABIC </span><span lang=NL><span style='mso-element:field-separator'></span></span></span><![endif]--><span
+style='mso-bookmark:_Ref119482394'></span><span style='mso-bookmark:_Ref119482394'><span
+style='mso-ansi-language:EN-GB'>2</span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref119482394'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:_Ref119482394'></span><span style='mso-bookmark:_Ref119482394'></span><span
+style='mso-ansi-language:EN-GB'>: A Petri net for the HeuristicsNet of Figure 1<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><span
+style="mso-spacerun: yes"> </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>First start the ProM
+program; the result will be something like the following screen.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+EN-GB'><!--[if gte vml 1]><v:shape id="_x0000_i1027" type="#_x0000_t75"
+ style='width:414.75pt;height:331.5pt'>
+ <v:imagedata src="image005.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=800 height=600 src="UG03.jpg"><![endif]></span></p>
+
+<p class=MsoCaption><span style='mso-ansi-language:EN-GB'>Figure </span><!--[if supportFields]><span
+lang=NL><span style='mso-element:field-begin'></span></span><span
+style='mso-ansi-language:EN-GB'><span style="mso-spacerun: yes"> </span>SEQ
+Figure \* ARABIC </span><span lang=NL><span style='mso-element:field-separator'></span></span><![endif]--><span
+style='mso-ansi-language:EN-GB'>3</span><!--[if supportFields]><span lang=NL><span
+style='mso-element:field-end'></span></span><![endif]--><span style='mso-ansi-language:
+EN-GB'>: screen after starting ProM.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>Before we can start
+mining we have to open a log file. Use </span><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>File
+&gt; Open XML Log file &gt; Browse</span><span style='mso-ansi-language:EN-GB'>
+and navigate to the file </span><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>HeuristicsMiningUsersGuideVb1.xml</span><span
+style='mso-ansi-language:EN-GB'> (the exact place depends on your
+installation). If everything goes right the result would be the screen given
+below:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><span
+style="mso-spacerun: yes"> </span><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;page-break-after:avoid'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1028" type="#_x0000_t75" style='width:414.75pt;height:331.5pt'>
+ <v:imagedata src="image007.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=800 height=600 src="UG04.jpg"><![endif]></p>
+
+<p class=MsoCaption><a name="_Ref119398025"><span style='mso-ansi-language:
+EN-GB'>Figure </span></a><!--[if supportFields]><span style='mso-bookmark:_Ref119398025'></span><span
+style='mso-element:field-begin'></span><span style='mso-bookmark:_Ref119398025'><span
+style='mso-ansi-language:EN-GB'><span style="mso-spacerun: yes"> </span>SEQ
+Figure \* ARABIC </span><span lang=NL><span style='mso-element:field-separator'></span></span></span><![endif]--><span
+style='mso-bookmark:_Ref119398025'></span><span style='mso-bookmark:_Ref119398025'><span
+style='mso-ansi-language:EN-GB'>4</span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref119398025'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:_Ref119398025'></span><span style='mso-bookmark:_Ref119398025'></span><span
+style='mso-ansi-language:EN-GB'>: The screen before we start mining. <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>Left there is
+information about the loaded event log. Within the [Simple tab-page] we can
+select the Event types that will be used during mining. If we use the [Summary
+entire log] button you will get detailed global information about the loaded
+log. The [Preview log settings] will gave you detailed information about the
+individual traces. Because we are dealing with an artificial log, these
+information is more or less trivial.<span style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>The [Advanced
+tab-page] can be used to filter the loaded log. More information about these
+options is in the general starters manual of ProM. However, in our first mining
+session we will use the default setting for all parameters. That means that we
+can directly start the mining process by using the mining option as indicated
+in <span style='mso-field-code:"REF _Ref119463963 \\h"'>Figure 5<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100310039003400360033003900360033000000</w:data>
+</xml><![endif]--></span>. The result is a screen with parameters of the
+HeuristicsMiner as given in <span style='mso-field-code:"REF _Ref119395003 \\h"'>Figure
+7<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100310039003300390035003000300033000000</w:data>
+</xml><![endif]--></span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+EN-GB'><!--[if gte vml 1]><v:shape id="_x0000_i1029" type="#_x0000_t75"
+ style='width:414.75pt;height:331.5pt'>
+ <v:imagedata src="image009.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=800 height=600 src="UG05.jpg"><![endif]></span></p>
+
+<p class=MsoCaption><a name="_Ref119463963"><span style='mso-ansi-language:
+EN-GB'>Figure </span></a><!--[if supportFields]><span style='mso-bookmark:_Ref119463963'></span><span
+style='mso-element:field-begin'></span><span style='mso-bookmark:_Ref119463963'><span
+style='mso-ansi-language:EN-GB'><span style="mso-spacerun: yes"> </span>SEQ
+Figure \* ARABIC </span><span lang=NL><span style='mso-element:field-separator'></span></span></span><![endif]--><span
+style='mso-bookmark:_Ref119463963'></span><span style='mso-bookmark:_Ref119463963'><span
+style='mso-ansi-language:EN-GB'>5</span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref119463963'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:_Ref119463963'></span><span style='mso-bookmark:_Ref119463963'></span><span
+style='mso-ansi-language:EN-GB'>: Starting the HeuristicsMiner.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+EN-GB'><!--[if gte vml 1]><v:shape id="_x0000_i1030" type="#_x0000_t75"
+ style='width:414.75pt;height:331.5pt'>
+ <v:imagedata src="image011.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=800 height=600 src="UG06.jpg"><![endif]></span></p>
+
+<p class=MsoCaption><span style='mso-ansi-language:EN-GB'>Figure </span><!--[if supportFields]><span
+lang=NL><span style='mso-element:field-begin'></span></span><span
+style='mso-ansi-language:EN-GB'><span style="mso-spacerun: yes"> </span>SEQ
+Figure \* ARABIC </span><span lang=NL><span style='mso-element:field-separator'></span></span><![endif]--><span
+style='mso-ansi-language:EN-GB'>6</span><!--[if supportFields]><span lang=NL><span
+style='mso-element:field-end'></span></span><![endif]--><span style='mso-ansi-language:
+EN-GB'> The HeuristicsMiner parameter screen.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>In this first mining
+session we will use the default parameter setting. The only thing we have to do
+is pushing the [start mining] button. The graphical result is depicted in <span
+style='mso-field-code:"REF _Ref119395003 \\h"'>Figure 7<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100310039003300390035003000300033000000</w:data>
+</xml><![endif]--></span>. By manipulating the </span><span style='font-family:
+Arial;mso-ansi-language:EN-GB'>^ v</span><span style='mso-ansi-language:EN-GB'>
+arrows of each of the boxes we can minimize or maximize the areas. In the
+graphical representation area we can use the right mouse click to get extra
+options (for instance the option to print the graphical representation, to zoom
+in or out, and showing also the XOR/AND split/join information ). Below we will
+look in more detail to information in the different areas. Let we first focus
+on the graphical representation. The graphical result as given in <span
+style='mso-field-code:"REF _Ref119395003 \\h"'>Figure 7<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100310039003300390035003000300033000000</w:data>
+</xml><![endif]--></span> is very similar to the HeuristicNet of <span
+style='mso-field-code:"REF _Ref119395065"'>Figure 1</span>. The squared boxes
+are again the tasks. The arcs between tasks represent dependency relations. The
+label of an arc is the result of the parsing of the traces in the log. We can
+use the mined model to check if the traces in the log can be parsed by the
+model. For instance, we can parse the trace “A C B D I J F H K”. For the
+parsing of this trace we need the arcs A&gt;C, A&gt;B, B&gt;D, C&gt;I, I&gt;J,
+D&gt;F, F&gt;H, J&gt;K, H&gt;K. The label of an arc indicates the number of
+times the connection is used during the parsing of all traces of the event log.
+For instance, both connection from A to C and from A to B are have the value
+1000 (equal to the number of traces in the event log). That indicates that A
+has an AND-split to B and C. Information about the splits and joins can be
+displayed by using the right mouse button in combination with the [display
+split/join semantics]. If we use this option also the dependency values are
+displayed. The dependency measure indicates how certain we are that there is a
+dependency relation between two activities A and B. I high value (close to 1)
+means that we are very sure that there is a dependency relation between the
+connected tasks. For a definition of the dependency relation we refer to WP166.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+EN-GB'><!--[if gte vml 1]><v:shape id="_x0000_i1031" type="#_x0000_t75"
+ style='width:414.75pt;height:331.5pt'>
+ <v:imagedata src="image013.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=800 height=600 src="UG07.jpg"><![endif]></span></p>
+
+<p class=MsoCaption><a name="_Ref119394988"></a><a name="_Ref119395003"><span
+style='mso-bookmark:_Ref119394988'><span style='mso-ansi-language:EN-GB'>Figure
+</span></span></a><!--[if supportFields]><span style='mso-bookmark:_Ref119395003'><span
+style='mso-bookmark:_Ref119394988'></span></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:_Ref119395003'><span style='mso-bookmark:_Ref119394988'><span
+style='mso-ansi-language:EN-GB'><span style="mso-spacerun: yes"> </span>SEQ
+Figure \* ARABIC </span><span lang=NL><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:_Ref119395003'><span style='mso-bookmark:_Ref119394988'></span></span><span
+style='mso-bookmark:_Ref119395003'><span style='mso-bookmark:_Ref119394988'><span
+style='mso-ansi-language:EN-GB'>7</span></span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref119395003'><span style='mso-bookmark:_Ref119394988'></span></span><span
+style='mso-element:field-end'></span><![endif]--><span style='mso-bookmark:
+_Ref119395003'><span style='mso-bookmark:_Ref119394988'></span></span><span
+style='mso-bookmark:_Ref119395003'></span><span style='mso-bookmark:_Ref119394988'><span
+style='mso-ansi-language:EN-GB'>: The process model mined with the
+HeuristicsMiner.</span></span><span style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr>
+  <td width=568 valign=top style='width:426.1pt;border:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>** Starting plugin import **<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>* Mining Plugins<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>* Analysis Plugins<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>* Import Plugins<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>* Export Plugins<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>* Conversion Plugins<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>* Logfilters<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>* Starting main UI<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>ProM Framework Initialized<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Please wait while initializing the Log....<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>finished initializing.<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Please wait while initializing the Log....<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>finished initializing.<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Please wait while initializing the Log....<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>finished initializing.<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Please wait while initializing the Log....<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>finished initializing.<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Please wait while initializing the Log....<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>finished initializing.<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Start process mining.<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Start Heuristics mining ... <o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>THRESHOLDS:<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Relative-to-best threshold<span style="mso-spacerun: yes"> 
+  </span>0.05<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Positive observations<span style="mso-spacerun: yes">  </span>10<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Dependency threshold<span style="mso-spacerun: yes">  </span>0.9<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Length-one-loops threshold<span style="mso-spacerun: yes">  </span>0.9<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Length-two-loops threshold<span style="mso-spacerun: yes">  </span>0.9<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Long distance threshold<span style="mso-spacerun: yes">  </span>0.9<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Dependency divisor<span style="mso-spacerun: yes">  </span>1<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>AND threshold<span style="mso-spacerun: yes">  </span>0.1<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Extra Info false<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Use all-events-connected-heuristic true<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Use long distance dependency heuristics false<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Number of process instances (cases) = 1000<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Number of audit trail entries (events) = 10057<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Total number of connections = 13<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Total &quot;wrong&quot; observations = 0<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Continuous semantics fitness = 0.9718102018494581<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Improved Continuous semantics fitness = 0.9955161535361293<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Mining duration: 2 seconds, and 293 milliseconds<o:p></o:p></span></p>
+  <p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+  EN-GB'>Process mining finished.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoCaption><a name="_Ref150935833"></a><a name="_Ref151108131"><span
+style='mso-bookmark:_Ref150935833'><span style='mso-ansi-language:EN-GB'>Figure
+</span></span></a><!--[if supportFields]><span style='mso-bookmark:_Ref151108131'><span
+style='mso-bookmark:_Ref150935833'></span></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:_Ref151108131'><span style='mso-bookmark:_Ref150935833'><span
+style='mso-ansi-language:EN-GB'><span style="mso-spacerun: yes"> </span>SEQ
+Figure \* ARABIC </span><span lang=NL><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:_Ref151108131'><span style='mso-bookmark:_Ref150935833'></span></span><span
+style='mso-bookmark:_Ref151108131'><span style='mso-bookmark:_Ref150935833'><span
+style='mso-ansi-language:EN-GB'>8</span></span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref151108131'><span style='mso-bookmark:_Ref150935833'></span></span><span
+style='mso-element:field-end'></span><![endif]--><span style='mso-bookmark:
+_Ref151108131'><span style='mso-bookmark:_Ref150935833'></span></span><span
+style='mso-bookmark:_Ref150935833'></span><span style='mso-bookmark:_Ref151108131'><span
+style='mso-ansi-language:EN-GB'>: Information in the text screen.</span></span><span
+style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+EN-GB'>In <span style='mso-field-code:"REF _Ref150935833 \\h"'>Figure 8<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100350030003900330035003800330033000000</w:data>
+</xml><![endif]--></span> we see the information given in the text screen.
+After the calls for the different plug-ins we see information about the
+parameters used during this mining session, some information about the event
+log (1000 process instances and 10057 tasks tokens), the number of connections
+(13), the number of wrong observations (0), the fitness of the model
+(Continuous semantics fitness = 0.972<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>Improved Continuous
+semantics fitness = 0.996), and finally the mining time (2.4 seconds). For a
+noise free log the goal of the mining algorithm is to find an optimal process
+model in the sense that is in accordance with the information in the event log.
+Testing if all traces can be parsed by the mined process model is one
+possibility to check this. In a simple fitness measure we just calculate the
+number of correct parsed traces divided by the number of traces. However, this
+fitness measure appears to naive. First of all, if for one process model the
+parsing usually get stuck at many places of a trace and in an other process
+model there is only one error at the end of the traces we prefer the second
+one. Moreover, we like a proper completion of the parsing process (i.e. if the
+end tasks is activated there are no hanging activities in the process model).
+The continuous semantics fitness is based on the intuitions formulated
+above.<span style="mso-spacerun: yes">  </span>We don’t stop the parsing if an
+error occur. The error is recorded, but the parsing goes on. That means that
+this fitness measure is based on the number of successfully parsed tasks tokens
+(10057) instead of the number of parsed traces (1000).<span
+style="mso-spacerun: yes">  </span>However, this means that the fitness of a
+model in which everything is allowed is equal to 1.0. In the improved
+continuous fitness there is a punishment for extra allowed behaviour. For more
+information about this measurements see the </span><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>Analysis
+&gt; HeuristicsNet &gt; Fitness</span><span style='mso-ansi-language:EN-GB'>
+plugin. As indicated above, a simpler fitness measure is based on the number of
+traces (cases) in the log that can be successfully parsed by the model
+(finishing without hanging task in the process model). We can calculate this
+fitness by using the fitness calculation plug-in. This fitness appears 0.956.
+This means that in our example 956 traces out of 1000 traces can be
+successfully parsed.<span style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>But what about the
+other 44 traces? If we look at the orginal HeuristicsNet of <span
+style='mso-field-code:"REF _Ref119395065"'>Figure 1</span> that is used to
+generate the event log </span><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>HeuristicsMiningUsersGuideVb1.xml</span><span
+style='mso-ansi-language:EN-GB'> we see that there are connections that are
+hardly used (indicated with the label “Exception”).<span style="mso-spacerun:
+yes">  </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>If we use the default
+parameter setting (Use all-events-connected-heuristic = true) only dependency
+relations which are really necessary to connect all task into a workflow net
+are and<span style="mso-spacerun: yes">  </span>always accepted. Extra
+connections are only accepted if<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>(i) the positive
+observations are above the threshold <b>and</b> if (ii) the dependency value is
+above the threshold and if (iii) the difference between the new dependency
+value and the first accepted one is less than the relative to best threshold.
+Remark that there is a strong correlation between the positive observation
+threshold and the<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>dependency threshold.
+For instance, choosing a dependency threshold of 0.9 means that we need more
+than 10 positive observation of A directly followed B to accept an dependency
+between A and B. If we are interested in more exceptional behaviour we can
+chance this values. As an example we choose the Positive observations threshold
+= 3, Dependency threshold = 0.8 and a<span style="mso-spacerun: yes"> 
+</span>Relative-to-best threshold = 0.2. To do this we first close the
+Heuristics Miner Result frame (the cross-symbol at the right upper corner of
+the frame) and than update the two parameters with the values as indicated
+above (3, 0.8, and 0.2). <span style='mso-field-code:"REF _Ref119467382 \\h"'>Figure
+9<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100310039003400360037003300380032000000</w:data>
+</xml><![endif]--></span> is the result of the mining approach with the updated
+parameter setting.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+EN-GB'><!--[if gte vml 1]><v:shape id="_x0000_i1032" type="#_x0000_t75"
+ style='width:414.75pt;height:331.5pt'>
+ <v:imagedata src="image015.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=800 height=600 src="UG09.jpg"><![endif]></span></p>
+
+<p class=MsoCaption><a name="_Ref119467382"><span style='mso-ansi-language:
+EN-GB'>Figure </span></a><!--[if supportFields]><span style='mso-bookmark:_Ref119467382'></span><span
+style='mso-element:field-begin'></span><span style='mso-bookmark:_Ref119467382'><span
+style='mso-ansi-language:EN-GB'><span style="mso-spacerun: yes"> </span>SEQ
+Figure \* ARABIC </span><span lang=NL><span style='mso-element:field-separator'></span></span></span><![endif]--><span
+style='mso-bookmark:_Ref119467382'></span><span style='mso-bookmark:_Ref119467382'><span
+style='mso-ansi-language:EN-GB'>9</span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref119467382'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:_Ref119467382'></span><span style='mso-bookmark:_Ref119467382'></span><span
+style='mso-ansi-language:EN-GB'>: The mining result with Positive observations
+threshold = 3, Dependency threshold = 0.8 and a<span style="mso-spacerun:
+yes">  </span>Relative-to-best threshold = 0.2. Also low frequent dependency
+relations are mined and represented in the graph.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>If we look to the
+dependency graph in <span style='mso-field-code:"REF _Ref119467382 \\h"'>Figure
+9<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100310039003400360037003300380032000000</w:data>
+</xml><![endif]--></span> we can see that there two new connections in the
+dependency graph; a connection from task D directly to task K, and a extra loop
+from task J to task C. Both connections are hardy used (20 times and 25 times).
+Both the fitness measurements are equal to 1.0 (all traces of the log can be
+correct parsed by the mined HeuristicsNet). If we look to the dependency graph
+we can see that tasks K has three ingoing arcs: from task J, task D and task K.
+We can use the right mouse button in combination with the [display split/join
+semantics] to show that K always needs J and only one of the tasks D and H
+(i.e. In K = (J </span><span style='font-family:Arial;mso-ansi-language:EN-GB'>&amp;</span><span
+style='mso-ansi-language:EN-GB'> (D </span><span style='font-family:Arial;
+mso-ansi-language:EN-GB'>v</span><span style='mso-ansi-language:EN-GB'> H))). <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>So far the first
+mining results of the HeuristicsMiner. However, the event log used in this
+first session is a noise free log. In the next section we will investigate the
+behaviour of the HeuristicsMiner in case of a log with noise. <o:p></o:p></span></p>
+
+<b><i><span style='font-size:14.0pt;font-family:Arial;mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:EN-GB;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span></i></b>
+
+<h2><span style='mso-ansi-language:EN-GB'>Mining an event log with noise<o:p></o:p></span></h2>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>In this section we try
+to use the HeuristicsMiner on an event log with noise. In the event log </span><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+mso-ansi-language:EN-GB'>HeuristicsMiningUsersGuideVb1noise5.xml </span><span
+style='mso-ansi-language:EN-GB'>5% of the traces of the original event log </span><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+mso-ansi-language:EN-GB'>HeuristicsMiningUsersGuideVb1.xml</span><span
+style='mso-ansi-language:EN-GB'><span style="mso-spacerun: yes">  </span>are
+deformed by removing one or more events out of the trace, interchanging two
+events,<span style="mso-spacerun: yes">  </span>or by removing some tasks from
+the begin or the end of a trace. The types of deformation are randomly
+distributed over the traces of the original event log. Specially, the
+combination of low frequent patterns (exceptions) and noise are difficult to
+mine: how to discriminate between noise and low frequent behaviour? But we
+don’t scare away. In a first approach we use the HeuristicsMiner plug-in with
+the default parameter setting to see what happens. Close the </span><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+mso-ansi-language:EN-GB'>HeuristicsMiningUsersGuideVb1noise5</span><span
+style='mso-ansi-language:EN-GB'> event log and load the </span><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+mso-ansi-language:EN-GB'>HeuristicsMiningUsersGuideVb1noise5 log.</span><span
+style='mso-ansi-language:EN-GB'> Use the HeuristicsMiner with default
+parameters. The result is given in <span style='mso-field-code:"REF _Ref150935134 \\h"'>Figure
+10<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100350030003900330035003100330034000000</w:data>
+</xml><![endif]--></span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+EN-GB'><!--[if gte vml 1]><v:shape id="_x0000_i1033" type="#_x0000_t75"
+ style='width:414.75pt;height:331.5pt'>
+ <v:imagedata src="image017.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=800 height=600 src="UG10.jpg"><![endif]></span></p>
+
+<p class=MsoCaption><a name="_Ref150935134"><span style='mso-ansi-language:
+EN-GB'>Figure </span></a><!--[if supportFields]><span style='mso-bookmark:_Ref150935134'></span><span
+style='mso-element:field-begin'></span><span style='mso-bookmark:_Ref150935134'><span
+style='mso-ansi-language:EN-GB'><span style="mso-spacerun: yes"> </span>SEQ
+Figure \* ARABIC </span><span lang=NL><span style='mso-element:field-separator'></span></span></span><![endif]--><span
+style='mso-bookmark:_Ref150935134'></span><span style='mso-bookmark:_Ref150935134'><span
+style='mso-ansi-language:EN-GB'>10</span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref150935134'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:_Ref150935134'></span><span style='mso-bookmark:_Ref150935134'></span><span
+style='mso-ansi-language:EN-GB'>: Mining result on the log with 5% noise
+(HeuristicsMiningUsersGuideVb1noise5.xml) with the default parameters setting.<o:p></o:p></span></p>
+
+<p class=MsoCaption><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>It is clear that the
+dependency graph has the same connections as the noise free dependency graph
+(i.e. de resulting dependency graph based on the noise free material). The new
+dependency measures are hardly lower than the dependency measures of the<span
+style="mso-spacerun: yes">  </span>noise free graph (use the right mouse button
+in combination with the [display split/join semantics] to show the dependency
+measures).<span style="mso-spacerun: yes">  </span>Remark that the parsing
+information in <span style='mso-field-code:"REF _Ref150935134 \\h"'>Figure 10<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100350030003900330035003100330034000000</w:data>
+</xml><![endif]--></span> is influenced by the noise. For instance task A
+appears 988 times in the log, task C 1009 times, and task B 985 times. If we
+look to these values there is a dissimilarity between them and the parsing
+information of the labels of the regarding arcs (i.e. 973 and 976). If we look
+to the area with information about the mining process we see the information as
+given in <span style='mso-field-code:"REF _Ref119472722 \\h"'>Figure 11<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100310039003400370032003700320032000000</w:data>
+</xml><![endif]--></span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr>
+  <td width=568 valign=top style='width:426.1pt;border:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-indent:27.0pt'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>Number
+  of process instances (cases) = 1000<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-indent:27.0pt'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>Number
+  of audit trail entries (events) = 9958<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-indent:27.0pt'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>The
+  BEGIN task is possible not unique?<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-indent:27.0pt'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>Use
+  the 'Add an artificial BEGIN-task' option!<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-indent:27.0pt'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>The
+  END task is possible not unique?<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-indent:27.0pt'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>Use
+  the 'Add an artificial END-task' option!<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-indent:27.0pt'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>Total
+  number of connections = 13<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-indent:27.0pt'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>Total
+  &quot;wrong&quot; observations = 34<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-indent:27.0pt'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>Continuous
+  semantics fitness = 0.941021610765214<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-indent:27.0pt'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>Improved
+  Continuous semantics fitness = 0.9890283751421658<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-indent:27.0pt'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>Mining
+  duration: 1 second, and 723 milliseconds<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-indent:27.0pt;page-break-after:avoid'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  mso-ansi-language:EN-GB'>Process mining finished.</span><span
+  style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoCaption><a name="_Ref119472722"><span style='mso-ansi-language:
+EN-GB'>Figure </span></a><!--[if supportFields]><span style='mso-bookmark:_Ref119472722'></span><span
+style='mso-element:field-begin'></span><span style='mso-bookmark:_Ref119472722'><span
+style='mso-ansi-language:EN-GB'><span style="mso-spacerun: yes"> </span>SEQ
+Figure \* ARABIC </span><span lang=NL><span style='mso-element:field-separator'></span></span></span><![endif]--><span
+style='mso-bookmark:_Ref119472722'></span><span style='mso-bookmark:_Ref119472722'><span
+style='mso-ansi-language:EN-GB'>11</span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref119472722'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:_Ref119472722'></span><span style='mso-bookmark:_Ref119472722'></span><span
+style='mso-ansi-language:EN-GB'>: Process information for default parameters
+setting and the log with 5% noise.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>Because some tasks are
+removed from the begin or the end of a trace the begin and end tasks are no
+longer unique. Also the number of 34 “wrong” observations is an indication for
+noise. If for instance the dependency relation between task A and C is based on
+222 observations of A directly followed by C and 2 times they other way around,
+than there are 2 “wrong” observations. Remark that even in the first mining
+session (with an event-log without noise)<span style="mso-spacerun: yes"> 
+</span>an incomplete process model was induced, but the number of “wrong”
+observations was 0 (<span style='mso-field-code:"REF _Ref150935833 \\h"'>Figure
+8<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100350030003900330035003800330033000000</w:data>
+</xml><![endif]--></span>).<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:27.0pt'><a name="OLE_LINK1"><span
+style='mso-ansi-language:EN-GB'>In <span style='mso-field-code:"REF _Ref119472722 \\h"'>Figure
+11<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100310039003400370032003700320032000000</w:data>
+</xml><![endif]--></span>we see that the Continuous semantics fitness = 0.941
+and the Improved Continuous semantics fitness = 0.989</span></a><span
+style='mso-bookmark:OLE_LINK1'><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>.</span></span><span
+style='mso-bookmark:OLE_LINK1'><span style='mso-ansi-language:EN-GB'>We can
+calculate the ProperCompletion-fitness </span></span><span style='mso-bookmark:
+OLE_LINK1'><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:
+"Courier New";mso-ansi-language:EN-GB'>Analysis &gt; HeuristicsNet &gt; Fitness</span></span><span
+style='mso-bookmark:OLE_LINK1'><span style='mso-ansi-language:EN-GB'> plugin.
+This fitness appears 0.909. This means that in our example 909 out of 1000
+traces can be successfully parsed (the 45 low frequent traces and about 50
+traces (5% of 1000) with noise). <o:p></o:p></span></span></p>
+
+<span style='mso-bookmark:OLE_LINK1'></span>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>So far the
+HeuristicsMiner seems robust for noise. But what happens when we try to mine
+the exceptions? For this purpose we will use the same parameters setting as
+during the mining of exceptions in the noise free log (i.e. Positive
+observations threshold = 3, Dependency threshold = 0.8 and a<span
+style="mso-spacerun: yes">  </span>Relative-to-best threshold = 0.2). <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>But we also saw that
+the noise caused a warning (<span style='mso-field-code:"REF _Ref119472722 \\h"'>Figure
+11<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100310039003400370032003700320032000000</w:data>
+</xml><![endif]--></span>) that there is not an unique START and END-task. In
+this situation it make sense to add and artificial START and END. We can do
+this by first closing the HeuristicsMiner and using the [advanced] tab page of
+the event-log loader. In the [default log-filter options] we first<span
+style="mso-spacerun: yes">  </span>select the “Add artificial START task log
+filter” and than use the [add]-button in combination with the default values.
+Do the same to add an artificial END-task.<span style="mso-spacerun: yes">      
+</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>The result of mining
+of the updated event log is given in <span style='mso-field-code:"REF _Ref119473691 \\h"'>Figure
+12<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100310039003400370033003600390031000000</w:data>
+</xml><![endif]--></span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+EN-GB'><!--[if gte vml 1]><v:shape id="_x0000_i1034" type="#_x0000_t75"
+ style='width:414.75pt;height:259.5pt'>
+ <v:imagedata src="image019.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=800 height=600 src="UG12.jpg"><![endif]></span></p>
+
+<p class=MsoCaption><a name="_Ref119473691"><span style='mso-ansi-language:
+EN-GB'>Figure </span></a><!--[if supportFields]><span style='mso-bookmark:_Ref119473691'></span><span
+style='mso-element:field-begin'></span><span style='mso-bookmark:_Ref119473691'><span
+style='mso-ansi-language:EN-GB'><span style="mso-spacerun: yes"> </span>SEQ
+Figure \* ARABIC </span><span lang=NL><span style='mso-element:field-separator'></span></span></span><![endif]--><span
+style='mso-bookmark:_Ref119473691'></span><span style='mso-bookmark:_Ref119473691'><span
+style='mso-ansi-language:EN-GB'>12</span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref119473691'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:_Ref119473691'></span><span style='mso-bookmark:_Ref119473691'></span><span
+style='mso-ansi-language:EN-GB'>: The mining result with an artificial BEGIN
+and END-task, Positive observations threshold = 3, Dependency threshold = 0.8
+and a<span style="mso-spacerun: yes">  </span>Relative-to-best threshold = 0.2
+on the event log with 5% noise. Also low frequent dependency relations are
+mined and represented in the graph.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>If we look to <span
+style='mso-field-code:"REF _Ref119473691 \\h"'>Figure 12<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100310039003400370033003600390031000000</w:data>
+</xml><![endif]--></span> we see that also the low frequent and noise patterns
+are represented in the graph. Total number of connections = 21 and the fitness
+is low (Continuous semantics fitness = 0.402, Improved Continuous semantics
+fitness = 0.982). However, if we chance the number of positive observations
+from 3 to 5 the result is the simpler HeuristicsNet as depicted in <span
+style='mso-field-code:"REF _Ref119480329 \\h"'>Figure 13<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100310039003400380030003300320039000000</w:data>
+</xml><![endif]--></span>. We prefer this result above the previous result
+because the model is simpler and fitness of this model is much higher (i.e.
+Continuous semantics fitness = 0.968, Improved Continuous semantics fitness =
+0.995). <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><span style='mso-ansi-language:
+EN-GB'><!--[if gte vml 1]><v:shape id="_x0000_i1035" type="#_x0000_t75"
+ style='width:414.75pt;height:259.5pt'>
+ <v:imagedata src="image021.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=800 height=600 src="UG13.jpg"><![endif]></span></p>
+
+<p class=MsoCaption><a name="_Ref119480329"><span style='mso-ansi-language:
+EN-GB'>Figure </span></a><!--[if supportFields]><span style='mso-bookmark:_Ref119480329'></span><span
+style='mso-element:field-begin'></span><span style='mso-bookmark:_Ref119480329'><span
+style='mso-ansi-language:EN-GB'><span style="mso-spacerun: yes"> </span>SEQ
+Figure \* ARABIC </span><span lang=NL><span style='mso-element:field-separator'></span></span></span><![endif]--><span
+style='mso-bookmark:_Ref119480329'></span><span style='mso-bookmark:_Ref119480329'><span
+style='mso-ansi-language:EN-GB'>13</span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref119480329'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:_Ref119480329'></span><span style='mso-bookmark:_Ref119480329'></span><span
+style='mso-ansi-language:EN-GB'>: The mining result with an artificial BEGIN
+and END-task, Positive observations threshold = 5, Dependency threshold = 0.8
+and a<span style="mso-spacerun: yes">  </span>Relative-to-best threshold = 0.2
+on the event log with 5% noise.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>So far a first
+illustration of the HeuristicsMiner. The result of the HeuristicsMiner is a
+HeuristicsNet. Below we will shortly show how we can combine the Heuristics
+Miner plug-in with other plug-in in the Prom framework. First we will use the
+Conversion plug-in to translate a HeuristicsNet to a Petri Net. Starting point
+is the HeuristicsNet as given in <span style='mso-field-code:"REF _Ref119467382 \\h"'>Figure
+9<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100310039003400360037003300380032000000</w:data>
+</xml><![endif]--></span>. Use the </span><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New";mso-ansi-language:EN-GB'>Conversion
+&gt; Heuristics net &gt; Heuristics net to Petri net</span><span
+style='mso-ansi-language:EN-GB'> option. Remark that the result (<span
+style='mso-field-code:"REF _Ref150938304 \\h"'>Figure 14<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100350030003900330038003300300034000000</w:data>
+</xml><![endif]--></span>) is exactly the Petri net of <span style='mso-field-code:
+"REF _Ref119482394 \\h"'>Figure 2<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003100310039003400380032003300390034000000</w:data>
+</xml><![endif]--></span>. Even the dummy tasks (D1, D2, D2) are inserted (and
+one extra dummy task).<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>After the conversion
+it is possible to use all the plug-ins that are available for Petri nets. Use
+the Analysis&gt;Petri net to get a list of possible analysis options for Petri
+nets. For more information about these plug-ins see the accompanied
+documentation. Have also a look to the Export possibilities in the ProM
+framework. For instance, it is always possible to save the dot-file of a
+graphical representation.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>The ProM frame work is
+dynamical. That means that periodical new plug-ins becomes available. It is
+also possible to develop your own plug-ins and make them available for other
+ProM users. <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'>So far this first
+acquaintance with the HeuristicsMiner and possible the ProM framework. <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='mso-ansi-language:EN-GB'>***<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-GB'><span
+style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><span lang=NL><!--[if gte vml 1]><v:shape
+ id="_x0000_i1036" type="#_x0000_t75" style='width:414.75pt;height:331.5pt'>
+ <v:imagedata src="image023.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=800 height=600 src="UG14.jpg"><![endif]></span></p>
+
+<p class=MsoCaption><a name="_Ref150938304"><span style='mso-ansi-language:
+EN-GB'>Figure </span></a><!--[if supportFields]><span style='mso-bookmark:_Ref150938304'></span><span
+style='mso-element:field-begin'></span><span style='mso-bookmark:_Ref150938304'><span
+style='mso-ansi-language:EN-GB'><span style="mso-spacerun: yes"> </span>SEQ
+Figure \* ARABIC </span><span lang=NL><span style='mso-element:field-separator'></span></span></span><![endif]--><span
+style='mso-bookmark:_Ref150938304'></span><span style='mso-bookmark:_Ref150938304'><span
+style='mso-ansi-language:EN-GB'>14</span></span><!--[if supportFields]><span
+style='mso-bookmark:_Ref150938304'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:_Ref150938304'></span><span style='mso-bookmark:_Ref150938304'></span><span
+style='mso-ansi-language:EN-GB'>: Result of the conversion of the HeuristicsNet
+to a Petri net.<o:p></o:p></span></p>
+
+</div>
+
+<div style='mso-element:footnote-list'><![if !supportFootnotes]><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<![endif]>
+
+<div style='mso-element:footnote' id=ftn1>
+
+<p class=MsoFootnoteText><a style='mso-footnote-id:ftn1' href="#_ftnref1"
+name="_ftn1" title=""><span class=MsoFootnoteReference><span lang=NL><span
+style='mso-special-character:footnote'><![if !supportFootnotes]>[1]<![endif]></span></span></span></a><span
+style='mso-ansi-language:EN-GB'> Of course, the goal of process mining is to
+extract <i>unknown</i> information about processes from transaction logs.
+Normally, it make no sense to mine data from an <i>known</i> workflow model.
+However, starting with data form a know model is a excellent method to test or
+demonstrate the rediscovery capacity of a mining technique.<o:p></o:p></span></p>
+
+</div>
+
+<div style='mso-element:footnote' id=ftn2>
+
+<p class=MsoFootnoteText><a style='mso-footnote-id:ftn2' href="#_ftnref2"
+name="_ftn2" title=""><span class=MsoFootnoteReference><span lang=NL><span
+style='mso-special-character:footnote'><![if !supportFootnotes]>[2]<![endif]></span></span></span></a><span
+style='mso-ansi-language:EN-GB'> In Section 2 the formal definition of
+HeuristicsNet is given.<o:p></o:p></span></p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

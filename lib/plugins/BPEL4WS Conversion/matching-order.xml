@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<matching-order xmlns="http://www.processmining.org/bpel4ws_conversion/matching-order">
+  <predefined name="Sequence" />
+  <predefined name="Switch" />
+  <predefined name="Pick" />
+  <predefined name="While" />
+  <predefined name="Flow" />
+</matching-order>
+

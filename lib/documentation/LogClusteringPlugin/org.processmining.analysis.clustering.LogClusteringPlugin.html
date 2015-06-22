@@ -1,0 +1,144 @@
+
+<p><font size="5" face="Arial Black">Log Clustering: Users Guide</font></p>
+<p>J.-Y. Jung<br>
+Department of Industrial Engineering,<br>
+Seoul National University,<br>
+Sillim-dong, Gwanak-gu, Seoul, Korea (151-742)</p>
+<p>E-mail: <font FACE="Arial"><a href="mailto:jjyjung@gmail.com">jjyjung@gmail.com</a>
+</p>
+</font>
+
+<br><br>
+<p><font FACE="Arial" SIZE="5"><b>
+1. Introduction
+</b></font></p>
+<p>
+This documentation contains information about the Log Clustering plug-in for ProM. ProM is a framework of process mining implemented in Java. It provides a variety of plug-ins and it can be used as an effective tool of the process log analysis. Since the process log of industrial systems is sometimes very complicated, the results of process mining are often too difficult to find comprehensive meanings. This Log Clustering plug-in addresses the problem. The plug-in can be utilized to preprocess the log into several clusters by using the concept of process similarity measures. More detailed information including the clustering procedure and the similarity measures will be explained in the following sections.
+</p>
+
+<br><br>
+<p><font FACE="Arial" SIZE="5"><b>
+2. Log Clustering
+</b></font></p>
+<p>
+Process log has a great amount of process instances. This plug-in uses the log sequences of process instances. Each instance is considered of the sequence of activity executions, which is called a log sequence. A log sequence has information about which activities were executed and which order they have. The information is expressed to activity and transition vectors in this plug-in. On the basis of two vectors, the log sequences are merged into log clusters. The result of log clustering is shown in the tree structure, called dendrogram.
+<br>
+From the result of log clustering, we can invoke all kinds of process mining plug-ins, such as heuristic mining, social mining, etc. After double-click of a cluster, you can then invoke any plug-in in the main menu.
+</p>
+
+
+<br><br>
+<img src=dendrogram.jpg WIDTH=851 HEIGHT=527>
+<p><font FACE="Arial" SIZE=3><b>
+Figure 1: The result of log clustering (dendrogram).
+</b></p>
+
+<br><br>
+<p><font FACE="Arial" SIZE="5"><b>
+3. Setting for Log Clustering
+</b></font></p>
+
+<p>
+The setting for log clustering is divided to four parts: similarity types, similarity measures, clustering algorithms, and frequency weights.
+</p>
+
+<ul>
+<li><b>Similarity types</b>
+<br>
+It means which elements you want to compare two log sequences. This plug-in uses two characteristic vectors of log sequences. There are three options: activity similarity, transition similarity, and weighted sum of the two.
+<ul>
+<li><b>activity similarity</b>: Two log sequences with more common activities have bigger similarity value.
+<li><b>transition similarity</b>: Two log sequences with more common transitions have bigger similarity value. It has two options according to the transition type.
+<ul>
+<li>explicit transition: It will use only adjacent precedences between two activities.
+<li>implicit transition: It will use all precedence relations between two activities including adjacent ones.
+</ul>
+<li><b>weighted sum</b>: Both of activity and transition similarities are used to compare two log sequences. The ratio alpha is the rate of the activity similarity in the weighted sum of the two. In this option, implicit transition similarity can be also selected.
+</ul>
+
+<p>
+
+<li><b>Similarity measures</b>
+<br>
+There are many metrics of compare two vectors. This plug-in supports two kinds of metrics.
+<ul>
+<li><b>Jaccard coefficient</b>: It can be used only in the comparison of binary vectors. If you do not use implicit transition or frequency weights, you can select the measure. The coefficient is defined as the size of the intersection divided by the size of the union of two vectors. 
+<li><b>Cosine coefficient</b>: It can be used in all setting. The coefficient produces the cosine value of the angle between two vectors. It is the same concept of uncentered correlation coefficient.
+</ul>
+
+<p>
+
+<li><b>Clustering algorithms</b>
+<br>
+Currently, only a hierarchical algorithm is supported.
+<ul>
+<li><b>AHC algorithm</b>: Agglomerative hierarchical clustering algorithm is a bottom-up approach to merge each data to successively larger data clusters.  The procedure of agglomerative clustering can be expressed in a tree structure, called dendrogram. The result of this plug-in also shows a dendrogram of log sequences.
+<li><b>K-means algorithm</b>: It is not yet implemented.
+<li><b>ROCK algorithm</b>: It is not yet implemented.
+</ul>
+
+<p>
+
+<li><b>Frequency weights</b>
+<br>
+This is one of means of improving performance of log clustering. If an activity often occurs in a log sequence, the impact of the activity becomes big in comparing it with other sequences (activity frequency). On the other hand, if an activity often occurs in log sequences in the log, the impact becomes low. The frequency weight can reflect on the generality or specialty of each activity (inverse activity frequency).
+<ul>
+<li><b>Activity/Transition frequency</b>: It is not yet implemented.
+<li><b>Inverse process frequency</b>: The general activity or transition, which is determined by its frequency in the log, can improve the discrimination power.
+</ul>
+
+<p>
+
+<li><b>Similarity threshold</b>
+<br>
+Real industrial logs sometimes produce quite complicated hierarchical trees. If you want to see a simplified tree, you can prune the whole dendrogram by giving the threshold. If you set 'greater than 0.1', it will show the ealier stages of clustering and you can find how the result clusters were produces from the sequences. Otherwise, if you set 'lower than 0.1', it will show the last stages of clustering and you can expect how similar the result clusters are with each other. 
+<br>
+(Warning) The graphic library of ProM has the limit of arcs and nodes that can be displayed in a diagram. If an error of displaying occurs, you can see the simplified tree by giving this threshold.
+</ul>
+
+<br><br>
+<p><font FACE="Arial" SIZE="5"><b>
+4. Summary of Log Sequences
+</b></font></p>
+
+<p>
+This plug-in encodes each different log sequence to each string. To do this, each activity is encoded to each character.
+</p>
+
+<ul>
+<li><b>Activity descriptions</b>: It shows a list of activities and their encoding.
+<li><b>Log sequences</b>: It shows a list of different log sequences, encodings, frequencies, and the set of the process instances with the sequence.
+</ul>
+
+<br><br>
+<p><font FACE="Arial" SIZE="5"><b>
+5. Result of Log Sequences
+</b></font></p>
+
+<p>
+The result frame consists in three parts</b>: dendrogram, process instances, and similarity threshold. 
+<ul>
+<li><b>Dendrogram</b>: It shows the tree structure of the given setting. Especially, the given similarity threshold decides the size of tree. If you double-click each sequence or cluster, the corresponding process instances are selected in the list of process instances.
+<li><b>Process instances</b>: It shows all the process instances. When a node in dendrogram is double-clicked, the instances in the sequence or cluster will be highlighted.
+<li><b>Similarity threshold</b>: In the 'greater than' setting, the result clusters are the top nodes in the dendrogram, and otherwise, in 'lower than' setting, the result clusters are the leaf nodes. If the threshold value becomes higher, the number of result clusters is bigger. 
+</ul>
+</p>
+
+<br><br>
+<img src=wholetree.jpg WIDTH=851 HEIGHT=527>
+<p><font FACE="Arial" SIZE=3><b>
+Figure 2: The whole dendrogram.
+</b></p>
+
+<br><br>
+<img src=greaterthan.jpg WIDTH=851 HEIGHT=527>
+<p><font FACE="Arial" SIZE=3><b>
+Figure 3: The subtrees of elements with greater similarities than threshold ('C159' selected).
+</b></p>
+
+<br><br>
+<img src=lowerthan.jpg WIDTH=851 HEIGHT=527>
+<p><font FACE="Arial" SIZE=3><b>
+Figure 4: The subtrees of elements with lower similarities than threshold ('C159' selected).
+</b></p>
+

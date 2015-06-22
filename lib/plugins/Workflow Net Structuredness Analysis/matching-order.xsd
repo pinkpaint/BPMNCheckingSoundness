@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:m="http://www.processmining.org/wfnet-structuredness/matching-order"
+	xmlns:tns="http://www.processmining.org/wfnet-structuredness/matching-order"
+	targetNamespace="http://www.processmining.org/wfnet-structuredness/matching-order"
+	elementFormDefault="qualified">
+
+	<element name="matching-order">
+		<complexType>
+			<sequence>
+				<choice minOccurs="0" maxOccurs="unbounded">
+					<element name="predefined">
+						<complexType>
+							<attribute name="name" use="required">
+								<simpleType>
+									<restriction base="string">
+										<enumeration value="Maximal sequence" />
+										<enumeration value="Implicit choice" />
+										<enumeration value="Explicit choice" />
+										<enumeration value="While" />
+										<enumeration
+											value="Maximal marked graph" />
+										<enumeration
+											value="Maximal state machine" />
+											<enumeration
+											value="Maximal well-structured" />
+									</restriction>
+								</simpleType>
+							</attribute>
+						</complexType>
+					</element>
+					<element name="component">
+						<complexType>
+							<attribute name="path" use="required" />
+							<attribute name="cost" use="required" type="m:costType" />
+						</complexType>
+					</element>
+				</choice>
+			</sequence>
+		</complexType>
+		<unique name="predefined-unique">
+			<selector xpath="tns:predefined" />
+			<field xpath="@name" />
+		</unique>
+		<unique name="component-unique">
+			<selector xpath="tns:component" />
+			<field xpath="@path" />
+		</unique>
+	</element>
+	
+	<simpleType name="costType">
+		<restriction base="decimal">
+			<minExclusive value="0.0" />
+		</restriction>
+	</simpleType>
+
+</schema>

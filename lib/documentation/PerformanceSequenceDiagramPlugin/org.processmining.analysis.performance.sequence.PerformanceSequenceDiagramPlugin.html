@@ -1,0 +1,145 @@
+
+
+
+<h3> <a name="intro"> Introduction </a></h3>
+<p> The purpose of the performance sequence diagram plug-in is to provide you with a means to assess the performance of your 
+processes. This plug-in can especially be of help if you want to know what behavior in your processes is common, what behavior
+is rare and what behavior may result in extreme situations (e.g. instances with extremely high throughput times). What is more,
+it can assist you in finding the causes of such behavior.
+</p>
+<p>
+In the logs of today's information systems, a lot of information is recorded.  This plug-in will focus on information that is 
+stored on the audit trail entry level of the logs. In an audit trail entry, information about one event is recorded.<br>
+Common information stored at the audit trail entry level includes:
+<ul>
+<li>TaskID: Name of the task involved in the event.</li>
+<li>Event type: Type of the event, e.g. schedule, start, complete.</li>
+<li>Timestamp: Timestamp at which the event took place.</li>
+<li>Originator: Name of the originator involved in the event.</li>
+</ul>
+</p>
+<p>
+Though one could also think of other information that may be stored here, such as:
+<ul>
+<li>Department: Name of the department at which the event was handled.</li>
+<li>Part: Name of the part of the case that is currently being handled. For instance, suppose the process under consideration is the production line of a car. A case is then the production of one car. Parts currently handled may be: doors, wheels, windows etc.</li>
+<li>Country: Name of the country in which the event took place.</li>
+</ul>
+<p>
+This plug-in allows you to focus on a certain data-element (such as taskID, originator, department) and see how transfer of 
+work between instances of the selected data-element (for instance in case of originator this can be Nick or John) takes place
+for each case.
+The transfer of work is displayed in a sequence diagram, in which you can easily see which data-elements cooperate.
+What is more, this plug-in takes the sequences that visualize the transfer of work, and compares them against each other to
+see if they follow the same pattern. The found patterns are then displayed in a separate diagram: the pattern diagram. 
+Here the patterns are displayed, sorted based on the frequency of sequences that follow the pattern (the pattern with the highest frequency if 
+displayed at the top). Furthermore, information such as the mean throughput time of the patterns is available as well here. Using
+this information, you can easily determine which patterns appear often, and thus seem to be common behavior, which not (rare, 
+maybe even unwanted, behavior) and which patterns result in a high throughput time, and thus may indicate unwanted behavior. 
+With help of the patterns, you may be able to understand the causes of this unwanted behavior 
+(a lot of time spend at a certain data-element instance perhaps). 
+This can help you with preventing the behavior from appearing in the future.
+</p>
+<hr>
+<h3> <a name="how to"> How to use </a></h3>
+<p>
+For this plug-in only an event-log is required as input. When you start the plug-in, first log relations 
+will be derived from this log. When this is done, you will see a screen as the one depicted below.
+</p>
+<p><img src="EmptyDiagram.gif" alt="start screen" ></p>
+<p>
+On the left-hand side of this screen, there are a number of options that you can set.
+At the top you can choose data-element that you wish to use. Note that the types available here are dependent on the 
+information contained in the log. 
+Clearly, if departments are not mentioned in the log, then the department data-element type will not be available.<br>
+The second option available is the time sort, here you can select the unit in which the available times should be displayed.
+Time sorts available here are: milliseconds, seconds, minutes, hours, days, months (30 days) and years (365 days). </p>
+<p>
+The last setting that is available is the pattern type. You can choose between using the flexible-equivalent or the 
+strict-equivalent pattern type. 
+The difference between the both is that when using the strict-equivalent pattern type, sequences are defined to be different
+if data-element blocks do not start and end in exactly the same order. When using the flexible-equivalent pattern type this
+is not needed, though for each block in the pattern the requirement is set that all blocks that begin after this one ends,
+should begin after this block ends in the compared sequence as well.
+Let us look at an example:
+<p><img src="Patterns.gif" alt="patterns" ></p>
+When using the strict-equivalent type, the sequences in the example above are considered to be different, because in the left 
+sequence block b0 starts (and ends) before block c0 and in the right sequence block c0 starts (and ends) before block b0. When 
+using the flexible-equivalent type though, they are considered to be equal, because although blocks b0 and c0 do not start in 
+the same order, the flexible-equivalent requirement is met. For both sequences we have the following: <br>
+After the end of block a0, blocks b0, c0, d0 and a1 start.<br>
+After the end of block b0, blocks d0 and a1 start.<br>
+After the end of block c0, blocks d0 and a1 start.<br>
+After the end of block d0, block a1 starts. <br>
+No block starts after block a1 ends.<br>
+</p>
+<p>
+When you have selected the settings that you wish to use, you can click on the <code>Show Diagram</code>-button. 
+After which the sequence diagram will be displayed, see for instance the example below. 
+</p>
+<p><img src="SequenceDiagram.gif" alt="Sequence Diagram screen" ></p>
+When you move your mouse cursor over a sequence, information about the sequence will be displayed in the tooltip. In the example, the mouse is currently above two different sequences. So information about both sequences is displayed. 
+This information encompasses:
+<ul>
+<li> The name of the process instance of which the sequence is a visualization. </li>
+<li> The throughput time of the sequence. </li>
+</ul> 
+If the cursor points to an arrow:
+<ul>
+<li>The name of the data-element from which the arrow originates, i.e. the data-element that is the source of the arrow.</li>
+<li>The name of the data-element in which the arrow ends, i.e. the destination of the arrow.</li>
+<li>The time spend between the moment at which the arrow begins and the moment at which the arrow ends.</li>
+</ul> 
+If the cursor points to a block (as in the example): 
+<ul>
+<li>The name of the data-element to which the block belongs.</li>
+<li>The time spend in the block.</li>
+</ul>
+</p>
+<p>
+You can switch between the sequence diagram and the pattern diagram, by selecting the corresponding tab at the top of the screen.
+An example of what a pattern diagram can look like is shown below. 
+<p><img src="PatternDiagram.gif" alt="Pattern Diagram screen" ></p>
+As you can see, information about each pattern, such as throughput time and frequency is shown on the right hand side of the screen. But you can also see information belonging to the pattern in a tooltip when you move the cursor of your mouse over the pattern. 
+The information in the tooltip encompasses:
+<ul>
+<li> The pattern number of the pattern. </li>
+<li> The mean throughput time of the pattern. </li>
+</ul>
+If the cursor points to an arrow: 
+<ul>
+<li>The name of the data-element from which the arrow originates, i.e. the data-element that is the source of the arrow.</li>
+<li>The name of the data-element in which the arrow ends, i.e. the data-element that is the destination of the arrow.</li>
+<li>The mean time spend between the moment at which the arrow begins and the moment at which the arrow ends.</li>
+</ul>
+If the cursor points to a block: 
+<ul>
+<li>The name of the data-element to which the block belongs.</li>
+<li>The mean time spend in the block.</li>
+</ul>
+<p>
+If the results still contain many patterns, and you only wish to view a limited number, you can click on the <code>Filter Options</code>-button. 
+You will then see the screen below.
+</p>
+<p><img src="FilterOptions.gif" alt="Filter options screen" ></p>
+<p>
+Here you can select the process-instances that you wish to use by selecting them in the table on the left side of the screen. 
+But you can also select instances by selecting one of the following options, and pressing the <code>Update</code>-button
+afterwards.
+The following options is always available:
+<ul>
+<li>All Process instances: Selects all the process instances.</li></ul>
+The following option is available after the <code>Show Diagram</code>-button has been clicked at least once:
+<ul>
+<li>Sequences with a certain throughput time: Selects all process instances that have a throughput time above/below the filled in bound value.</li>
+</ul>
+The following options are available after the pattern diagram has been drawn at least once:
+<ul>
+<li>All Patterns: Selects all process instances that match one of the patterns from the pattern diagram.</li>
+<li>Interval of patterns: Selects all process instances that match one of the patterns in the interval.</li>
+<li>Patterns with a certain mean throughput time: Selects all process instances that match one of the patterns of which the mean throughput time lies above/below the filled in bound value.</li>
+</ul>
+</p>
+<p>
+After you have selected the process instances that you wish to use, you can click the <code>Use selected instances</code>-button, after which the sequence diagram and pattern diagram will be redrawn. 
+</p> 
